@@ -16,7 +16,8 @@ Contents:
    :maxdepth: 1
 
    dpa_shutdown
-
+   dea_seq_reset
+   
 Indices and tables
 ==================
 
