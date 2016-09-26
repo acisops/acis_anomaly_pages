@@ -62,7 +62,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'ACIS Anomaly Pages'
+project = 'ACIS Anomaly Documentation'
 copyright = '2016, CXC ACIS Operations Team'
 author = 'CXC ACIS Operations Team'
 
