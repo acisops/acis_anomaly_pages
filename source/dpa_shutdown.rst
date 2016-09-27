@@ -6,8 +6,7 @@ DPA-A or DPA-B Anomalous Shutdown
 What is it?
 -----------
 
-The DPA-A or DPA-B shuts down anomalously, presumably due to a spurious command. See Flight Notes
-`394 <http://cxc.cfa.harvard.edu/acis/memos/FN394.ps>`_ and `417 <http://cxc.cfa.harvard.edu/acis/memos/FN417.ps>`_.
+The DPA-A or DPA-B shuts down anomalously, presumably due to a spurious command.
 
 When did it happen before?
 --------------------------

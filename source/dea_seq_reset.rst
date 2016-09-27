@@ -7,8 +7,7 @@ What is it?
 -----------
 
 The DEA sequencer crashes, resulting in loss of science data from all
-video boards for the rest of the science run. See Software Problem Report
-`136 <http://acis.mit.edu/axaf/spr/prob0136.html>`_.
+video boards for the rest of the science run.
 
 When did it happen before?
 --------------------------
