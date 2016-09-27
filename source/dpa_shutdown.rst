@@ -36,6 +36,12 @@ Impacts
 Relevant Procedures
 -------------------
 
+.. |dpaa_on| replace:: ``SOP_61038_DPAA_ON``
+.. _dpaa_on: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_61038_DPAA_ON.pdf
+
+.. |dpab_on| replace:: ``SOP_61037_DPAB_ON``
+.. _dpab_on: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_61037_DPAB_ON.pdf
+
 SOT Procedures
 ++++++++++++++
 
@@ -47,8 +53,8 @@ SOT Procedures
 FOT Procedures
 ++++++++++++++
 
-* `Turn On DPA-A <http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_61038_DPAA_ON.pdf>`_
-* `Turn On DPA-B <http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_61037_DPAB_ON.pdf>`_
+* |dpaa_on|_
+* |dpab_on|_
 * Load DEA Housekeeping Parameter Block and Start DEA Housekeeping Run ?
 * Set Focal Plane Temperature to -120 C ?
 
