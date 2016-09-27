@@ -17,6 +17,7 @@ Contents:
 
    dpa_shutdown
    dea_seq_reset
+   hi_lo_anomaly
    
 Indices and tables
 ==================
