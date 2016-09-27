@@ -38,4 +38,4 @@ Relevant Notes/Memos
 --------------------
 
 * `ACIS-MIT SPR 136 <http://acis.mit.edu/axaf/spr/prob0136.html>`_
-* `ACIS-MIT Software Problem Report 136 <ftp://acis.mit.edu/pub/SPR136-1.0.pdf>'_
+* `ACIS-MIT Software Problem Report 136 <ftp://acis.mit.edu/pub/SPR136-1.0.pdf>`_
