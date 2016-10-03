@@ -28,14 +28,17 @@ make sure that there is nothing anomalous in the data *BEFORE* the shutdown. We 
 just like the previous occurrences. If yes, it should appear as if in one frame the DEA-A turned off. We need
 to process the dump data, send an email to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz, and Bev LaMarr),
 and convene a telecon at the next reasonable moment. A DEA-A recovery requires that the BEP be warmbooted after the
-DEA-A is back on (see SOP and Flight Note for details).
+DEA-A is back on (see `the SOP <http://cxc.cfa.harvard.edu/acis/cmd_seq/deaa_on.pdf>`_ and
+`Flight Note 572 <http://cxc.cfa.harvard.edu/acis/memos/Flight_Note572_DEA_Shutdown_Closeout_merged.pdf>`_ for details).
 
 Impacts
 -------
 
 * Until the DEA is powered back on, science operations will be interrupted.
-* After DEA is powered back on, the focal plane temperature will be unregulated and possibly uncalibrated.  Recovery will require a BEP warmboot and setting the focal plane temperature to -121 C.
-* The warmboot of the BEP will reset the parameters of the TXINGS patch to their defaults.  They can be updated in the weekly load through a SAR.
+* After DEA is powered back on, the focal plane temperature will be unregulated and possibly uncalibrated. Recovery
+  will require a BEP warmboot and setting the focal plane temperature to -121 :math:`^{\circ}\rm{C}`.
+* The warmboot of the BEP will reset the parameters of the TXINGS patch to their defaults. They can be updated in the
+  weekly load through a SAR.
 
 Relevant Procedures
 -------------------
@@ -50,9 +53,18 @@ SOT Procedures
 FOT Procedures
 ++++++++++++++
 
-* `SOP_61036_DEAA_ON <http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_61036_DEAA_ON.pdf>`_
-* `SOP_ACIS_WARMBOOT_DEAHOUSEKEEPING <http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_WARMBOOT_DEAHOUSEKEEPING.pdf>`_
-* `SOT_SI_SET_ACIS_FP_TEMP_TO_M121C <http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_SI_SET_ACIS_FP_TEMP_TO_M121C.pdf>`_
+.. |deaa_on| replace:: ``SOP_61036_DEAA_ON``
+.. _deaa_on: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_61036_DEAA_ON.pdf
+
+.. |wmboot_hkp| replace:: ``SOP_ACIS_WARMBOOT_DEAHOUSEKEEPING``
+.. _wmboot_hkp: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_WARMBOOT_DEAHOUSEKEEPING.pdf
+
+.. |fptemp_121| replace:: ``SOT_SI_SET_ACIS_FP_TEMP_TO_M121C``
+.. _fptemp_121: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_SI_SET_ACIS_FP_TEMP_TO_M121C.pdf
+
+* |deaa_on|_
+* |wmboot_hkp|_
+* |fptemp_121|_
 
 Relevant Notes/Memos
 --------------------
