@@ -11,7 +11,15 @@ The DPA-A or DPA-B shuts down anomalously, presumably due to a spurious command.
 When did it happen before?
 --------------------------
 
-The DPA-A has shut down 4 times over the mission and the DPA-B has shut down once. The last DPA-A shutdown was in 2015.
+The DPA-A has shut down 4 times over the mission:
+
+* 2000: 2000:300:15:40
+* 2002: 2002:353:20:26
+* 2015: 2015:012:00:01
+
+and the DPA-B has shut down once:
+
+* 2007: 2007:347:17:50
 
 Will it happen again?
 ---------------------
@@ -58,8 +66,12 @@ FOT Procedures
 
 * |dpaa_on|_
 * |dpab_on|_
-* Load DEA Housekeeping Parameter Block and Start DEA Housekeeping Run ?
 * |fptemp_121|_
+
+CAPs
+++++
+
+* `CAP 1342 (DPA-A Poweroff Recovery) <http://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1301_1400/CAP_1342_dpaa_poweroff_recovery/CAP_1342_dpaa_poweroff_recovery.pdf>`_
 
 Relevant Notes/Memos
 --------------------
