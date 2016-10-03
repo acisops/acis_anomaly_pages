@@ -12,7 +12,11 @@ video boards for the rest of the science run.
 When did it happen before?
 --------------------------
 
-The DEA Sequencer has reset three times during the mission; most recently in 2013.
+The DEA Sequencer has reset three times during the mission; most recently in 2013:
+
+* 2004:174:20:49, obsid 5008
+* 2009:044:00:14, obsid 10275
+* 2013:211:05:42, obsid 15474
 
 Will it happen again?
 ---------------------
@@ -37,5 +41,12 @@ Impacts
 Relevant Notes/Memos
 --------------------
 
+Access locked:
+
 * `ACIS-MIT SPR 136 <http://acis.mit.edu/axaf/spr/prob0136.html>`_
+* `ACIS-MIT SPR 143 <http://acis.mit.edu/axaf/spr/prob0143.html>`_
+* `ACIS-MIT SPR 149 <http://acis.mit.edu/axaf/spr/prob0149.html>`_
+
+Open access, full memo:
+
 * `ACIS-MIT Software Problem Report 136 <ftp://acis.mit.edu/pub/SPR136-1.0.pdf>`_
