@@ -42,13 +42,16 @@ Relevant Procedures
 .. |dpab_on| replace:: ``SOP_61037_DPAB_ON``
 .. _dpab_on: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_61037_DPAB_ON.pdf
 
+.. |fptemp_121| replace:: ``SOT_SI_SET_ACIS_FP_TEMP_TO_M121C``
+.. _fptemp_121: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_SI_SET_ACIS_FP_TEMP_TO_M121C.pdf
+
 SOT Procedures
 ++++++++++++++
 
-* `Turn On DPA-A <http://cxc.cfa.harvard.edu/acis/cmd_seq/dpaa_on.ps>`_
-* `Turn On DPA-B <http://cxc.cfa.harvard.edu/acis/cmd_seq/dpab_on.ps>`_
-* `Load DEA Housekeeping Parameter Block and Start DEA Housekeeping Run <http://cxc.cfa.harvard.edu/acis/cmd_seq/dea_hkp.ps>`_
-* `Set Focal Plane Temperature to -120 C <http://cxc.cfa.harvard.edu/acis/cmd_seq/setfp_m120.ps>`_
+* `Turn On DPA-A <http://cxc.cfa.harvard.edu/acis/cmd_seq/dpaa_on.pdf>`_
+* `Turn On DPA-B <http://cxc.cfa.harvard.edu/acis/cmd_seq/dpab_on.pdf>`_
+* `Load DEA Housekeeping Parameter Block and Start DEA Housekeeping Run <http://cxc.cfa.harvard.edu/acis/cmd_seq/dea_hkp.pdf>`_
+* `Set Focal Plane Temperature to -121 C <http://cxc.cfa.harvard.edu/acis/cmd_seq/setfp_m121.pdf>`_
 
 FOT Procedures
 ++++++++++++++
@@ -56,7 +59,7 @@ FOT Procedures
 * |dpaa_on|_
 * |dpab_on|_
 * Load DEA Housekeeping Parameter Block and Start DEA Housekeeping Run ?
-* Set Focal Plane Temperature to -120 C ?
+* |fptemp_121|_
 
 Relevant Notes/Memos
 --------------------
