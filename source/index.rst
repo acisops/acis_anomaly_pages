@@ -19,11 +19,3 @@ Contents:
    dea_shutdown
    dea_seq_reset
    hi_lo_anomaly
-   
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
