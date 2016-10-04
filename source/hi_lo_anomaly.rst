@@ -12,7 +12,10 @@ negative for the first three output nodes and large and positive for the fourth 
 When did it happen before?
 --------------------------
 
-Twice once in 2011 and once in 2013.
+Twice:
+
+* March 7, 2011: obsid 12934
+* October 31, 2013: obsid 16496
 
 Will it happen again?
 ---------------------

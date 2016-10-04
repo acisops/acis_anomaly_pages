@@ -13,13 +13,13 @@ When did it happen before?
 
 The DPA-A has shut down 4 times over the mission:
 
-* 2000: 2000:300:15:40
-* 2002: 2002:353:20:26
-* 2015: 2015:012:00:01
+* October 26, 2000: 2000:300:15:40, obsid 979
+* December 19, 2002: 2002:353:20:26, obsid 60915
+* January 12, 2015: 2015:012:00:01, obsid 52186
 
 and the DPA-B has shut down once:
 
-* 2007: 2007:347:17:50
+* December 13, 2007: 2007:347:17:50, obsid 58072
 
 Will it happen again?
 ---------------------

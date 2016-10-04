@@ -14,9 +14,9 @@ When did it happen before?
 
 The DEA Sequencer has reset three times during the mission; most recently in 2013:
 
-* 2004:174:20:49, obsid 5008
-* 2009:044:00:14, obsid 10275
-* 2013:211:05:42, obsid 15474
+* June 22, 2004: 2004:174:20:49, obsid 5008
+* February 13, 2009: 2009:044:00:14, obsid 10275
+* July 30, 2013: 2013:211:05:42, obsid 15474
 
 Will it happen again?
 ---------------------

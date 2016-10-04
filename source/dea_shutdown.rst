@@ -13,7 +13,7 @@ When did it happen before?
 
 The DEA-A has shutdown only once in the mission, in 2005:
 
-* September 16, 2005, 2005:259:11:02
+* September 16, 2005, 2005:258:23:31:29, obsid 6221
 
 Will it happen again?
 ---------------------
