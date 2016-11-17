@@ -45,7 +45,7 @@ Impacts
 -------
 
 * The last portion of the science run for that particular CCD/FEP combination will be lost. The following science run
-should be unaffected.
+  should be unaffected.
 
 Relevant Procedures
 -------------------
