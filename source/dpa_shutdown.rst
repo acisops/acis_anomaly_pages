@@ -29,12 +29,16 @@ It appears likely that the anomaly will occur again if the mission continues.
 What is the first response?
 ---------------------------
 
-Our real-time web pages will alert us and the Lead System Engineer will call us. We need to process the dump data and
-make sure that there is nothing anomalous in the data *BEFORE* the shutdown. We want to know if a new occurrence looks
-just like the previous occurrences. If yes, it should appear as if in one frame the DPA-A (or DPA-B) turned off. We need
-to process the dump data, send an email to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz, and Bev LaMarr),
-and convene a telecon at the next reasonable moment. DPA-A shutdowns require reloading the patches, restarting DEA
-housekeeping, and resetting the focal plane temperature. DPA-B shutdowns only require that the DPA-B be powered back on.
+Our real-time web pages will alert us and the Lead System Engineer will call us. We need to:
+
+* Process the dump data and make sure that there is nothing anomalous in the data *BEFORE* 
+  the shutdown. We want to know if a new occurrence looks just like the previous occurrences. 
+  If yes, it should appear as if in one frame the DPA-A (or DPA-B) turned off.
+* Send an email to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz, and Bev LaMarr)
+* Convene a telecon at the next reasonable moment. 
+* DPA-A shutdowns require reloading the patches, restarting DEA housekeeping, and resetting 
+  the focal plane temperature. 
+* DPA-B shutdowns only require that the DPA-B be powered back on.
 
 Impacts
 -------
