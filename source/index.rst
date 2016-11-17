@@ -19,4 +19,5 @@ Contents:
    dpa_shutdown
    dea_shutdown
    dea_seq_reset
+   fep_reset
    hi_lo_anomaly
