@@ -13,12 +13,30 @@ When did it happen before?
 
 The DEA-A has shutdown only once in the mission, in 2005:
 
-* September 16, 2005, 2005:258:23:31:29, obsid 6221
+* September 15, 2005, 2005:258:23:31:29, obsid 6221
 
 Will it happen again?
 ---------------------
 
 It appears it could happen again, but one occurrence in 16 years provides little guidance.
+
+How is this Anomaly Diagnosed?
+------------------------------
+
+Within a major frame (32.2 seconds), one should see:
+
+* 1DEPSA (DEA-A Power Supply On/Off) change from 1 to 0
+* All DEA-A Analog Voltages (1DEP3AVO, 1DEP2AVO, 1DEP1AVO, 1DEP0AVO, 1DEN0AVO, 1DEN1AVO) 
+  go to 0.0 +/- 0.5 V 
+* 1DEICACU (DEA-A input current) drop to < 0.2 A (this value is noisy, so take an average)
+* DEA-A POWER should go to zero
+* 1DE28AVO (DEA-A +28V Input) is expected to have a small uptick, ~0.5 V, consistent with 
+  the load suddenly dropping to zero
+
+All other hardware telemetry should be nominal. The current values for these can be found 
+on our Real-Time Telemetry pages.  Older data can be examined from the dump files or the 
+engineering archive.
+
 
 What is the first response?
 ---------------------------
