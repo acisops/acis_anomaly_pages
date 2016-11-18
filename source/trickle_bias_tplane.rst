@@ -15,9 +15,9 @@ When did it happen before?
 
 Three times:
 
-* June 27, 2000: , obsid 371
-* October 29, 2001: , obsid 3403
-* November 4, 2001: , obsid 2010
+* June 27, 2000: obsid 371
+* October 29, 2001: obsid 3403
+* November 4, 2001: obsid 2010
 
 Will it happen again?
 ---------------------
