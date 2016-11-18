@@ -21,3 +21,4 @@ Contents:
    dea_seq_reset
    fep_reset
    hi_lo_anomaly
+   trickle_bias_tplane
