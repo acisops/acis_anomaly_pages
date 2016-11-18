@@ -48,9 +48,9 @@ execute normally, so no corrective action is necessary.
 
 If we see T-Plane latchup on coming into comm, it may be worth trying
 to salvage the remainder of the science run. Check whether a CLD
-exists for a ``WSPOW`` packet to command the required set of DEA boards 
+exists for a ``WSPOWXXXXX`` packet to command the required set of DEA boards
 and FEPs. If so, and significant time remains for the obsid, execute
-stop science, ``WSFEPALLDN``, the ``WSPOW`` command, and start science.
+stop science, ``WSFEPALLDN``, the ``WSPOWXXXXX`` command, and start science.
 
 A special case: if the following science run is a no-bias version of
 the same SI mode, it will not recycle the FEP power. Send a stop
@@ -71,11 +71,18 @@ lost from remaining FEPs due to telemetry saturation.
 Relevant Procedures
 -------------------
 
-FOT Procedures
-++++++++++++++
+.. |stop_sci| replace:: ``1A_AA000_191.CLD``, ``AA00000000`` (stop science command)
+.. _stop_sci: http://acis.mit.edu/cgi-bin/get-cld?cld=1A_AA000_191.CLD
 
-* ``1A_AA000_191.CLD`` stop science
-* ``1A_WS003_165.CLD`` FEPALLDN
+.. |feps_down| replace:: ``1A_WS003_165.CLD``, ``WSFEPALLDN`` (command to power down all FEPs)
+.. _feps_down: http://acis.mit.edu/cgi-bin/get-cld?cld=1A_WS003_165.CLD
+
+
+Command Files
++++++++++++++
+
+* |stop_sci|_
+* |feps_down|_
 
 Currently there are 2 6-chip and 3 5-chip power commands in CLDs. The
 5-chip commands all power an additional, unneeded FEP.
@@ -83,10 +90,7 @@ Currently there are 2 6-chip and 3 5-chip power commands in CLDs. The
 Relevant Notes/Memos
 --------------------
 
-ACIS Software Problem Report M00062901: SPR 133: Event Packets
-interleaved with Bias Packets, causing FEP T-Plane Lock-Up.
-
-MIT ECO # 36-1028 untricklebias: Patch to run bias thief methods from
-science task
+* `ACIS Software Problem Report M00062901: SPR 133: Event Packets interleaved with Bias Packets, causing FEP T-Plane Lock-Up. <http://acis.mit.edu/axaf/spr/prob0133.html>`_
+* `MIT ECO # 36-1028 untricklebias: Patch to run bias thief methods from science task <http://acis.mit.edu/axaf/eco/eco-1038.pdf>`_
 
 
