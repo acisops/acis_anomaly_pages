@@ -23,10 +23,22 @@ Will it happen again?
 
 It appears likely that the anomaly will occur again.
 
+How is this Anomaly Diagnosed?
+------------------------------
+
+* The science run will be terminated, sending a ``scienceReport`` packet that will contain
+  non-zero ``fepErrorCodes`` and a non-zero ``terminationCode``.
+* Within a major frame (32.2 seconds), there will be a slight drop in DPA Input Current A and/or B,
+  (1DPICACU and/or 1DPICBCU) ~0.2-0.3 A. The drop in two input currents depends on which side is
+  running which FEPs.
+* Within a major frame, the 1STAT1ST bilevel will toggle off (science idle).
+* DEA Housekeeping will show sharp drops in the temperatures of FEP 0 and/or FEP 1, if they are
+  running.
+
 What is the first response?
 ---------------------------
 
-Most likely we will be notified by CXCDS Ops that data ceased prematurely for an 
+Most likely we will be notified by CXCDS Ops that data ceased prematurely for an
 observation. We need to:
  
 * Process the dump data and get access to the CXC products
