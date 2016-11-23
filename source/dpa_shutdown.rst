@@ -26,7 +26,6 @@ Will it happen again?
 
 It appears likely that the anomaly will occur again if the mission continues.
 
-
 How is this Anomaly Diagnosed?
 ------------------------------
 
