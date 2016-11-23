@@ -64,11 +64,11 @@ Impacts
 Relevant Procedures
 -------------------
 
-.. |dpaa_on| replace:: ``SOP_61038_DPAA_ON``
-.. _dpaa_on: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_61038_DPAA_ON.pdf
+.. |dpaa_on| replace:: ``SOP_ACIS_DPAA_ON``
+.. _dpaa_on: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_DPAA_ON.pdf
 
-.. |dpab_on| replace:: ``SOP_61037_DPAB_ON``
-.. _dpab_on: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_61037_DPAB_ON.pdf
+.. |dpab_on| replace:: ``SOP_ACIS_DPAB_ON``
+.. _dpab_on: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_DPAB_ON.pdf
 
 .. |fptemp_121| replace:: ``SOT_SI_SET_ACIS_FP_TEMP_TO_M121C``
 .. _fptemp_121: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_SI_SET_ACIS_FP_TEMP_TO_M121C.pdf
