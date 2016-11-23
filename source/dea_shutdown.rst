@@ -28,9 +28,9 @@ Within a major frame (32.2 seconds), one should see:
 * 1DEPSA (DEA-A Power Supply On/Off) change from 1 to 0
 * All DEA-A Analog Voltages (1DEP3AVO, 1DEP2AVO, 1DEP1AVO, 1DEP0AVO, 1DEN0AVO, 1DEN1AVO) 
   go to 0.0 +/- 0.5 V 
-* 1DEICACU (DEA-A input current) drop to < 0.2 A (this value is noisy, so take an average)
+* 1DEICACU (DEA-A Input Current) drop to < 0.2 A (this value is noisy, so take an average)
 * DEA-A POWER should go to zero
-* 1DE28AVO (DEA-A +28V Input) is expected to have a small uptick, ~0.5 V, consistent with 
+* 1DE28AVO (DEA-A +28V Input Voltage) is expected to have a small uptick, ~0.5 V, consistent with
   the load suddenly dropping to zero
 
 All other hardware telemetry should be nominal. The current values for these can be found 
