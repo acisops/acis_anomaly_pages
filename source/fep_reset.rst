@@ -83,10 +83,10 @@ What is the first response?
 Most likely we will be notified by CXCDS Ops that data from one or more of
 the CCDs stopped during an observation. We need to:
  
-* Process the dump data and get access to the CXC products
-* Send an email to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz, 
+* Send an email to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz,
   and Bev LaMarr)
-* Convene a telecon at the next reasonable moment. 
+* Process the dump data and get access to the CXC products
+* Convene a telecon at the next reasonable moment.
 
 Impacts
 -------

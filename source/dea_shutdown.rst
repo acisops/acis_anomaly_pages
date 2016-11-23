@@ -43,11 +43,11 @@ What is the first response?
 
 Our real-time web pages will alert us and the Lead System Engineer will call us. We need to:
  
-* Process the dump data and make sure that there is nothing anomalous in the data *BEFORE* 
-  the shutdown. We want to know if a new occurrence looks just like the previous occurrences. 
-  If yes, it should appear as if in one frame the DEA-A turned off. 
 * Send an email to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz, and Bev LaMarr),
-* Convene a telecon at the next reasonable moment. A DEA-A recovery requires that the BEP be 
+* Process the dump data and make sure that there is nothing anomalous in the data *BEFORE*
+  the shutdown. We want to know if a new occurrence looks just like the previous occurrences.
+  If yes, it should appear as if in one frame the DEA-A turned off.
+* Convene a telecon at the next reasonable moment. A DEA-A recovery requires that the BEP be
   warmbooted after the DEA-A is back on (see `the SOP <http://cxc.cfa.harvard.edu/acis/cmd_seq/deaa_on.pdf>`_ 
   and `Flight Note 572 <http://cxc.cfa.harvard.edu/acis/memos/Flight_Note572_DEA_Shutdown_Closeout_merged.pdf>`_
   for details).

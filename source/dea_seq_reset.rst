@@ -41,10 +41,10 @@ What is the first response?
 Most likely we will be notified by CXCDS Ops that data ceased prematurely for an
 observation. We need to:
  
-* Process the dump data and get access to the CXC products
-* Send an e-mail to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz, 
+* Send an e-mail to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz,
   and Bev LaMarr)
-* Convene a telecon at the next reasonable moment. 
+* Process the dump data and get access to the CXC products
+* Convene a telecon at the next reasonable moment.
 * Examine data from the next observation because the setup for the next
   observation should clear the problem.
 

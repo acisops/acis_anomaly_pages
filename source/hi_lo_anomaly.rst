@@ -43,9 +43,9 @@ written to intervene if the observation with the anomaly is still in progress to
 
 If not, we need to: 
 
-* Process the dump data and get access to the CXC products 
 * Send an email to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz, and Bev LaMarr)
-* Convene a telecon at the next reasonable moment. 
+* Process the dump data and get access to the CXC products
+* Convene a telecon at the next reasonable moment.
 * Examine data from the next observation, because the setup for the next observation should 
   clear the problem.
 
