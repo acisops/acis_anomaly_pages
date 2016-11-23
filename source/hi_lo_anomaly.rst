@@ -22,6 +22,17 @@ Will it happen again?
 
 It appears likely it could happen again.
 
+How is this Anomaly Diagnosed?
+------------------------------
+
+Both of the following symptoms will be noticed:
+
+* One or more FEPs will stop returning event data.
+* The ``deltaOverclock`` values reported from these FEPs are large and negative for the first three output nodes and
+  large and positive for the fourth output node.
+
+Both of these symptoms can be observed from one of the PMON pages.
+
 What is the first response?
 ---------------------------
 
