@@ -26,6 +26,23 @@ Will it happen again?
 
 It appears likely that the anomaly will occur again if the mission continues.
 
+
+How is this Anomaly Diagnosed?
+------------------------------
+
+Within a major frame (32.2 seconds), one should see, for either DPA-A or DPA-B:
+
+* 1DPPS[AB] (DPA-[AB] Power Supply On/Off) change from 1 to 0
+* 1DPP0[AB]V0 (DPA-[AB] +5V Analog Voltage) drop to 0.0 +/- 0.3 V
+* 1DPIC[AB]CU (DPA-[AB] Input Current) drop to < 0.2 A (this value is noisy, so take an average)
+* DPA-[AB] POWER should go to zero
+* 1DP28[AB]VO (DPA-[AB] +28V Input Voltage) is expected to have a small uptick, ~0.5 V, consistent with
+  the load suddenly dropping to zero
+
+All other hardware telemetry should be nominal. The current values for these can be found
+on our Real-Time Telemetry pages.  Older data can be examined from the dump files or the
+engineering archive.
+
 What is the first response?
 ---------------------------
 
