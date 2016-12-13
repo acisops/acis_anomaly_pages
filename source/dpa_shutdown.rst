@@ -114,8 +114,10 @@ FOT Procedures
 CAPs
 ++++
 
-* `CAP 1342 (DPA-A Poweroff Recovery) <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1301_1400/CAP_1342_dpaa_poweroff_recovery/CAP_1342_dpaa_poweroff_recovery.pdf>`_
 * `CAP 1407 (DPA-A Poweroff Recovery) <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1401-1500/CAP_1407_dpaa_poweroff_recovery/CAP_1407_dpaa_poweroff_recovery.pdf>`_
+* `CAP 1342 (DPA-A Poweroff Recovery) <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1301_1400/CAP_1342_dpaa_poweroff_recovery/CAP_1342_dpaa_poweroff_recovery.pdf>`_
+* `CAP 1055 (Commanding to Turn On DPA Side B and Warm Boot BEP Side A) <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1001_1100/CAP_1055_Turn_on_DPA_B/CAP_1055_CMDing_Turn_On_DPA_B_warmboot_BEP_A_sign.pdf>`_
+* `CAP 818 (DPA-A Side Recovery from Enabled/Powered Off State) <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/0801_0900/CAP_0818_DPA-A%20Power%20Off%20Recovery/CAP_818_2002_354_not_signed.pdf>`_
 
 Relevant Notes/Memos
 --------------------
