@@ -38,6 +38,7 @@ Within a major frame (32.2 seconds), one should see, for either DPA-A or DPA-B:
 * DPA-[AB] POWER should go to zero
 * 1DP28[AB]VO (DPA-[AB] +28V Input Voltage) is expected to have a small uptick, ~0.5 V, consistent with
   the load suddenly dropping to zero
+* If DPA-A shuts down, the software and hardware bilevels will likely not have normal values.
 
 All other hardware telemetry should be nominal. The current values for these can be found
 on our Real-Time Telemetry pages.  Older data can be examined from the dump files or the
@@ -59,6 +60,9 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   the shutdown. We want to know if a new occurrence looks just like the previous occurrences.
   If yes, it should appear as if in one frame the DPA-A (or DPA-B) turned off.
 * Convene a telecon at the next reasonable moment.
+* As soon as the time of the DPA-[AB] shutdown is known, inform ``sot_yellow_alert``. 
+* Identify whether or not additional comm time is needed and if so ask the Lead Systems 
+  Engineer to request it.
 * DPA-A shutdowns require reloading the patches, restarting DEA housekeeping, and resetting 
   the focal plane temperature. 
 * DPA-B shutdowns only require that the DPA-B be powered back on.
@@ -67,6 +71,12 @@ Impacts
 -------
 
 * Until the DPA is powered back on, science operations will be interrupted.
+* In the case of a side A shutdown, the warmboot of the BEP will reset the parameters of the 
+  TXINGS patch to their defaults. They can be updated in the weekly load through a SAR.
+* After recovery from a DPA-A shutdown, the power status may be in an unusual state (e.g., lower
+  than expected input current) due to FEPs being off. This situation should resolve itself with 
+  the next observation.
+
 
 Relevant Procedures
 -------------------
