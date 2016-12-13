@@ -70,8 +70,10 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 Impacts
 -------
 
-* Until the DPA is powered back on, science operations will be interrupted.
-* In the case of a side A shutdown, the warmboot of the BEP will reset the parameters of the 
+* Until the DPA-A is powered back on, science operations will be interrupted, but this may not
+  be the case if DPA-B needs to be powered back on. In this case, science operations will need to
+  be stopped and the FEPs and video boards will need to be powered down.
+* In the case of a side A or B shutdown, the warmboot of the BEP will reset the parameters of the 
   TXINGS patch to their defaults. They can be updated in the weekly load through a SAR.
 * After recovery from a DPA-A shutdown, the power status may be in an unusual state (e.g., lower
   than expected input current) due to FEPs being off. This situation should resolve itself with 
