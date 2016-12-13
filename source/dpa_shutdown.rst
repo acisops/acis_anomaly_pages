@@ -112,8 +112,8 @@ FOT Procedures
 CAPs
 ++++
 
-* `CAP 1342 (DPA-A Poweroff Recovery) <http://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1301_1400/CAP_1342_dpaa_poweroff_recovery/CAP_1342_dpaa_poweroff_recovery.pdf>`_
-* `CAP 1407 (DPA-A Poweroff Recovery) <http://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1401-1500/CAP_1407_dpaa_poweroff_recovery/CAP_1407_dpaa_poweroff_recovery.pdf>`_
+* `CAP 1342 (DPA-A Poweroff Recovery) <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1301_1400/CAP_1342_dpaa_poweroff_recovery/CAP_1342_dpaa_poweroff_recovery.pdf>`_
+* `CAP 1407 (DPA-A Poweroff Recovery) <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1401-1500/CAP_1407_dpaa_poweroff_recovery/CAP_1407_dpaa_poweroff_recovery.pdf>`_
 
 Relevant Notes/Memos
 --------------------
