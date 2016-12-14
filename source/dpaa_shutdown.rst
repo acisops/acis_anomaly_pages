@@ -1,12 +1,12 @@
-.. _dpa-shutdown:
+.. _dpaa-shutdown:
 
-DPA-A or DPA-B Anomalous Shutdown
-=================================
+DPA-A Anomalous Shutdown
+========================
 
 What is it?
 -----------
 
-The DPA-A or DPA-B shuts down anomalously, presumably due to a spurious command.
+The DPA-A shuts down anomalously, presumably due to a spurious command.
 
 When did it happen before?
 --------------------------
@@ -18,10 +18,6 @@ The DPA-A has shut down 4 times over the mission:
 * January 12, 2015: 2015:012:00:01, obsid 52186
 * December 9, 2016: 2016:344:07:40, obsid 17615
 
-and the DPA-B has shut down once:
-
-* December 13, 2007: 2007:347:17:50, obsid 58072
-
 Will it happen again?
 ---------------------
 
@@ -30,15 +26,15 @@ It appears likely that the anomaly will occur again if the mission continues.
 How is this Anomaly Diagnosed?
 ------------------------------
 
-Within a major frame (32.2 seconds), one should see, for either DPA-A or DPA-B:
+Within a major frame (32.2 seconds), one should see:
 
-* 1DPPS[AB] (DPA-[AB] Power Supply On/Off) change from 1 to 0
-* 1DPP0[AB]V0 (DPA-[AB] +5V Analog Voltage) drop to 0.0 +/- 0.3 V
-* 1DPIC[AB]CU (DPA-[AB] Input Current) drop to < 0.2 A (this value is noisy, so take an average)
-* DPA-[AB] POWER should go to zero
-* 1DP28[AB]VO (DPA-[AB] +28V Input Voltage) is expected to have a small uptick, ~0.5 V, consistent with
+* 1DPPSA (DPA-A Power Supply On/Off) change from 1 to 0
+* 1DPP0AV0 (DPA-A +5V Analog Voltage) drop to 0.0 +/- 0.3 V
+* 1DPICACU (DPA-A Input Current) drop to < 0.2 A (this value is noisy, so take an average)
+* DPA-A POWER should go to zero
+* 1DP28AVO (DPA-A +28V Input Voltage) is expected to have a small uptick, ~0.5 V, consistent with
   the load suddenly dropping to zero
-* If DPA-A shuts down, the software and hardware bilevels will likely not have normal values.
+* The software and hardware bilevels will likely not have normal values.
 
 All other hardware telemetry should be nominal. The current values for these can be found
 on our Real-Time Telemetry pages.  Older data can be examined from the dump files or the
@@ -65,14 +61,14 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   Engineer to request it.
 * DPA-A shutdowns require reloading the patches, restarting DEA housekeeping, and resetting 
   the focal plane temperature. 
-* DPA-B shutdowns only require that the DPA-B be powered back on.
+* DPA-B shutdowns require that the DPA-B be powered back on, science operations may need
+  to be stopped, and the FEPs and video boards maybe need to be powered down.
 
 Impacts
 -------
 
-* Until the DPA-A is powered back on, science operations will be interrupted, but this may not
-  be the case if DPA-B needs to be powered back on. In this case, science operations will need to
-  be stopped and the FEPs and video boards will need to be powered down.
+* Until the DPA-A is powered back on, science operations will be interrupted, but if DPA-B 
+  needs to be powered back on science operations may need to be temporarily stopped.
 * In the case of a side A or B shutdown, the warmboot of the BEP will reset the parameters of the 
   TXINGS patch to their defaults. They can be updated in the weekly load through a SAR.
 * After recovery from a DPA-A shutdown, the power status may be in an unusual state (e.g., lower
@@ -86,9 +82,6 @@ Relevant Procedures
 .. |dpaa_on| replace:: ``SOP_ACIS_DPAA_ON``
 .. _dpaa_on: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_DPAA_ON.pdf
 
-.. |dpab_on| replace:: ``SOP_ACIS_DPAB_ON``
-.. _dpab_on: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_DPAB_ON.pdf
-
 .. |stdfoptg| replace:: ``SOP_ACIS_SW_STDFOPTG``
 .. _stdfoptg: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDFOPTG.pdf
 
@@ -99,7 +92,6 @@ SOT Procedures
 ++++++++++++++
 
 * `Turn On DPA-A <http://cxc.cfa.harvard.edu/acis/cmd_seq/dpaa_on.pdf>`_
-* `Turn On DPA-B <http://cxc.cfa.harvard.edu/acis/cmd_seq/dpab_on.pdf>`_
 * `Flight Software Standard Patch F, Optional Patch G <http://cxc.cfa.harvard.edu/acis/cmd_seq/sw_stdfoptg.pdf>`_
 * `Set Focal Plane Temperature to -121 C <http://cxc.cfa.harvard.edu/acis/cmd_seq/setfp_m121.pdf>`_
 
@@ -107,7 +99,6 @@ FOT Procedures
 ++++++++++++++
 
 * |dpaa_on|_
-* |dpab_on|_
 * |stdfoptg|_
 * |fptemp_121|_
 
@@ -116,7 +107,6 @@ CAPs
 
 * `CAP 1407 (DPA-A Poweroff Recovery) <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1401-1500/CAP_1407_dpaa_poweroff_recovery/CAP_1407_dpaa_poweroff_recovery.pdf>`_
 * `CAP 1342 (DPA-A Poweroff Recovery) <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1301_1400/CAP_1342_dpaa_poweroff_recovery/CAP_1342_dpaa_poweroff_recovery.pdf>`_
-* `CAP 1055 (Commanding to Turn On DPA Side B and Warm Boot BEP Side A) <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1001_1100/CAP_1055_Turn_on_DPA_B/CAP_1055_CMDing_Turn_On_DPA_B_warmboot_BEP_A_sign.pdf>`_
 * `CAP 818 (DPA-A Side Recovery from Enabled/Powered Off State) <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/0801_0900/CAP_0818_DPA-A%20Power%20Off%20Recovery/CAP_818_2002_354_not_signed.pdf>`_
 
 Relevant Notes/Memos
