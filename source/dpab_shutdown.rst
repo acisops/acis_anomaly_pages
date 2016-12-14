@@ -49,28 +49,24 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   - If Tom does not answer, call Scott Wolk. Leave a message if he does not answer.
 
 * Process the dump data and make sure that there is nothing anomalous in the data *BEFORE*
-  the shutdown. We want to know if a new occurrence looks just like the previous occurrences.
-  If yes, it should appear as if in one frame the DPA-A (or DPA-B) turned off.
+  the shutdown. We want to know if a new occurrence looks just like the single previous 
+  occurrence. If yes, it should appear as if in one frame the DPA-B turned off.
 * Convene a telecon at the next reasonable moment.
-* As soon as the time of the DPA-[AB] shutdown is known, inform ``sot_yellow_alert``. 
+* As soon as the time of the DPA-B shutdown is known, inform ``sot_yellow_alert``. 
 * Identify whether or not additional comm time is needed and if so ask the Lead Systems 
   Engineer to request it.
-* DPA-A shutdowns require reloading the patches, restarting DEA housekeeping, and resetting 
-  the focal plane temperature. 
-* DPA-B shutdowns require that the DPA-B be powered back on, science operations may need
-  to be stopped, and the FEPs and video boards maybe need to be powered down.
+* Prepare a CAP to power back on the DPA-B and bring it up for review. If the shutdown occurs during 
+  an observation that utilitizes the side B FEPs, the active BEP may execut a watchdog reboot and
+  it may be necessary to warm boot the BEP. (**also standby mode?**)
+* Execute the CAP at the next available comm.
 
 Impacts
 -------
 
-* Until the DPA-A is powered back on, science operations will be interrupted, but if DPA-B 
-  needs to be powered back on science operations may need to be temporarily stopped.
-* In the case of a side A or B shutdown, the warmboot of the BEP will reset the parameters of the 
-  TXINGS patch to their defaults. They can be updated in the weekly load through a SAR.
-* After recovery from a DPA-A shutdown, the power status may be in an unusual state (e.g., lower
-  than expected input current) due to FEPs being off. This situation should resolve itself with 
-  the next observation.
-
+* Until the DPA-B is powered back on, science operations which require the use of the side B FEPs
+  will be interrupted.
+* If it is necessary to warm boot the BEP, this will reset the parameters of the TXINGS patch 
+  to their defaults. They can be updated in the weekly load through a SAR.
 
 Relevant Procedures
 -------------------
@@ -78,33 +74,22 @@ Relevant Procedures
 .. |dpab_on| replace:: ``SOP_ACIS_DPAB_ON``
 .. _dpab_on: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_DPAB_ON.pdf
 
-.. |stdfoptg| replace:: ``SOP_ACIS_SW_STDFOPTG``
-.. _stdfoptg: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDFOPTG.pdf
-
-.. |fptemp_121| replace:: ``SOT_SI_SET_ACIS_FP_TEMP_TO_M121C``
-.. _fptemp_121: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_SI_SET_ACIS_FP_TEMP_TO_M121C.pdf
+.. |warmboot| replace:: ``SOP_ACIS_WARMBOOT_DEAHOUSEKEEPING``
+.. _warmboot: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_WARMBOOT_DEAHOUSEKEEPING.pdf
 
 SOT Procedures
 ++++++++++++++
 
 * `Turn On DPA-B <http://cxc.cfa.harvard.edu/acis/cmd_seq/dpab_on.pdf>`_
-* `Flight Software Standard Patch F, Optional Patch G <http://cxc.cfa.harvard.edu/acis/cmd_seq/sw_stdfoptg.pdf>`_
-* `Set Focal Plane Temperature to -121 C <http://cxc.cfa.harvard.edu/acis/cmd_seq/setfp_m121.pdf>`_
+* `Warm Boot the Active ACIS BEP and Start DEA Housekeeping Run <http://cxc.cfa.harvard.edu/acis/cmd_seq/warmboot_hkp.pdf>`_
 
 FOT Procedures
 ++++++++++++++
 
 * |dpab_on|_
-* |stdfoptg|_
-* |fptemp_121|_
+* |warmboot|_
 
 CAPs
 ++++
 
 * `CAP 1055 (Commanding to Turn On DPA Side B and Warm Boot BEP Side A) <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1001_1100/CAP_1055_Turn_on_DPA_B/CAP_1055_CMDing_Turn_On_DPA_B_warmboot_BEP_A_sign.pdf>`_
-
-Relevant Notes/Memos
---------------------
-
-* `Flight Note 394 <http://cxc.cfa.harvard.edu/acis/memos/FN394.ps>`_
-* `Flight Note 417 <http://cxc.cfa.harvard.edu/acis/memos/FN417.ps>`_
