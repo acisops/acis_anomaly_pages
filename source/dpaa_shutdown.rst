@@ -59,8 +59,12 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 * As soon as the time of the shutdown is known, inform ``sot_yellow_alert``. 
 * Identify whether or not additional comm time is needed and if so ask the Lead Systems 
   Engineer to request it.
-* DPA-A shutdowns also require reloading the patches, restarting DEA housekeeping, and resetting 
-  the focal plane temperature. 
+* Prepare a CAP to power back on the DPA-A and bring it up for review. DPA-A shutdowns also 
+  require reloading the patches, restarting DEA housekeeping, and resetting the focal plane 
+  temperature. If *Chandra* is heading into the radiation belts, it may be necessary to also 
+  issue a ``WSVIDALLDN`` command to power off the video boards.
+* Execute the CAP at the next available comm. Reloading the flight software patches can take
+  a half an hour, so ensure that there is enough time in the comm to execute the entire procedure.
 
 Impacts
 -------
@@ -71,7 +75,6 @@ Impacts
 * After recovery from a DPA-A shutdown, the power status may be in an unusual state (e.g., lower
   than expected input current) due to FEPs being off. This situation should resolve itself with 
   the next observation.
-
 
 Relevant Procedures
 -------------------
@@ -84,6 +87,12 @@ Relevant Procedures
 
 .. |fptemp_121| replace:: ``SOT_SI_SET_ACIS_FP_TEMP_TO_M121C``
 .. _fptemp_121: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_SI_SET_ACIS_FP_TEMP_TO_M121C.pdf
+
+.. |wsvidalldn| replace:: ``1A_WS007_164.CLD``
+.. _wsvidalldn: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/archive/cld/1A_WS007_164.CLD
+
+.. |stdfoptgssc| replace:: ``I_ACIS_SW_STDFOPTG.ssc``
+.. _stdfoptgssc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/products/ssc/I_ACIS_SW_STDFOPTG.ssc
 
 SOT Procedures
 ++++++++++++++
@@ -98,6 +107,12 @@ FOT Procedures
 * |dpaa_on|_
 * |stdfoptg|_
 * |fptemp_121|_
+
+FOT Scripts
++++++++++++
+
+* |wsvidalldn|_
+* |stdfoptgssc|_
 
 CAPs
 ++++
