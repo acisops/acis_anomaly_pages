@@ -54,23 +54,20 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 
 * Process the dump data and make sure that there is nothing anomalous in the data *BEFORE*
   the shutdown. We want to know if a new occurrence looks just like the previous occurrences.
-  If yes, it should appear as if in one frame the DPA-A (or DPA-B) turned off.
+  If yes, it should appear as if in one frame the DPA-A turned off.
 * Convene a telecon at the next reasonable moment.
-* As soon as the time of the DPA-[AB] shutdown is known, inform ``sot_yellow_alert``. 
+* As soon as the time of the shutdown is known, inform ``sot_yellow_alert``. 
 * Identify whether or not additional comm time is needed and if so ask the Lead Systems 
   Engineer to request it.
-* DPA-A shutdowns require reloading the patches, restarting DEA housekeeping, and resetting 
+* DPA-A shutdowns also require reloading the patches, restarting DEA housekeeping, and resetting 
   the focal plane temperature. 
-* DPA-B shutdowns require that the DPA-B be powered back on, science operations may need
-  to be stopped, and the FEPs and video boards maybe need to be powered down.
 
 Impacts
 -------
 
-* Until the DPA-A is powered back on, science operations will be interrupted, but if DPA-B 
-  needs to be powered back on science operations may need to be temporarily stopped.
-* In the case of a side A or B shutdown, the warmboot of the BEP will reset the parameters of the 
-  TXINGS patch to their defaults. They can be updated in the weekly load through a SAR.
+* Until the DPA-A is powered back on, science operations will be interrupted.
+* The warmboot of the BEP will reset the parameters of the TXINGS patch to their defaults. 
+  They can be updated in the weekly load through a SAR.
 * After recovery from a DPA-A shutdown, the power status may be in an unusual state (e.g., lower
   than expected input current) due to FEPs being off. This situation should resolve itself with 
   the next observation.
