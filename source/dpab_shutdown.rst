@@ -31,6 +31,7 @@ Within a major frame (32.2 seconds), one should see:
 * DPA-B POWER should go to zero
 * 1DP28BVO (DPA-B +28V Input Voltage) is expected to have a small uptick, ~0.5 V, consistent with
   the load suddenly dropping to zero
+* If the DPA-B shutdown causes a watchdog reboot of the BEP, then 1STAT2ST = 0. 
 
 All other hardware telemetry should be nominal. The current values for these can be found
 on our Real-Time Telemetry pages.  Older data can be examined from the dump files or the
@@ -55,9 +56,10 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 * As soon as the time of the DPA-B shutdown is known, inform ``sot_yellow_alert``. 
 * Identify whether or not additional comm time is needed and if so ask the Lead Systems 
   Engineer to request it.
-* Prepare a CAP to power back on the DPA-B and bring it up for review. If the shutdown occurs during 
-  an observation that utilitizes the side B FEPs, the active BEP may execut a watchdog reboot and
-  it may be necessary to warm boot the BEP. (**also standby mode?**)
+* Prepare a CAP to power back on the DPA-B and submit it for review. This CAP should also put ACIS
+  into "thermal standby mode" before executing. If the shutdown occurs during an observation that 
+  utilitizes the side B FEPs, the active BEP may execut a watchdog reboot and it may be necessary 
+  to warm boot the BEP. 
 * Execute the CAP at the next available comm.
 
 Impacts
@@ -72,21 +74,26 @@ Relevant Procedures
 -------------------
 
 .. |dpab_on| replace:: ``SOP_ACIS_DPAB_ON``
-.. _dpab_on: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_DPAB_ON.pdf
+.. _dpab_on: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_DPAB_ON.pdf
 
 .. |warmboot| replace:: ``SOP_ACIS_WARMBOOT_DEAHOUSEKEEPING``
-.. _warmboot: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_WARMBOOT_DEAHOUSEKEEPING.pdf
+.. _warmboot: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_WARMBOOT_DEAHOUSEKEEPING.pdf
+
+.. |standby| replace:: ``SOP_61021_STANDBY``
+.. _standby: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_61021_STANDBY.pdf
 
 SOT Procedures
 ++++++++++++++
 
 * `Turn On DPA-B <http://cxc.cfa.harvard.edu/acis/cmd_seq/dpab_on.pdf>`_
+* `Put ACIS Into Thermal Standby Mode <http://cxc.cfa.harvard.edu/acis/cmd_seq/standby.ps>`_
 * `Warm Boot the Active ACIS BEP and Start DEA Housekeeping Run <http://cxc.cfa.harvard.edu/acis/cmd_seq/warmboot_hkp.pdf>`_
 
 FOT Procedures
 ++++++++++++++
 
 * |dpab_on|_
+* |standby|_
 * |warmboot|_
 
 CAPs
