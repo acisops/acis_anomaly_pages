@@ -25,7 +25,7 @@ How is this Anomaly Diagnosed?
 
 Within a major frame (32.2 seconds), one should see:
 
-* 1DPPSB (DPA-B Power Supply On/Off) change from 1 to 0
+* 1DPPSB (DPA-B Power Supply On/Off) change from 1 to 0 (On to Off)
 * 1DPP0BV0 (DPA-B +5V Analog Voltage) drop to 0.0 +/- 0.3 V
 * 1DPICBCU (DPA-B Input Current) drop to < 0.2 A (this value is noisy, so take an average)
 * DPA-B POWER should go to zero
