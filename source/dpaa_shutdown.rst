@@ -59,7 +59,7 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 * As soon as the time of the shutdown is known, inform ``sot_yellow_alert``. 
 * Identify whether or not additional comm time is needed and if so ask the Lead Systems 
   Engineer to request it.
-* Prepare a CAP to power back on the DPA-A and bring it up for review. DPA-A shutdowns also 
+* Prepare a CAP to power back on the DPA-A and submit it for review. DPA-A shutdowns also 
   require reloading the patches, restarting DEA housekeeping, and resetting the focal plane 
   temperature. If *Chandra* is heading into the radiation belts, it may be necessary to also 
   issue a ``WSVIDALLDN`` command to power off the video boards.
@@ -80,13 +80,13 @@ Relevant Procedures
 -------------------
 
 .. |dpaa_on| replace:: ``SOP_ACIS_DPAA_ON``
-.. _dpaa_on: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_DPAA_ON.pdf
+.. _dpaa_on: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_DPAA_ON.pdf
 
 .. |stdfoptg| replace:: ``SOP_ACIS_SW_STDFOPTG``
-.. _stdfoptg: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDFOPTG.pdf
+.. _stdfoptg: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDFOPTG.pdf
 
 .. |fptemp_121| replace:: ``SOT_SI_SET_ACIS_FP_TEMP_TO_M121C``
-.. _fptemp_121: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_SI_SET_ACIS_FP_TEMP_TO_M121C.pdf
+.. _fptemp_121: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_SI_SET_ACIS_FP_TEMP_TO_M121C.pdf
 
 .. |wsvidalldn| replace:: ``1A_WS007_164.CLD``
 .. _wsvidalldn: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/archive/cld/1A_WS007_164.CLD
