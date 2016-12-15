@@ -58,8 +58,8 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   Engineer to request it.
 * Prepare a CAP to power back on the DPA-B and submit it for review. This CAP should also put ACIS
   into "thermal standby mode" before executing. If the shutdown occurs during an observation that 
-  utilitizes the side B FEPs, the active BEP may execut a watchdog reboot and it may be necessary 
-  to warm boot the BEP. 
+  utilitizes the side B FEPs, or if a subsequent observation requests them, the active BEP may 
+  execute a watchdog reboot and it may be necessary to warm boot the BEP. 
 * Execute the CAP at the next available comm.
 
 Impacts
