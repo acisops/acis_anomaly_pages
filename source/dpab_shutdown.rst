@@ -54,8 +54,7 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   occurrence. If yes, it should appear as if in one frame the DPA-B turned off.
 * Convene a telecon at the next reasonable moment.
 * As soon as the time of the DPA-B shutdown is known, inform ``sot_yellow_alert``. 
-* Identify whether or not additional comm time is needed and if so ask the Lead Systems 
-  Engineer to request it.
+* Identify whether or not additional comm time is needed and if so ask the OC/LSE to request it.
 * Prepare a CAP to power back on the DPA-B and submit it for review. This CAP should also put ACIS
   into "thermal standby mode" before executing. If the shutdown occurs during an observation that 
   utilitizes the side B FEPs, or if a subsequent observation requests them, the active BEP may 
