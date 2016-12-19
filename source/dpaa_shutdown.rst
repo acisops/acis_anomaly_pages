@@ -57,12 +57,16 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   If yes, it should appear as if in one frame the DPA-A turned off.
 * Convene a telecon at the next reasonable moment.
 * As soon as the time of the shutdown is known, inform ``sot_yellow_alert``. 
-* Identify whether or not additional comm time is needed and if so ask the Lead Systems 
-  Engineer to request it.
+* Identify whether or not additional comm time is needed and if so ask the OC/LSE to request it.
 * Prepare a CAP to power back on the DPA-A and submit it for review. DPA-A shutdowns also 
-  require reloading the patches, restarting DEA housekeeping, and resetting the focal plane 
-  temperature. If *Chandra* is heading into the radiation belts, it may be necessary to also 
-  issue a ``WSVIDALLDN`` command to power off the video boards.
+  require:
+
+  - Reloading the patches
+  - Restarting DEA housekeeping
+  - Resetting the focal plane temperature to -121 :math:`^\circ{\rm C}`. 
+  - If *Chandra* is heading into the radiation belts, it may be necessary to also issue a ``WSVIDALLDN`` 
+    command to power off the video boards.
+
 * Execute the CAP at the next available comm. Reloading the flight software patches can take
   a half an hour, so ensure that there is enough time in the comm to execute the entire procedure.
 
