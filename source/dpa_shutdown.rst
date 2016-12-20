@@ -16,6 +16,7 @@ The DPA-A has shut down 4 times over the mission:
 * October 26, 2000: 2000:300:15:40, obsid 979
 * December 19, 2002: 2002:353:20:26, obsid 60915
 * January 12, 2015: 2015:012:00:01, obsid 52186
+* December 9, 2016: 2016:344 07:40, obsid 17615
 
 and the DPA-B has shut down once:
 
