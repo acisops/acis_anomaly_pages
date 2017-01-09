@@ -23,10 +23,10 @@ Unknown. This is the only instance in flight so far.
 How is this Anomaly Diagnosed?
 ------------------------------
 
-Both of the following symptoms will be noticed:
+Both of the following symptoms may be noticed:
 
-* Data System Operations reported the anomaly to us at V&V time.
-* We think telemetry may saturate. PMON can be changed to provide detailed diagnostics.
+* Data System Operations reports the anomaly to us at V&V time.
+* PMON may be changed to provide detailed diagnostics.
 
 
 What is the first response?
