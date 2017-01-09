@@ -13,7 +13,7 @@ When did it happen before?
 
 Once:
 
-* December 16, 2011: obsid 18278
+* December 16, 2016: obsid 18278
 
 Will it happen again?
 ---------------------
@@ -72,4 +72,5 @@ Relevant Notes/Memos
 --------------------
 
 * `ACIS FEP Anomaly during OBSID 18278 <ftp://acis.mit.edu/pub/acis-18278-anom-v1.2.pdf>`_
+
 
