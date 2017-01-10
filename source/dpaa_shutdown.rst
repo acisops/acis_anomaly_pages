@@ -130,3 +130,4 @@ Relevant Notes/Memos
 
 * `Flight Note 394 <http://cxc.cfa.harvard.edu/acis/memos/FN394.ps>`_
 * `Flight Note 417 <http://cxc.cfa.harvard.edu/acis/memos/FN417.ps>`_
+* `Flight Note 563 <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/flightnotes/controlled/Flight_Note563_DPA-A_Turn_Off_Anomaly_Report.pdf>`_
