@@ -31,7 +31,10 @@ Within a major frame (32.2 seconds), one should see:
 * DPA-B POWER should go to zero
 * 1DP28BVO (DPA-B +28V Input Voltage) is expected to have a small uptick, ~0.5 V, consistent with
   the load suddenly dropping to zero
-* If 1STAT2ST = 0, the DPA-B shutdown has caused a watchdog reboot of the BEP.
+* If 1STAT2ST = 0, the DPA-B shutdown has caused a watchdog reboot of the BEP in use. This will
+  happen if the DPA-B shuts down during an observation which is using B-side FEPs, or if the DPA-B
+  shuts down during an observation which is not using B-side FEPs but a subsequent observation does
+  use them.
 
 All other hardware telemetry should be nominal. The current values for these can be found
 on our Real-Time Telemetry pages.  Older data can be examined from the dump files or the
