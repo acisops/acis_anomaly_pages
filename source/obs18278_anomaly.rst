@@ -26,7 +26,7 @@ How is this Anomaly Diagnosed?
 Both of the following symptoms may be noticed:
 
 * Data System Operations reports the anomaly to us at V&V time.
-* Exposure numbers on the impacted chip will be red on the PMON page, indicating dropped frames, but that can happen for a number of reasons (ratty comm, telemetry saturation, this anomaly). PMON may be changed in future to provide detailed diagnostics.
+* Exposure numbers on the impacted chip will be red on the PMON page, indicating dropped frames, but that can happen for a number of reasons (ratty comm, telemetry saturation, this anomaly). The telemetry will probably not saturate for this anomaly, and reported event rates will look normal for the affected chip. In addition, only odd or even frame numbers will be reported for that chip.
 
 
 What is the first response?
