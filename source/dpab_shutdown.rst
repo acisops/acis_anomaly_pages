@@ -58,10 +58,25 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 * Convene a telecon at the next reasonable moment.
 * As soon as the time of the DPA-B shutdown is known, inform ``sot_yellow_alert``. 
 * Identify whether or not additional comm time is needed and if so ask the OC/LSE to request it.
-* Prepare a CAP to power back on the DPA-B and submit it for review. This CAP should also put ACIS
-  into "thermal standby mode" before executing. If the shutdown occurs during an observation that 
-  utilitizes the side B FEPs, or if a subsequent observation requests them, the active BEP may 
-  execute a watchdog reboot and it may be necessary to warm boot the BEP. 
+* Prepare a CAP and submit it for review. The steps in the CAP will depend on whether or not the
+  active BEP has executed a watchdog reboot. This may happen if the shutdown occurs during an
+  observation that utilitizes the side B FEPs, or if a subsequent observation requests them.
+
+  1. If the BEP has not executed a watchdog reboot, the steps should be:
+
+     - Turn on DPA side B (|dpab_on|_)
+
+  2. If the BEP has executed a watchdog reboot, the steps should be:
+
+     - Stop the science run and power down the FEPs and video boards (|standby|_)
+     - Turn on DPA side B (|dpab_on|_)
+     - Warm-boot the BEP and start a DEA housekeeping run (|warmboot|_).
+
+  At this point in the mission (Jan 2017), it is standard practice to power off unused FEPs to
+  reduce power consumption and keep the electronics temperatures lower. For this reason, it is
+  believed that it is safe to power on the DPA side B during a science run that does not use
+  these FEPs. If this practice is changed later in the mission, this procedure may have to be
+  revisited.
 * Execute the CAP at the next available comm.
 
 Impacts
