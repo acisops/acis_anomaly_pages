@@ -58,9 +58,9 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 * Convene a telecon at the next reasonable moment.
 * As soon as the time of the shutdown is known, inform ``sot_yellow_alert``. 
 * Identify whether or not additional comm time is needed and if so ask the OC/LSE to request it.
-* Prepare a CAP to power back on the DPA-A and submit it for review. DPA-A shutdowns also 
-  require:
+* Prepare a CAP and submit it for review. This CAP will have the following steps:
 
+  - Power on the DPA side A
   - Reloading the patches
   - Restarting DEA housekeeping
   - Resetting the focal plane temperature to -121 :math:`^\circ{\rm C}`. 
