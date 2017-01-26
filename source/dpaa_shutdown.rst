@@ -60,12 +60,11 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 * Identify whether or not additional comm time is needed and if so ask the OC/LSE to request it.
 * Prepare a CAP and submit it for review. This CAP will have the following steps:
 
-  - Power on the DPA side A
-  - Reloading the patches
-  - Restarting DEA housekeeping
-  - Resetting the focal plane temperature to -121 :math:`^\circ{\rm C}`. 
+  - Power on the DPA side A (|dpaa_on|_)
+  - Reload the patches and restart DEA housekeeping (|stdfoptg|_)
+  - Reset the focal plane temperature to -121 :math:`^\circ{\rm C}` (|fptemp_121|_)
   - If *Chandra* is heading into the radiation belts, it may be necessary to also issue a ``WSVIDALLDN`` 
-    command to power off the video boards.
+    command to power off the video boards (|wsvidalldn|_)
 
 * Execute the CAP at the next available comm. Reloading the flight software patches can take
   a half an hour, so ensure that there is enough time in the comm to execute the entire procedure.
