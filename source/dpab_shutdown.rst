@@ -72,12 +72,15 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
      - Turn on DPA side B (|dpab_on|_)
      - Warm-boot the BEP and start a DEA housekeeping run (|warmboot|_).
 
-  At this point in the mission (Jan 2017), it is standard practice to power off unused FEPs to
-  reduce power consumption and keep the electronics temperatures lower. For this reason, it is
-  believed that it is safe to power on the DPA side B during a science run that does not use
-  these FEPs. If this practice is changed later in the mission, this procedure may have to be
-  revisited.
 * Execute the CAP at the next available comm.
+
+.. note::
+
+   At this point in the mission (Jan 2017), it is standard practice to power off unused FEPs to
+   reduce power consumption and keep the electronics temperatures lower. For this reason, it is
+   believed that it is safe to power on the DPA side B during a science run that does not use
+   these FEPs. If this practice is changed later in the mission, this procedure may have to be
+   revisited.
 
 Impacts
 -------
