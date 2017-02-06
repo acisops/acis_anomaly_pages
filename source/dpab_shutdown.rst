@@ -47,11 +47,7 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 
 * Send an email to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz, and Bev LaMarr)
 * Send an email to ``sot_yellow_alert`` explaining the status of ACIS and the planned response.
-* Call the Flight Directors:   
-
-  - Call the lead Flight Director, Tom Aldcroft. Leave a message if he does not answer.
-  - If Tom does not answer, call Scott Wolk. Leave a message if he does not answer.
-
+* Call the Flight Directors, Tom Aldcroft and Scott Wolk. Leave messages if they do not answer.
 * Process the dump data and make sure that there is nothing anomalous in the data *BEFORE*
   the shutdown. We want to know if a new occurrence looks just like the single previous 
   occurrence. If yes, it should appear as if in one frame the DPA-B turned off.
