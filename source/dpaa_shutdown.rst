@@ -110,8 +110,12 @@ FOT Procedures
 FOT Scripts
 +++++++++++
 
-* |wsvidalldn|_
 * |stdfoptgssc|_
+
+CLD Scripts
++++++++++++
+
+* |wsvidalldn|_
 
 CAPs
 ++++
