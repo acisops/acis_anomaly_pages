@@ -46,14 +46,23 @@ What is the first response?
 Our real-time web pages will alert us and the Lead System Engineer will call us. We need to:
 
 * Send an email to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz, and Bev LaMarr)
-* Send an email to ``sot_yellow_alert`` explaining the status of ACIS and the planned response.
+* Send an email to ``sot_yellow_alert`` explaining the status of ACIS and that the ACIS team is
+  investigating.
 * Call the Flight Directors, Tom Aldcroft and Scott Wolk. Leave messages if they do not answer.
+* Contact the GOT Duty Officer to inform that we need the dump data as soon as possible and to
+  email or call when the dump file is available.
 * Process the dump data and make sure that there is nothing anomalous in the data *BEFORE*
   the shutdown. We want to know if a new occurrence looks just like the single previous 
   occurrence. If yes, it should appear as if in one frame the DPA-B turned off.
-* Convene a telecon at the next reasonable moment.
-* As soon as the time of the DPA-B shutdown is known, inform ``sot_yellow_alert``. 
+* Once analysis of the dump data is complete, convene a telecon at the next reasonable moment
+  with the ACIS team and Peter Ford, Bob Goeke, Mark Bautz, and Bev LaMarr, and review the
+  diagnosis. If the diagnosis is consistent with previous DPA-B anomalies, proceed with the
+  recovery. If the diagnosis is not consistentwith previous DPA-B anomalies, stop and start a
+  more involved analysis with the ACIS team.
+* As soon as the time of the DPA-B shutdown is known, inform ``sot_yellow_alert``.
 * Identify whether or not additional comm time is needed and if so ask the OC/LSE to request it.
+* Call a telecon with the FOT, SOT, and FDs to brief them on the diagnosis and the plan to develop
+  a CAP to recover.
 * Prepare a CAP and submit it for review. The steps in the CAP will depend on whether or not the
   active BEP has executed a watchdog reboot. This may happen if the shutdown occurs during an
   observation that utilitizes the side B FEPs (side B powers FEPs 3-5), or if a subsequent 
@@ -72,6 +81,8 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
      - Warm-boot the BEP and start a DEA housekeeping run (|warmboot|_).
 
 * Execute the CAP at the next available comm.
+* Write a shift report and distribute to ``sot_shift`` to inform the project that ACIS is restored
+  to its default configuration.
 
 .. note::
 
