@@ -22,3 +22,4 @@ Contents:
    fep_reset
    hi_lo_anomaly
    trickle_bias_tplane
+   fep_thresholder
