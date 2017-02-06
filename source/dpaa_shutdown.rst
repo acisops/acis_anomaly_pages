@@ -116,13 +116,13 @@ FOT Scripts
 CAPs
 ++++
 
-* `CAP 1407 (DPA-A Poweroff Recovery) <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1401-1500/CAP_1407_dpaa_poweroff_recovery/CAP_1407_dpaa_poweroff_recovery.pdf>`_
+* `CAP 1407 (DPA-A Poweroff Recovery) <http://cxc.cfa.harvard.edu/acis/CAPs/CAP1407_dpaa_poweroff_recovery.pdf>`_
 * `CAP 1342 (DPA-A Poweroff Recovery) <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1301_1400/CAP_1342_dpaa_poweroff_recovery/CAP_1342_dpaa_poweroff_recovery.pdf>`_
 * `CAP 818 (DPA-A Side Recovery from Enabled/Powered Off State) <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/0801_0900/CAP_0818_DPA-A%20Power%20Off%20Recovery/CAP_818_2002_354_not_signed.pdf>`_
 
 Relevant Notes/Memos
 --------------------
 
-* `Flight Note 394 <http://cxc.cfa.harvard.edu/acis/memos/FN394.ps>`_
-* `Flight Note 417 <http://cxc.cfa.harvard.edu/acis/memos/FN417.ps>`_
+* `Flight Note 394 <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/flightnotes/controlled/Flight_Note394_DPA_Turn_Off_Anomaly.pdf>`_
+* `Flight Note 417 <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/flightnotes/controlled/Flight_Note417_DPA_Turn_Off_Anomaly.pdf>`_
 * `Flight Note 563 <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/flightnotes/controlled/Flight_Note563_DPA-A_Turn_Off_Anomaly_Report.pdf>`_
