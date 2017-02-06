@@ -56,7 +56,10 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 * Identify whether or not additional comm time is needed and if so ask the OC/LSE to request it.
 * Prepare a CAP and submit it for review. The steps in the CAP will depend on whether or not the
   active BEP has executed a watchdog reboot. This may happen if the shutdown occurs during an
-  observation that utilitizes the side B FEPs, or if a subsequent observation requests them.
+  observation that utilitizes the side B FEPs (side B powers FEPs 3-5), or if a subsequent 
+  observation requests them. Note that this implies that a watchdog reboot of the BEP will be 
+  avoided only if it occurs during an observation using only 1 or 2 CCDs, and until an 
+  observation occurs using 3 or more CCDs.
 
   1. If the BEP has not executed a watchdog reboot, the steps should be:
 
