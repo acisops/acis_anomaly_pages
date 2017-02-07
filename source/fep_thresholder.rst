@@ -37,11 +37,15 @@ the current comm or a following one (still on the same obsid),
 we have `a SOP <http://cxc.cfa.harvard.edu/acis/cmd_seq/dea_fep_diags.pdf>`_ 
 written to intervene if the observation with the anomaly is still in progress to dump diagnostic data.
 
+* Send an e-mail to sot_red_alert and convene a telecon giving the plan, and the need for quick action to get the SOP done before the end of the science run.
+* The steps below should also be followed, as appropriate.
+
 If not, we need to: 
 
 * Send an email to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz, and Bev LaMarr)
 * Process the dump data and get access to the CXC products
-* Convene a telecon at the next reasonable moment.
+* Notify sot_yellow_alert and/or brief the 9am telecon
+* Convene a telecon at the next reasonable moment. This would include the ACIS team as above. Approval by MIT via e-mail is a possible alternative.
 * Examine data from the next observation, because the setup for the next observation should 
   clear the problem.
 
