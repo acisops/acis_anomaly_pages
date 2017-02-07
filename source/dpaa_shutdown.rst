@@ -23,7 +23,7 @@ Will it happen again?
 
 It appears likely that the anomaly will occur again if the mission continues.
 
-How is this Anomaly Diagnosed?
+How is this anomaly diagnosed?
 ------------------------------
 
 Within a major frame (32.2 seconds), one should see:
@@ -40,23 +40,23 @@ All other hardware telemetry should be nominal. The current values for these can
 on our Real-Time Telemetry pages.  Older data can be examined from the dump files or the
 engineering archive.
 
-What is the first response?
----------------------------
+What is the response?
+---------------------
 
 Our real-time web pages will alert us and the Lead System Engineer will call us. We need to:
 
 * Send an email to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz, and Bev LaMarr)
-* Send an email to ``sot_yellow_alert`` explaining the status of ACIS and that the ACIS team is
-  investigating.
-* Call the Flight Directors, Tom Aldcroft and Scott Wolk. Leave messages if they do not answer.
+* Send an email to ``sot_red_alert`` explaining the status of ACIS and state that the ACIS team
+  is investigating.
 * Contact the GOT Duty Officer to inform that we need the dump data as soon as possible and to
   email or call when the dump file is available.
 * Process the dump data and make sure that there is nothing anomalous in the data *BEFORE*
   the shutdown. We want to know if a new occurrence looks just like the previous occurrences.
   If yes, it should appear as if in one frame the DPA-A turned off.
 * Once analysis of the dump data is complete, convene a telecon at the next reasonable moment
-  with the ACIS team and Peter Ford, Bob Goeke, Mark Bautz, and Bev LaMarr, and review the
-  diagnosis. If the diagnosis is consistent with previous DPA-A anomalies, proceed with the
+  with the ACIS team and review the diagnosis. The MIT ACIS team (Peter Ford, Bob Goeke, Mark
+  Bautz, and Bev LaMarr) should also be included in the discussion, either in the telecon or
+  via email. If the diagnosis is consistent with previous DPA-A anomalies, proceed with the
   recovery. If the diagnosis is not consistentwith previous DPA-A anomalies, stop and start a
   more involved analysis with the ACIS team.
 * As soon as the time of the shutdown is known, inform ``sot_yellow_alert``. 
