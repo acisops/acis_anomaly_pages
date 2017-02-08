@@ -38,6 +38,7 @@ we have `a SOP <http://cxc.cfa.harvard.edu/acis/cmd_seq/dea_fep_diags.pdf>`_
 written to intervene if the observation with the anomaly is still in progress to dump diagnostic data.
 
 * Send an e-mail to sot_red_alert and convene a telecon giving the plan, and the need for quick action to get the SOP done before the end of the science run.
+* Prepare a CAP and submit it for review to cap_review@ipa.cfa.harvard.edu
 * The steps below should also be followed, as appropriate.
 
 If not, we need to: 
