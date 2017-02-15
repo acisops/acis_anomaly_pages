@@ -29,7 +29,7 @@ How is this anomaly diagnosed?
 Within a major frame (32.2 seconds), one should see:
 
 * 1DPPSA (DPA-A Power Supply On/Off) change from 1 to 0 (On to Off)
-* 1DPP0AV0 (DPA-A +5V Analog Voltage) drop to 0.0 +/- 0.3 V
+* 1DPP0AVO (DPA-A +5V Analog Voltage) drop to 0.0 +/- 0.3 V
 * 1DPICACU (DPA-A Input Current) drop to < 0.2 A (this value is noisy, so take an average)
 * DPA-A POWER should go to zero
 * 1DP28AVO (DPA-A +28V Input Voltage) is expected to have a small uptick, ~0.5 V, consistent with
@@ -46,8 +46,8 @@ What is the response?
 Our real-time web pages will alert us and the Lead System Engineer will call us. We need to:
 
 * Send an email to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz, and Bev LaMarr)
-* Send an email to ``sot_red_alert`` explaining the status of ACIS and state that the ACIS team
-  is investigating.
+* Send an email to ``sot_red_alert`` announcing a telecon to brief the FOT, SOT, and FDs on
+  the diagnosis and the plan to develop a CAP to recover.
 * Contact the GOT Duty Officer to inform that we need the dump data as soon as possible and to
   email or call when the dump file is available.
 * Process the dump data and make sure that there is nothing anomalous in the data *BEFORE*
@@ -63,7 +63,9 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 * Identify whether or not additional comm time is needed and if so ask the OC/LSE to request it.
 * Call a telecon with the FOT, SOT, and FDs to brief them on the diagnosis and the plan to develop
   a CAP to recover.
-* Prepare a CAP and submit it for review. This CAP will have the following steps:
+* Prepare a CAP and submit it for review to capreview AT ipa DOT harvard DOT edu. It will also
+  be necessary to call the OC/CC to determine which number should be used for the CAP. This CAP
+  will have the following steps:
 
   - Power on the DPA side A (|dpaa_on|_)
   - If *Chandra* is heading into the radiation belts, it may be necessary to also issue a ``WSVIDALLDN``

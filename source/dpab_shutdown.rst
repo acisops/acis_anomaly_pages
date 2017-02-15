@@ -26,7 +26,7 @@ How is this anomaly diagnosed?
 Within a major frame (32.2 seconds), one should see:
 
 * 1DPPSB (DPA-B Power Supply On/Off) change from 1 to 0 (On to Off)
-* 1DPP0BV0 (DPA-B +5V Analog Voltage) drop to 0.0 +/- 0.3 V
+* 1DPP0BVO (DPA-B +5V Analog Voltage) drop to 0.0 +/- 0.3 V
 * 1DPICBCU (DPA-B Input Current) drop to < 0.2 A (this value is noisy, so take an average)
 * DPA-B POWER should go to zero
 * 1DP28BVO (DPA-B +28V Input Voltage) is expected to have a small uptick, ~0.5 V, consistent with
@@ -46,8 +46,8 @@ What is the response?
 Our real-time web pages will alert us and the Lead System Engineer will call us. We need to:
 
 * Send an email to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz, and Bev LaMarr)
-* Send an email to ``sot_red_alert`` explaining the status of ACIS and state that the ACIS team
-  is investigating.
+* Send an email to ``sot_red_alert`` announcing a telecon to brief the FOT, SOT, and FDs on
+  the diagnosis and the plan to develop a CAP to recover.
 * Contact the GOT Duty Officer to inform that we need the dump data as soon as possible and to
   email or call when the dump file is available.
 * Process the dump data and make sure that there is nothing anomalous in the data *BEFORE*
@@ -56,23 +56,25 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 * Once analysis of the dump data is complete, convene a telecon at the next reasonable moment
   with the ACIS team and review the diagnosis. The MIT ACIS team (Peter Ford, Bob Goeke, Mark
   Bautz, and Bev LaMarr) should also be included in the discussion, either in the telecon or
-  via email. If the diagnosis is consistent with previous DPA-A anomalies, proceed with the
-  recovery. If the diagnosis is not consistentwith previous DPA-A anomalies, stop and start a
+  via email. If the diagnosis is consistent with previous DPA-B anomalies, proceed with the
+  recovery. If the diagnosis is not consistent with previous DPA-B anomalies, stop and start a
   more involved analysis with the ACIS team.
 * As soon as the time of the DPA-B shutdown is known, inform ``sot_yellow_alert``.
 * Identify whether or not additional comm time is needed and if so ask the OC/LSE to request it.
 * Call a telecon with the FOT, SOT, and FDs to brief them on the diagnosis and the plan to develop
   a CAP to recover.
-* Prepare a CAP and submit it for review. The steps in the CAP will depend on whether or not the
-  active BEP has executed a watchdog reboot. This may happen if the shutdown occurs during an
-  observation that utilitizes the side B FEPs (side B powers FEPs 3-5), or if a subsequent 
-  observation requests them. Note that this implies that a watchdog reboot of the BEP will be 
-  avoided only if it occurs during an observation using only 1 or 2 CCDs, and until an 
-  observation occurs using 3 or more CCDs.
+* Prepare a CAP and submit it for review to capreview AT ipa DOT harvard DOT edu. It will also
+  be necessary to call the OC/CC to determine which number should be used for the CAP. The steps
+  in the CAP will depend on whether or not the active BEP has executed a watchdog reboot. This
+  may happen if the shutdown occurs during an observation that utilitizes the side B FEPs (side B
+  powers FEPs 3-5), or if a subsequent observation requests them. Note that this implies that a
+  watchdog reboot of the BEP will be avoided only if it occurs during an observation using only
+  1 or 2 CCDs, and until an observation occurs using 3 or more CCDs.
 
   1. If the BEP has not executed a watchdog reboot, the steps should be:
 
-     - Turn on DPA side B (|dpab_on|_)
+     - Turn on DPA side B (|dpab_on|_, this can be executed even if a science run is currently in
+       progress, see note below).
 
   2. If the BEP has executed a watchdog reboot, the steps should be:
 
@@ -116,7 +118,7 @@ SOT Procedures
 ++++++++++++++
 
 * `Turn On DPA-B <http://cxc.cfa.harvard.edu/acis/cmd_seq/dpab_on.pdf>`_
-* `Put ACIS Into Thermal Standby Mode <http://cxc.cfa.harvard.edu/acis/cmd_seq/standby.ps>`_
+* `Put ACIS Into Thermal Standby Mode <http://cxc.cfa.harvard.edu/acis/cmd_seq/standby.pdf>`_
 * `Warm Boot the Active ACIS BEP and Start DEA Housekeeping Run <http://cxc.cfa.harvard.edu/acis/cmd_seq/warmboot_hkp.pdf>`_
 
 FOT Procedures
