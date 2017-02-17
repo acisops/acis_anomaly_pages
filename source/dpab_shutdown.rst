@@ -45,11 +45,12 @@ What is the response?
 
 Our real-time web pages will alert us and the Lead System Engineer will call us. We need to:
 
-* Send an email to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz, and Bev LaMarr)
-* Send an email to ``sot_red_alert`` announcing a telecon to brief the FOT, SOT, and FDs on
-  the diagnosis and the plan to develop a CAP to recover.
+* Send an email to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz, and Bev LaMarr). If
+  it is off-hours, call Peter and Bob.
+* Send an email to ``sot_red_alert`` announcing that the ACIS team is aware of the DPA-B shutdown
+  and is investigating, and that a telecon will be called when more information is available.
 * Contact the GOT Duty Officer to inform that we need the dump data as soon as possible and to
-  email or call when the dump file is available.
+  email or call us when the dump file is available.
 * Process the dump data and make sure that there is nothing anomalous in the data *BEFORE*
   the shutdown. We want to know if a new occurrence looks just like the single previous 
   occurrence. If yes, it should appear as if in one frame the DPA-B turned off.
@@ -61,15 +62,15 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   more involved analysis with the ACIS team.
 * As soon as the time of the DPA-B shutdown is known, inform ``sot_yellow_alert``.
 * Identify whether or not additional comm time is needed and if so ask the OC/LSE to request it.
-* Call a telecon with the FOT, SOT, and FDs to brief them on the diagnosis and the plan to develop
-  a CAP to recover.
-* Prepare a CAP and submit it for review to capreview AT ipa DOT harvard DOT edu. It will also
-  be necessary to call the OC/CC to determine which number should be used for the CAP. The steps
-  in the CAP will depend on whether or not the active BEP has executed a watchdog reboot. This
-  may happen if the shutdown occurs during an observation that utilitizes the side B FEPs (side B
-  powers FEPs 3-5), or if a subsequent observation requests them. Note that this implies that a
-  watchdog reboot of the BEP will be avoided only if it occurs during an observation using only
-  1 or 2 CCDs, and until an observation occurs using 3 or more CCDs.
+* Send an email to ``sot_red_alert`` and call a telecon with the FOT, SOT, and FDs to brief
+  them on the diagnosis and the plan to develop a CAP to recover.
+* Prepare a CAP and submit it for review to capreview AT ipa DOT harvard DOT edu, and cc: acisdude.
+  It will also be necessary to call the OC/CC to determine which number should be used for the CAP.
+  The steps in the CAP will depend on whether or not the active BEP has executed a watchdog reboot.
+  This may happen if the shutdown occurs during an observation that utilitizes the side B FEPs
+  (side B powers FEPs 3-5), or if a subsequent observation requests them. Note that this implies
+  that a watchdog reboot of the BEP will be avoided only if it occurs during an observation using
+  only 1 or 2 CCDs, and until an observation occurs using 3 or more CCDs.
 
   1. If the BEP has not executed a watchdog reboot, the steps should be:
 

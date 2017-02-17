@@ -45,11 +45,12 @@ What is the response?
 
 Our real-time web pages will alert us and the Lead System Engineer will call us. We need to:
 
-* Send an email to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz, and Bev LaMarr)
-* Send an email to ``sot_red_alert`` announcing a telecon to brief the FOT, SOT, and FDs on
-  the diagnosis and the plan to develop a CAP to recover.
+* Send an email to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz, and Bev LaMarr). If
+  it is off-hours, call Peter and Bob.
+* Send an email to ``sot_red_alert`` announcing that the ACIS team is aware of the DPA-A shutdown
+  and is investigating, and that a telecon will be called when more information is available.
 * Contact the GOT Duty Officer to inform that we need the dump data as soon as possible and to
-  email or call when the dump file is available.
+  email or call us when the dump file is available.
 * Process the dump data and make sure that there is nothing anomalous in the data *BEFORE*
   the shutdown. We want to know if a new occurrence looks just like the previous occurrences.
   If yes, it should appear as if in one frame the DPA-A turned off.
@@ -57,15 +58,15 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   with the ACIS team and review the diagnosis. The MIT ACIS team (Peter Ford, Bob Goeke, Mark
   Bautz, and Bev LaMarr) should also be included in the discussion, either in the telecon or
   via email. If the diagnosis is consistent with previous DPA-A anomalies, proceed with the
-  recovery. If the diagnosis is not consistentwith previous DPA-A anomalies, stop and start a
+  recovery. If the diagnosis is not consistent with previous DPA-A anomalies, stop and start a
   more involved analysis with the ACIS team.
 * As soon as the time of the shutdown is known, inform ``sot_yellow_alert``. 
 * Identify whether or not additional comm time is needed and if so ask the OC/LSE to request it.
-* Call a telecon with the FOT, SOT, and FDs to brief them on the diagnosis and the plan to develop
-  a CAP to recover.
-* Prepare a CAP and submit it for review to capreview AT ipa DOT harvard DOT edu. It will also
-  be necessary to call the OC/CC to determine which number should be used for the CAP. This CAP
-  will have the following steps:
+* Send an email to ``sot_red_alert`` and call a telecon with the FOT, SOT, and FDs to brief
+  them on the diagnosis and the plan to develop a CAP to recover.
+* Prepare a CAP and submit it for review to capreview AT ipa DOT harvard DOT edu, and cc: acisdude.
+  It will also be necessary to call the OC/CC to determine which number should be used for the CAP.
+  This CAP will have the following steps:
 
   - Power on the DPA side A (|dpaa_on|_)
   - If *Chandra* is heading into the radiation belts, it may be necessary to also issue a ``WSVIDALLDN``
