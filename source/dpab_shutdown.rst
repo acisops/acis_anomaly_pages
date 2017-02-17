@@ -109,11 +109,32 @@ Relevant Procedures
 .. |dpab_on| replace:: ``SOP_ACIS_DPAB_ON``
 .. _dpab_on: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_DPAB_ON.pdf
 
-.. |warmboot| replace:: ``SOP_ACIS_WARMBOOT_DEAHOUSEKEEPING``
-.. _warmboot: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_WARMBOOT_DEAHOUSEKEEPING.pdf
+.. |dpab_on_pdf| replace:: PDF
+.. _dpab_on_pdf: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_DPAB_ON.pdf
+
+.. |dpab_on_doc| replace:: DOC
+.. _dpab_on_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_DPAB_ON.doc
 
 .. |standby| replace:: ``SOP_61021_STANDBY``
 .. _standby: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_61021_STANDBY.pdf
+
+.. |standby_pdf| replace:: PDF
+.. _standby_pdf: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_61021_STANDBY.pdf
+
+.. |standby_doc| replace:: DOC
+.. _standby_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_61021_STANDBY.doc
+
+.. |warmboot| replace:: ``SOP_ACIS_WARMBOOT_DEAHOUSEKEEPING``
+.. _warmboot: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_WARMBOOT_DEAHOUSEKEEPING.pdf
+
+.. |warmboot_pdf| replace:: PDF
+.. _warmboot_pdf: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_WARMBOOT_DEAHOUSEKEEPING.pdf
+
+.. |warmboot_doc| replace:: DOC
+.. _warmboot_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_WARMBOOT_DEAHOUSEKEEPING.doc
+
+.. |cap1055_pdf| replace:: PDF
+.. _cap1055_pdf: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1001_1100/CAP_1055_Turn_on_DPA_B/CAP_1055_CMDing_Turn_On_DPA_B_warmboot_BEP_A_sign.pdf
 
 SOT Procedures
 ++++++++++++++
@@ -125,11 +146,11 @@ SOT Procedures
 FOT Procedures
 ++++++++++++++
 
-* |dpab_on|_
-* |standby|_
-* |warmboot|_
+* ``SOP_ACIS_DPAB_ON`` (|dpab_on_pdf|_) (|dpab_on_doc|_)
+* ``SOP_61021_STANDBY`` (|standby_pdf|_) (|standby_doc|_)
+* ``SOP_ACIS_WARMBOOT_DEAHOUSEKEEPING`` (|warmboot_pdf|_) (|warmboot_doc|_)
 
 CAPs
 ++++
 
-* `CAP 1055 (Commanding to Turn On DPA Side B and Warm Boot BEP Side A) <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1001_1100/CAP_1055_Turn_on_DPA_B/CAP_1055_CMDing_Turn_On_DPA_B_warmboot_BEP_A_sign.pdf>`_
+* CAP 1055 (Commanding to Turn On DPA Side B and Warm Boot BEP Side A) (|cap1055_pdf|_)
