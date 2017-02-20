@@ -95,11 +95,29 @@ Relevant Procedures
 .. |dpaa_on| replace:: ``SOP_ACIS_DPAA_ON``
 .. _dpaa_on: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_DPAA_ON.pdf
 
+.. |dpaa_on_pdf| replace:: PDF
+.. _dpaa_on_pdf: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_DPAA_ON.pdf
+
+.. |dpaa_on_doc| replace:: DOC
+.. _dpaa_on_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_DPAA_ON.doc
+
 .. |stdfoptg| replace:: ``SOP_ACIS_SW_STDFOPTG``
 .. _stdfoptg: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDFOPTG.pdf
 
+.. |stdfoptg_pdf| replace:: PDF
+.. _stdfoptg_pdf: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDFOPTG.pdf
+
+.. |stdfoptg_doc| replace:: DOC
+.. _stdfoptg_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDFOPTG.doc
+
 .. |fptemp_121| replace:: ``SOT_SI_SET_ACIS_FP_TEMP_TO_M121C``
 .. _fptemp_121: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_SI_SET_ACIS_FP_TEMP_TO_M121C.pdf
+
+.. |fptemp_121_pdf| replace:: PDF
+.. _fptemp_121_pdf: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_SI_SET_ACIS_FP_TEMP_TO_M121C.pdf
+
+.. |fptemp_121_doc| replace:: DOC
+.. _fptemp_121_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_SI_SET_ACIS_FP_TEMP_TO_M121C.pdf
 
 .. |wsvidalldn| replace:: ``1A_WS007_164.CLD``
 .. _wsvidalldn: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/archive/cld/1A_WS007_164.CLD
@@ -117,9 +135,9 @@ SOT Procedures
 FOT Procedures
 ++++++++++++++
 
-* |dpaa_on|_
-* |stdfoptg|_
-* |fptemp_121|_
+* ``SOP_ACIS_DPAA_ON`` (|dpaa_on_pdf|_) (|dpaa_on_doc|_)
+* ``SOP_ACIS_SW_STDFOPTG`` (|stdfoptg_pdf|_) (|stdfoptg_doc|_)
+* ``SOT_SI_SET_ACIS_FP_TEMP_TO_M121C`` (|fptemp_121_pdf|_) (|fptemp_121_doc|_)
 
 FOT Scripts
 +++++++++++
@@ -134,9 +152,24 @@ CLD Scripts
 CAPs
 ++++
 
-* `CAP 1407 (DPA-A Poweroff Recovery) <http://cxc.cfa.harvard.edu/acis/CAPs/CAP1407_dpaa_poweroff_recovery.pdf>`_
-* `CAP 1342 (DPA-A Poweroff Recovery) <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1301_1400/CAP_1342_dpaa_poweroff_recovery/CAP_1342_dpaa_poweroff_recovery.pdf>`_
-* `CAP 818 (DPA-A Side Recovery from Enabled/Powered Off State) <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/0801_0900/CAP_0818_DPA-A%20Power%20Off%20Recovery/CAP_818_2002_354_not_signed.pdf>`_
+.. |cap818_pdf| replace:: PDF
+.. _cap818_pdf: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/0801_0900/CAP_0818_DPA-A%20Power%20Off%20Recovery/CAP_818_2002_354_not_signed.pdf
+
+.. |cap1342_pdf| replace:: PDF
+.. _cap1342_pdf: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1301_1400/CAP_1342_dpaa_poweroff_recovery/CAP_1342_dpaa_poweroff_recovery.pdf
+
+.. |cap1342_doc| replace:: DOC
+.. _cap1342_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1301_1400/CAP_1342_dpaa_poweroff_recovery/CAP_1342_dpaa_poweroff_recovery.doc
+
+.. |cap1407_pdf| replace:: PDF
+.. _cap1407_pdf: http://cxc.cfa.harvard.edu/acis/CAPs/CAP1407_dpaa_poweroff_recovery.pdf
+
+.. |cap1407_doc| replace:: DOC
+.. _cap1407_doc: http://cxc.cfa.harvard.edu/acis/CAPs/CAP1407_dpaa_poweroff_recovery.doc
+
+* CAP 1407 (DPA-A Poweroff Recovery) (|cap1407_pdf|_) (|cap1407_doc|_)
+* CAP 1342 (DPA-A Poweroff Recovery) (|cap1342_pdf|_) (|cap1342_doc|_)
+* CAP 818 (DPA-A Side Recovery from Enabled/Powered Off State) (|cap818_pdf|_)
 
 Relevant Notes/Memos
 --------------------

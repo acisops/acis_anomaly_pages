@@ -136,6 +136,9 @@ Relevant Procedures
 .. |cap1055_pdf| replace:: PDF
 .. _cap1055_pdf: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1001_1100/CAP_1055_Turn_on_DPA_B/CAP_1055_CMDing_Turn_On_DPA_B_warmboot_BEP_A_sign.pdf
 
+.. |cap1055_doc| replace:: DOC
+.. _cap1055_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1001_1100/CAP_1055_Turn_on_DPA_B/CAP_1055_Turn_on_DPA-B.doc
+
 SOT Procedures
 ++++++++++++++
 
@@ -153,4 +156,4 @@ FOT Procedures
 CAPs
 ++++
 
-* CAP 1055 (Commanding to Turn On DPA Side B and Warm Boot BEP Side A) (|cap1055_pdf|_)
+* CAP 1055 (Commanding to Turn On DPA Side B and Warm Boot BEP Side A) (|cap1055_pdf|_) (|cap1055_doc|_)
