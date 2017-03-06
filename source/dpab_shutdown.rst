@@ -8,6 +8,11 @@ What is it?
 
 The DPA-B shuts down anomalously, presumably due to a spurious command.
 
+.. note::
+
+    The diagnosis and response to this anomaly presented in this document assumes that the
+    active BEP is powered by DPA side A.
+
 When did it happen before?
 --------------------------
 
@@ -99,7 +104,7 @@ Impacts
 -------
 
 * Until the DPA-B is powered back on, science operations which require the use of the side B FEPs
-  will be interrupted.
+  will be affected.
 * If it is necessary to warm boot the BEP, this will reset the parameters of the TXINGS patch 
   to their defaults. They can be updated in the weekly load through a SAR.
 
