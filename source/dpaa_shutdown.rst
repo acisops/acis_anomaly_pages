@@ -50,8 +50,8 @@ What is the response?
 
 Our real-time web pages will alert us and the Lead System Engineer will call us. We need to:
 
-* Send an email to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz, and Bev LaMarr). If
-  it is off-hours, call Peter and Bob.
+* Send an email to the ACIS team at the official anomaly email address. If it is off-hours, call
+  Peter and Bob.
 * Send an email to ``sot_red_alert`` announcing that the ACIS team is aware of the DPA-A shutdown
   and is investigating, and that a telecon will be called when more information is available.
 * Contact the GOT Duty Officer to inform that we need the dump data as soon as possible and to
