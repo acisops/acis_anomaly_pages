@@ -16,7 +16,8 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
-   dpa_shutdown
+   dpaa_shutdown
+   dpab_shutdown
    dea_shutdown
    dea_seq_reset
    fep_reset
