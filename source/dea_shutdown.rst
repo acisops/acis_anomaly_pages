@@ -3,9 +3,9 @@
 DEA-A Anomalous Shutdown
 ========================
 
-.. note::
+.. warning::
 
-The FOT DEA-A On procedure and script are currently being updated.  Links will need to be checked/changed when that process completes.
+   The FOT DEA-A On procedure and script are currently being updated.  Links will need to be checked/changed when that process completes.
 
 What is it?
 -----------
@@ -77,7 +77,7 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 
   - Power on the DEA side A (|deaa_on|_)
   - Warm boot the BEP and restart housekeeping (|wmboot_hkp|_)
-  - Set the focal plane temperature to -121 :math: `^{\circ}\rm{C}` (|fptemp_121|_)
+  - Set the focal plane temperature to -121 :math:`^{\circ}\rm{C}` (|fptemp_121|_)
     
 * Execute the CAP at the next available comm.
 * Write a shift report and distribute to ``sot_shift`` to inform the project that ACIS is restored
@@ -140,7 +140,7 @@ FOT Procedures
 ++++++++++++++
 
 * ``SOP_61036_DEAA_ON`` (|deaa_on_pdf|_) (|deaa_on_doc|_)
-* ``SOP_ACIS_WARMBOOT_DEAHOUSEKEEPING`` (|wmboot_hkp_pdf|_) (|warmoot_hkp_doc|_)
+* ``SOP_ACIS_WARMBOOT_DEAHOUSEKEEPING`` (|wmboot_hkp_pdf|_) (|wmoot_hkp_doc|_)
 * ``SOT_SI_SET_ACIS_FP_TEMP_TO_M121C`` (|fptemp_121_pdf|_) (|fptemp_121_doc|_)
 
 FOT Scripts
@@ -148,11 +148,6 @@ FOT Scripts
 
 * |deaonssc|_
 * |warmbootssc|_
-
-CLD Scripts
-+++++++++++
-
-None
 
 CAPs
 +++++++++++
@@ -173,7 +168,7 @@ CAPs
 * CAP 980 (DEA-A Recovery) (|cap980_pdf|_)
 * CAP 981 (ACIS DEA Warm Boot) (|cap981_pdf|_)
 
-  Relevant Notes/Memos
+Relevant Notes/Memos
 --------------------
 
 * `Flight Note 572
