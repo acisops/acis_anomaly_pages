@@ -140,7 +140,7 @@ FOT Procedures
 ++++++++++++++
 
 * ``SOP_61036_DEAA_ON`` (|deaa_on_pdf|_) (|deaa_on_doc|_)
-* ``SOP_ACIS_WARMBOOT_DEAHOUSEKEEPING`` (|wmboot_hkp_pdf|_) (|wmoot_hkp_doc|_)
+* ``SOP_ACIS_WARMBOOT_DEAHOUSEKEEPING`` (|wmboot_hkp_pdf|_) (|wmboot_hkp_doc|_)
 * ``SOT_SI_SET_ACIS_FP_TEMP_TO_M121C`` (|fptemp_121_pdf|_) (|fptemp_121_doc|_)
 
 FOT Scripts
