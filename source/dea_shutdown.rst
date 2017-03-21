@@ -27,7 +27,7 @@ The DEA-A has shutdown only once in the mission, in 2005:
 Will it happen again?
 ---------------------
 
-It appears it could happen again, but one occurrence in 16 years provides little guidance.
+It appears it could happen again, but one occurrence provides little guidance.
 
 How is this Anomaly Diagnosed?
 ------------------------------
