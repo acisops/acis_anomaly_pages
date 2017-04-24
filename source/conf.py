@@ -63,7 +63,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'ACIS Anomaly Documentation'
-copyright = '2016, CXC ACIS Operations Team'
+copyright = '2017, CXC ACIS Operations Team'
 author = 'CXC ACIS Operations Team'
 
 # The version info for the project you're documenting, acts as replacement for
