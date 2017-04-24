@@ -48,7 +48,7 @@ observation. We need to:
   SW pages.
 * Process the dump data and get access to the CXC products to verify that this
   anomaly looks identical or similar to previous occurrences.
-* Convene a telecon with the ACIs engineering team at the next reasonable moment
+* Convene a telecon with the ACIS engineering team at the next reasonable moment
   to review the data and diagnosis.
 
 Impacts
