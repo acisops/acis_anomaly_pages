@@ -42,11 +42,14 @@ Most likely we will be notified by CXCDS Ops that data ceased prematurely for an
 observation. We need to:
  
 * Send an e-mail to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz,
-  and Bev LaMarr)
-* Process the dump data and get access to the CXC products
-* Convene a telecon at the next reasonable moment.
+  and Bev LaMarr) to alert them to the existence of the anomaly.
 * Examine data from the next observation because the setup for the next
-  observation should clear the problem.
+  observation should clear the problem. This can be done from the realtime
+  SW pages.
+* Process the dump data and get access to the CXC products to verify that this
+  anomaly looks identical or similar to previous occurrences.
+* Convene a telecon with the ACIS engineering team at the next reasonable moment
+  to review the data and diagnosis.
 
 Impacts
 -------
