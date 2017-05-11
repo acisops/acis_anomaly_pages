@@ -11,8 +11,6 @@ the anomaly itself, when it has happened in the past, how likely it is to happen
 and what the response should be. Appropriate links are also given to relevant flight 
 notes, procedures, and other documentation.
 
-.. toctree::
-
 Contents:
  
 * :doc:`dpaa_shutdown` (Last Updated March 6, 2017)
