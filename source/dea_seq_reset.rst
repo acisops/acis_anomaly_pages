@@ -1,7 +1,7 @@
 .. _dea-seq-reset:
 
-DEA Sequencer Reset During a Science Observation (Last Updated April 24, 2017)
-==============================================================================
+DEA Sequencer Reset During a Science Observation
+================================================
 
 What is it?
 -----------

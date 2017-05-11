@@ -12,14 +12,11 @@ and what the response should be. Appropriate links are also given to relevant fl
 notes, procedures, and other documentation.
 
 Contents:
-
-.. toctree::
-   :maxdepth: 1
-
-   dpaa_shutdown
-   dpab_shutdown
-   dea_shutdown
-   dea_seq_reset
-   fep_reset
-   hi_lo_anomaly
-   trickle_bias_tplane
+ 
+* :doc:`dpaa_shutdown` (Last Updated March 6, 2017)
+* :doc:`dpab_shutdown` (Last Updated March 6, 2017)
+* :doc:`dea_shutdown` (Last Updated April 3, 2017)
+* :doc:`dea_seq_reset` (Last Updated April 24, 2017)
+* :doc:`fep_reset` (Last Updated November 23, 2016)
+* :doc:`hi_lo_anomaly` (Last Updated November 23, 2016)
+* :doc:`trickle_bias_tplane` (Last Updated November 18, 2016)

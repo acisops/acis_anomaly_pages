@@ -1,7 +1,7 @@
 .. _fep-reset:
 
-FEP Anomalous Reset (Last Updated November 23, 2016)
-====================================================
+FEP Anomalous Reset
+===================
 
 What is it?
 -----------

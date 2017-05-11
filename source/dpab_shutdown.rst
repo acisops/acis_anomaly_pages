@@ -1,7 +1,7 @@
 .. _dpab-shutdown:
 
-DPA-B Anomalous Shutdown (Last Updated March 6, 2017)
-=====================================================
+DPA-B Anomalous Shutdown
+========================
 
 What is it?
 -----------
