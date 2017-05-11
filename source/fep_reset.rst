@@ -104,7 +104,7 @@ But, to be certain:
    that the FEPs that had reset would have many fewer exposures/events/etc.
 
 What is the first response?
-===========================
+---------------------------
 
 Most likely we will be notified by CXCDS Ops that data from one or more of
 the CCDs stopped during an observation. We need to:
