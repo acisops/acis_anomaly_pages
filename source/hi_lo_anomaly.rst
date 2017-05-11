@@ -1,7 +1,7 @@
 .. _hi-lo-anomaly:
 
-Hi/Lo Pixel Anomaly
-===================
+Hi/Lo Pixel Anomaly (Last Updated November 23, 2016)
+====================================================
 
 What is it?
 -----------

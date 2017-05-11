@@ -1,7 +1,7 @@
 .. _dpaa-shutdown:
 
-DPA-A Anomalous Shutdown
-========================
+DPA-A Anomalous Shutdown (Last Updated March 6, 2017)
+=====================================================
 
 What is it?
 -----------

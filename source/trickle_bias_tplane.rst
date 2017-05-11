@@ -1,7 +1,7 @@
 .. _trickle-bias:
 
-Trickle Bias / T-Plane Latchup Anomaly
-======================================
+Trickle Bias / T-Plane Latchup Anomaly (Last Updated November 18, 2016)
+=======================================================================
 
 What is it?
 -----------

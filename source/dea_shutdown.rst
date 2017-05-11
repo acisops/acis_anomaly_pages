@@ -1,7 +1,7 @@
 .. _dea-shutdown:
 
-DEA-A Anomalous Shutdown
-========================
+DEA-A Anomalous Shutdown (Last Updated April 3, 2017)
+=====================================================
 
 .. warning::
 
