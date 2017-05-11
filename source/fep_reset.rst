@@ -43,10 +43,6 @@ But, to be certain:
    
    which is located on the Ops LAN, and extract the relevant MSIDs.
 
-.. raw:: html
-
-   <br>
-
 2. There are a total of 10 boards in the DPA, powered independently:
 
    DPA-A +5V to BEP-A, FEP0, FEP1, and FEP2
@@ -63,7 +59,6 @@ But, to be certain:
    - DPA Input Current B (1DPICBCU) drops
 
 .. raw:: html
-
    <br>
 
 3. The timeline of events in the anomaly can be reconstructed by
@@ -78,10 +73,6 @@ But, to be certain:
    `Peter Ford's Obsid 15232 memo <ftp://acis.mit.edu/pub/acis-obsid-15232-anom.pdf>`_ 
    for more information. 
 
-.. raw:: html
-
-   <br>
-
 4. Look at the following DEA Housekeeping and MSID values:
 
    DPA5VHKB, 1DPICBCU, 1DPP0BVO, 1DPICACU
@@ -92,10 +83,6 @@ But, to be certain:
    current (1DPICBCU) dropped at around the same time while the DPA-B 
    voltage (1DPP0BVO) and the DPA-A current and voltage remained steady. 
    The above behavior confirms that the FEPs actually reset.
-
-.. raw:: html
-
-   <br>
 
 5. Before the anomaly, the ``pmon`` display should look normal.
 
