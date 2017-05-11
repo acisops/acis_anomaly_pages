@@ -59,6 +59,7 @@ But, to be certain:
    - DPA Input Current B (1DPICBCU) drops
 
 .. raw:: html
+
    <br/>
 
 3. The timeline of events in the anomaly can be reconstructed by
