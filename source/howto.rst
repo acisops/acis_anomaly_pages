@@ -61,22 +61,49 @@ The DPA-A has shut down 4 times over the mission:
 Will it happen again?
 +++++++++++++++++++++
 
+This section should explain whether or not this particular anomaly is expected to happen
+again. In most cases, the answer will be "yes", unless this anomaly has fixed as a result
+of a software patch.
+
 How is this anomaly diagnosed?
 ++++++++++++++++++++++++++++++
+
+This section consists of a set of information which can be used to make sure that the
+current anomalous behavior is consistent with previous occurrences of the anomaly and
+distinguish it from other possible anomalies. This typically is a list of MSIDs and other
+telemetry to check using the ACIS hardware, PMON, and other *Chandra* status pages.
 
 What is the response?
 +++++++++++++++++++++
 
+This should be a bulleted list of steps that will need to be taken in the response. This
+will include things like:
+
+* Who to notify and when: the ACIS team, the MIT ACIS team, flight directors, etc.
+* Whether or not additional comm time will be required to resolve the anomaly.
+* If the dump data from the most recent comm needs to be investigated.
+* If a CAP should be prepared, and what it should contain.
+
 Impacts
 +++++++
+
+This section should describe what the expected impacts of the anomaly are, such as if
+all ACIS observations are halted until the anomaly is resolved, or if the anomaly only
+affected one observation.
 
 Relevant Procedures
 +++++++++++++++++++
 
+In this section, relevant FOT and SOT procedures which may be used in the resolution of
+the anomaly should be listed and linked to.
+
 Relevant Notes/Memos
 ++++++++++++++++++++
 
-Here, list memos with links
+Here, list and link to memos and notes providing further information about the anomaly.
+
+Finishing Up
+------------
 
 When you are finished, add your new page to the list of pages in the ``index.rst``
 file. So if your file was named ``acis_panic.rst``, then you would add this to the
@@ -92,8 +119,28 @@ the team approves it and before the pull request is merged.
 Testing Your Changes Locally
 ----------------------------
 
-You can have a look at the way your pages are rendered on your local machine. The way
-to do this
+You can have a look at the way your pages are rendered on your local machine. For this
+to work, you need to have the following packages installed in your local python installation:
+
+* ``sphinx``
+* ``sphinx-bootstrap-theme``
+
+You can install these using ``pip`` if you don't have them already, e.g. ``pip install sphinx``
+(you may need to run this as ``sudo``).
+
+Once you have these packages installed, go †o the top-level directory of the repo and type
+``make html``. The pages will be made inside the directory ``build/html``, and you can read
+them with your chosen web browser.
+
+ACIS Team Review
+----------------
+
+Once you have checked everything out, submit a pull request to the ``master`` branch of
+http://github.com/acisops/acis_anomaly_pages for ACIS team review. In the back and forth
+of review you may have to make further changes and add them to the branch / pull request.
+
+Once the review is over and the team has approved the changes, the pull request can be
+merged.
 
 Deploying to the CXC Web Space
 ------------------------------
@@ -103,7 +150,7 @@ the ``~acisdude/python/src/acis_anomaly_pages`` directory, and issue the followi
 commands:
 
 * ``git pull`` (make sure this completes without errors before running the next one!)
-* ``make cxchtml``
+* ``make deploy``
 
 The first command pulls the new changes into the local copy of the repository, and the
 next command builds the pages and copies them to the appropriate CXC web space.
