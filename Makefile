@@ -54,8 +54,8 @@ html:
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
-.PHONY: cxchtml
-cxchtml: html
+.PHONY: deploy
+deploy: html
 	rm -rf /proj/web-cxc-dmz/htdocs/acis/acis_anomaly_pages
 	cp -rf build/html /proj/web-cxc-dmz/htdocs/acis/acis_anomaly_pages
 
