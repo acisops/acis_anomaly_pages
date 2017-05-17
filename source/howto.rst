@@ -149,6 +149,7 @@ Once the pull request has been merged, log onto the HEAD LAN as ``acisdude``. Go
 the ``~acisdude/python/src/acis_anomaly_pages`` directory, and issue the following two
 commands:
 
+* ``source ~/python/bin/activate.csh`` (to load the Python stack with the appropriate commands)
 * ``git pull`` (make sure this completes without errors before running the next one!)
 * ``make deploy``
 
