@@ -35,15 +35,62 @@ but others continued, then the resets were most likely caused by a
 momentary "glitch" in the DPA-B +5V supply which halted the CPUs 
 that were currently powered by that supply.
 
-But, to be certain:
+Some analysis is necessary to be certain.
 
-1. Obtain the relevant dump data file from the directory:
+If you are watching PMON during a Comm and the event occurs while you
+are watching then:
+
+1. Before the anomaly, the ``pmon`` display should look normal.
+
+   If you happened to have comm right when the reset happened, you
+   would see ``FEPREC_RESET`` in red in the bottom left column that 
+   would eventually scroll off as more housekeeping packets came in. 
+   The CCD/FEP statistics in the middle section would stop accumulating
+   for the FEP(s) that had reset.
+
+   If you miss the FEP reset itself, but get comm afterwards, ``pmon``
+   does not complain, but you would notice that fewer CCD/FEPs are
+   accumulating statistics in the center section than you would
+   expect. The header part of the middle section, with the CCD/FEP
+   assignments would still show the FEPs that had reset but there
+   would be no data below them. So there is an indication that
+   something is amiss, but it is not in red flashing letters.
+
+   If you saw the science report at the end of the run, you would see
+   that the FEPs that had reset would have many fewer exposures/events/etc.
+
+   If you missed the FEP reset itself but suspect one occurred because
+   PMON reports that a FEP or FEPs stopped collecting, OR if DS Ops
+   has alerted us to the fact that one or more FEPs stopped
+   collecting, then you can proceed to step 2.
+
+2. Look at the following DEA Housekeeping and MSID values:
+
+   DEA Housekeeping:
+
+       DPA5VHKB
+
+   Telemetry MSIDs:
+
+        1DPICBCU, 1DPP0BVO, 1DPICACU
+
+   Typically, DPA5VHKB bounces around +/- a volt. However, if you see
+   it steadies up right around the time of the FEP halt, this indicates
+   that all DPA-B boards were in a reset state. Check to see if the DPA-B
+   current (1DPICBCU) dropped at around the same time while the DPA-B 
+   voltage (1DPP0BVO) and the DPA-A current and voltage remained steady. 
+   The above behavior confirms that the FEPs actually reset.
+
+To look at these values:
+
+
+3. When available, obtain the relevant dump data file from the directory:
 
    ``/dsops/critical/GOT/input/`` 
    
    which is located on the Ops LAN, and extract the relevant MSIDs.
 
-2. There are a total of 10 boards in the DPA, powered independently:
+4. There are a total of 8 boards in the DPA, powered independently:
 
    DPA-A +5V to BEP-A, FEP0, FEP1, and FEP2
 
@@ -61,7 +108,7 @@ But, to be certain:
 .. raw:: html
    <br>
 
-3. The timeline of events in the anomaly can be reconstructed by
+5. The timeline of events in the anomaly can be reconstructed by
    examining the packet data in the MIT psci data files. Peter Ford,
    Joan Quigley, Royce Buehler, or Catherine Grant can do that. They
    should find the time of the last event packets from the affected FEPs
@@ -73,40 +120,15 @@ But, to be certain:
    `Peter Ford's Obsid 15232 memo <ftp://acis.mit.edu/pub/acis-obsid-15232-anom.pdf>`_ 
    for more information. 
 
-4. Look at the following DEA Housekeeping and MSID values:
-
-   DPA5VHKB, 1DPICBCU, 1DPP0BVO, 1DPICACU
-
-   Typically, DPA5VHKB bounces around +/- a volt. However, if you see
-   it steadies up right around the time of the FEP halt, this indicates
-   that all DPA-B boards were in a reset state. Check to see if the DPA-B
-   current (1DPICBCU) dropped at around the same time while the DPA-B 
-   voltage (1DPP0BVO) and the DPA-A current and voltage remained steady. 
-   The above behavior confirms that the FEPs actually reset.
-
-5. Before the anomaly, the ``pmon`` display should look normal.
-
-   If you happened to have comm right when the reset happened, you
-   would see ``FEPREC_RESET`` in red in the bottom left column that 
-   would eventually scroll off as more housekeeping packets came in. 
-   The CCD/FEP statistics in the middle section would stop accumulating
-   for the FEPs that had reset.
-
-   If you miss the FEP reset itself, but get comm afterwards, ``pmon``
-   does not complain, but you would notice that fewer CCD/FEPs are
-   accumulating statistics in the center section than you would
-   expect. The header part of the middle section, with the CCD/FEP
-   assignments would still show the FEPs that had reset but there
-   would be no data below them. So there is an indication that
-   something is amiss, but it ís not in red flashing letters.
-
-   If you saw the science report at the end of the run, you would see
-   that the FEPs that had reset would have many fewer exposures/events/etc.
 
 What is the first response?
 ---------------------------
+If you happen to observe the incident on PMON, send a warning email to
+DS Ops (Joy Nichols).  Then do the analysis above when the data is
+available. If that analysis confirms the FEP-Reset then send email to
+the Flight Directors alerting them of the incident.
 
-Most likely we will be notified by CXCDS Ops that data from one or more of
+Most likely we will be notified by CXCDS Ops that data collection on one or more of
 the CCDs stopped during an observation. We need to:
 
 * Send an e-mail to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz,
@@ -124,9 +146,10 @@ the CCDs stopped during an observation. We need to:
 Impacts
 -------
 
-The power down prior to the next observation clears the anomaly. If the target 
-is not on one of the halted FEPs, then it is likely that the science objectives 
-of the observation will still be met.
+If the target is not on one of the halted FEPs, then it is likely that
+the science objectives of the observation will still be met.  
+
+The power down prior to the next observation clears the anomaly.
 
 We should examine data from the next observation because power-cycling the FEPs 
 should clear the condition. But if the next observation uses the same configuration, 
