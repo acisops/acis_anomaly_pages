@@ -3,10 +3,14 @@
 HOWTO: Editing ACIS Anomaly Pages
 =================================
 
-This document describes how to edit the ACIS Anomaly Pages.
+This document describes how to edit the ACIS Anomaly Pages. 
 
 Clone from GitHub
 -----------------
+
+Version control for ACIS Anomaly Pages is handled via git and GitHub. For more
+information on how to use them, see the 
+`ACIS Operations git Memo <http://cxc.cfa.harvard.edu/acis/memos/git_notes.html>`_.
 
 You need to clone the ``acis_anomaly_pages`` repository from GitHub:
 
