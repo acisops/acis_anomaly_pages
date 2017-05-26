@@ -43,19 +43,19 @@ on PMON displays and the real-time pages. A red ``FEPREC_RESET`` message will oc
 in the left Software Housekeeping column, and then scroll up and off the page. There
 may also be red ``SMRABORT`` messages, and/or a ``FEP_IO_ERROR`` message.
 
-1. When it's available, obtain the relevant dump data file from the ``/dsops/critical/GOT/input/``
-directory on the Ops LAN.
+1. When it's available, obtain the relevant dump data file from the ``/dsops/critical/GOT/input/`` 
+   directory on the Ops LAN.
 
 2. Run ACORN on the file as per the instructions in
    `"Running ACORN on data dumps in the case of an anomaly (04/06/16)" <http://cxc.cfa.harvard.edu/acis/memos/Dump_Acorn.html>`_
-This provides history of input currents 1DPIC[AB]CU and the status bit 1STAT1ST mentioned above.
+   This provides history of input currents 1DPIC[AB]CU and the status bit 1STAT1ST mentioned above.
 
 3. Run the MIT decom on the data dump as per the instructions in
-   `"Memo on Running MIT tools (04/26/16)" <http://cxc.cfa.harvard.edu/acis/memos/Dump_Psci.html>`_
-This will provide history of the FEP temperatures mentioned above.
+   `"Memo on Running MIT tools (04/26/16)" <http://cxc.cfa.harvard.edu/acis/memos/Dump_Psci.html>`_ 
+   This will provide history of the FEP temperatures mentioned above.
 
 4. MIT personnel can look at the error code, if any, in the science report packet at the
-end of the run, and verify the error code mentioned above.
+   end of the run, and verify the error code mentioned above.
 
 
 What is the first response?
@@ -68,7 +68,7 @@ observation. We need to:
   and Bev LaMarr) to alert them to the existence of the anomaly.
 * If we notice the anomaly before CXCDS OPS informs us, we should notify them as well.
 * Send a notification fo the Flight Directors including the time of the anomaly and the Obsid
-when it occurred.
+  when it occurred.
 * Examine data from the next observation because the setup for the next
   observation should clear the problem. This can be done from the realtime
   SW pages.
