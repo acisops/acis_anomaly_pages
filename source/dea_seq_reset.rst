@@ -47,11 +47,11 @@ may also be red ``SMRABORT`` messages, and/or a ``FEP_IO_ERROR`` message.
    directory on the Ops LAN.
 
 2. Run ACORN on the file as per the instructions in
-   `"Running ACORN on data dumps in the case of an anomaly (04/06/16)" <http://cxc.cfa.harvard.edu/acis/memos/Dump_Acorn.html>`_
+   `"Running ACORN on data dumps in the case of an anomaly (04/06/16)" <http://cxc.cfa.harvard.edu/acis/memos/Dump_Acorn.html>`_.
    This provides history of input currents 1DPIC[AB]CU and the status bit 1STAT1ST mentioned above.
 
 3. Run the MIT decom on the data dump as per the instructions in
-   `"Memo on Running MIT tools (04/26/16)" <http://cxc.cfa.harvard.edu/acis/memos/Dump_Psci.html>`_ 
+   `"Memo on Running MIT tools (04/26/16)" <http://cxc.cfa.harvard.edu/acis/memos/Dump_Psci.html>`_. 
    This will provide history of the FEP temperatures mentioned above.
 
 4. MIT personnel can look at the error code, if any, in the science report packet at the
