@@ -66,13 +66,9 @@ are watching then:
 
 2. Look at the following DEA Housekeeping and MSID values:
 
-   DEA Housekeeping:
+   DEA Housekeeping: DPA5VHKB
 
-       DPA5VHKB
-
-   Telemetry MSIDs:
-
-        1DPICBCU, 1DPP0BVO, 1DPICACU
+   Telemetry MSIDs: 1DPICBCU, 1DPP0BVO, 1DPICACU
 
    Typically, DPA5VHKB bounces around +/- a volt. However, if you see
    it steadies up right around the time of the FEP halt, this indicates
