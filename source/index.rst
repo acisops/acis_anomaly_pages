@@ -20,3 +20,5 @@ Contents:
 * :doc:`fep_reset` (Last Updated June 12, 2017)
 * :doc:`hi_lo_anomaly` (Last Updated November 23, 2016)
 * :doc:`trickle_bias_tplane` (Last Updated November 18, 2016)
+
+:doc:`howto`
