@@ -119,9 +119,10 @@ To look at these values:
 
 What is the first response?
 ---------------------------
+
 If you happen to observe the incident on PMON, send a warning email to
-DS Ops (Joy Nichols).  Then do the analysis above when the data is
-available. If that analysis confirms the FEP-Reset then send email to
+CXCDS Ops (Joy Nichols). Then do the analysis above when the data is
+available. If that analysis confirms a FEP reset, then send email to
 the Flight Directors alerting them of the incident.
 
 Most likely we will be notified by CXCDS Ops that data collection on one or more of
@@ -142,14 +143,14 @@ the CCDs stopped during an observation. We need to:
 Impacts
 -------
 
-If the target is not on one of the halted FEPs, then it is likely that
-the science objectives of the observation will still be met.  
+* If the target is not on one of the halted FEPs, then it is likely that
+  the science objectives of the observation will still be met.  
 
-The power down prior to the next observation clears the anomaly.
+* The power down prior to the next observation clears the anomaly.
 
-We should examine data from the next observation because power-cycling the FEPs 
-should clear the condition. But if the next observation uses the same configuration, 
-the FEPs will not be power cycled and the anomaly will persist.
+* We should examine data from the next observation because power-cycling the FEPs 
+  should clear the condition. But if the next observation uses the same configuration, 
+  the FEPs will not be power cycled and the anomaly will persist.
 
 Relevant Notes/Memos
 --------------------
