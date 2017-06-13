@@ -122,10 +122,10 @@ What is the first response?
 
 If you happen to observe the incident on PMON, send a warning email to
 CXCDS Ops (Joy Nichols). Then do the analysis above when the data is
-available. If that analysis confirms a FEP reset, then send email to
+available. If that analysis confirms a FEP reset, then send an email to
 the Flight Directors alerting them of the incident.
 
-Most likely we will be notified by CXCDS Ops that data collection on one or more of
+Most likely, we will be notified by CXCDS Ops that data collection on one or more of
 the CCDs stopped during an observation. We need to:
 
 * Send an e-mail to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz,
