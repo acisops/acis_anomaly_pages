@@ -131,14 +131,17 @@ the CCDs stopped during an observation. We need to:
 * Send an e-mail to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz,
   and Bev LaMarr) to alert them to the existence of the anomaly.
 
-* Examine data from the next observation because the setup for the next 
-  observation should clear the problem. This can be done from the realtime SW pages.
+* Examine data from the next observation, because in most cases the setup for 
+  the next observation should clear the problem (though see the note below in 
+  :ref:`fep_reset_impacts`). This can be done from the realtime SW pages.
 
 * Process the dump data and get access to the CXC products to verify that this
   anomaly looks identical or similar to previous occurrences.
 
 * Convene a telecon with the ACIS engineering team at the next reasonable moment 
   to review the data and diagnosis.
+
+.. _fep_reset_impacts:
 
 Impacts
 -------
@@ -149,8 +152,10 @@ Impacts
 * The power down prior to the next observation clears the anomaly.
 
 * We should examine data from the next observation because power-cycling the FEPs 
-  should clear the condition. But if the next observation uses the same configuration, 
-  the FEPs will not be power cycled and the anomaly will persist.
+  via the execution of the ``WSPOW00000`` command should clear the condition. 
+  However, any run immediately following which executes ``WSVIDALLDN`` instead 
+  (such as an event histogram or no-bias run) may be affected, since in this 
+  case the anomaly is likely to persist.
 
 Relevant Notes/Memos
 --------------------

@@ -50,8 +50,9 @@ data collection on one or more of the CCDs stopped during an observation. We nee
 * Send an e-mail to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz,
   and Bev LaMarr) to alert them to the existence of the anomaly.
 
-* Examine data from the next observation because the setup for the next 
-  observation should clear the problem. This can be done from the realtime SW pages.
+* Examine data from the next observation, because in most cases the setup for 
+  the next observation should clear the problem (though see the note below in 
+  :ref:`hi_lo_impacts`). This can be done from the realtime SW pages.
 
 * Process the dump data and get access to the CXC products to verify that this
   anomaly looks identical or similar to previous occurrences.
@@ -62,12 +63,20 @@ data collection on one or more of the CCDs stopped during an observation. We nee
 .. |sop_diagnostics| replace:: ``SOP_ACIS_DEA_FEP_DIAGNOSTICS``
 .. _sop_diagnostics: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_DEA_FEP_DIAGNOSTICS.pdf
 
+.. _hi_lo_impacts:
+
 Impacts
 -------
 
 * The remaining portion of the science run for that particular CCD/FEP 
   combination will be lost. 
-* The following science run should be unaffected.
+* In most situations, the following science run should be unaffected, 
+  as a power-cycle of the affected board via execution of the ``WSPOW00000``
+  command should clear the problem. However, any run immediately following 
+  which executes ``WSVIDALLDN`` instead (such as an event histogram or 
+  no-bias run) may be affected, since in this case the anomaly is likely 
+  to persist.
+
 
 Relevant Procedures
 -------------------
