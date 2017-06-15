@@ -32,7 +32,9 @@ Both of the following symptoms will be noticed:
 * The ``deltaOverclock`` values reported from these FEPs are large and negative 
   for the first three output nodes and large and positive for the fourth output node.
 
-Both of these symptoms can be observed from one of the PMON pages.
+Both of these symptoms can be observed from one of the PMON pages. We should also
+receive red alert emails from PMON which say "Repeated consecutive overclock values 
+of 0 or 4095" and/or "Repeated consecutive delta-overclocks outside expected range".
 
 What is the first response?
 ---------------------------
