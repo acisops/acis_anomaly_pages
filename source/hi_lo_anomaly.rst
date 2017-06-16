@@ -76,9 +76,7 @@ Impacts
   as a power-cycle of the affected board via execution of the ``WSPOW00000``
   command should clear the problem. However, any run immediately following 
   which executes ``WSVIDALLDN`` instead (such as an event histogram or 
-  no-bias run) may be affected, since in this case the anomaly is likely 
-  to persist.
-
+  no-bias run) may be affected, since in this case the anomaly may persist.
 
 Relevant Procedures
 -------------------
