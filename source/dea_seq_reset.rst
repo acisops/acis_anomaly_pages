@@ -36,7 +36,7 @@ How is this Anomaly Diagnosed?
   running.
 
 If only some of the FEPs were halted and the science run continues, this might be a
-case of :ref:`fep_reset`.
+case of :doc:`../fep_reset`.
 
 If we are in comm when the anomaly occurs, most of the above symptoms will be visible
 on PMON displays and the real-time pages. A red ``FEPREC_RESET`` message will occur
