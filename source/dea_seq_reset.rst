@@ -66,7 +66,7 @@ observation. We need to:
  
 * Send an e-mail to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz,
   and Bev LaMarr) to alert them to the existence of the anomaly.
-* If we notice the anomaly before CXCDS OPS informs us, we should notify them as well.
+* If we notice the anomaly before CXCDS OPS informs us, we should notify them as well. Send to operators@cfa or ascdsops@head.
 * Send a notification to the Flight Directors including the time of the anomaly and the Obsid
   when it occurred.
 * Examine data from the next observation because the setup for the next
