@@ -73,6 +73,7 @@ Impacts
 
 * The remaining portion of the science run for that particular CCD/FEP 
   combination will be lost. 
+
 * In most situations, the following science run should be unaffected, 
   as a power-cycle of the affected board via execution of the ``WSPOW00000``
   command should clear the problem. However, any run immediately following 

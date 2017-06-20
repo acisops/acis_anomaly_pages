@@ -150,8 +150,6 @@ Impacts
 * If the target is not on one of the halted FEPs, then it is likely that
   the science objectives of the observation will still be met.  
 
-* The power down prior to the next observation clears the anomaly.
-
 * We should examine data from the next observation because power-cycling the FEPs 
   via the execution of the ``WSPOW00000`` command should clear the condition. 
   However, any run immediately following which executes ``WSVIDALLDN`` instead 
