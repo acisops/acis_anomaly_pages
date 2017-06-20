@@ -41,8 +41,8 @@ What is the first response?
 ---------------------------
 
 If you happen to observe the incident on PMON, send a warning email to
-CXCDS Ops (Joy Nichols). Importantly, we have a 
-`SOP <http://cxc.cfa.harvard.edu/acis/cmd_seq/dea_fep_diags.pdf>`_ 
+CXCDS Ops (send to ``operators@cfa`` or ``ascdsops@head``). Importantly, 
+we have a `SOP <http://cxc.cfa.harvard.edu/acis/cmd_seq/dea_fep_diags.pdf>`_ 
 written to intervene if the observation with the anomaly is still in 
 progress to dump diagnostic data. If the analysis confirms the anomaly,
 then send an email to the Flight Directors alerting them of the incident.
