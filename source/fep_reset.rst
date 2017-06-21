@@ -52,13 +52,11 @@ are watching then:
    does not complain, but you would notice that fewer CCD/FEPs are
    accumulating statistics in the center section than you would
    expect. The header part of the middle section, with the CCD/FEP
-   assignments would still show the FEPs that had reset, but the 
-   display would be anomalous. If the anomaly occurs before the first
-   comm that is in the observation, the columns will be blank, but 
-   if the anomaly occurred after a previous comm but before the current
-   one, there will be data in those columns but they will not be updating.
-   So there is an indication that something is amiss, but it is not in 
-   red flashing letters.
+   assignments, would still show the FEPs that had reset, but the 
+   display would be static or blank depending on whether pmon had 
+   seen any data from the current observation previous to the anomaly. 
+   So there is an indication that something is amiss, but it is not 
+   in red flashing letters.
 
    If you saw the science report at the end of the run, you would see
    that the FEPs that had reset would have many fewer exposures/events/etc.
