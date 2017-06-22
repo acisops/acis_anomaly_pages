@@ -31,10 +31,8 @@ Both of the following symptoms will be noticed:
 * One or more FEPs will stop returning event data.
 * The ``deltaOverclock`` values reported from these FEPs are large and negative 
   for the first three output nodes and large and positive for the fourth output 
-  node. The sum of the ``initialOverclock`` and ``deltaOverclock`` values will
-  be consistent with zero for the first three output nodes and will be close to
-  a value of 4095 for the last output node. If one sees this, this is a clear
-  indication of the Hi/Lo Pixel Anomaly and not a :doc:`../fep_reset`.
+  node. If one sees this, this is a clear indication of the Hi/Lo Pixel Anomaly 
+  and not a :doc:`../fep_reset`.
 
 Both of these symptoms can be observed from one of the PMON pages. We should also
 receive red alert emails and text messages from PMON which say "Repeated consecutive 
@@ -62,7 +60,11 @@ data collection on one or more of the CCDs stopped during an observation. We nee
   :ref:`hi_lo_impacts`). This can be done from the realtime SW pages.
 
 * Process the dump data and get access to the CXC products to verify that this
-  anomaly looks identical or similar to previous occurrences.
+  anomaly looks identical or similar to previous occurrences. In particular, 
+  if the anomaly did occur, the dump data will reveal that for the affected FEPs
+  the sum of the ``initialOverclock`` and ``deltaOverclock`` values will be 
+  consistent with zero for the first three output nodes and will be close to
+  a value of 4095 for the last output node. 
 
 * Convene a telecon with the ACIS engineering team at the next reasonable moment 
   to review the data and diagnosis.
