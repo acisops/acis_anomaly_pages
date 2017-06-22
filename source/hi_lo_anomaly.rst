@@ -6,9 +6,9 @@ Hi/Lo Pixel Anomaly
 What is it?
 -----------
 
-Event data stops being reported for one CCD/FEP combination and the delta overclock 
-values are peculiar, large and negative for the first three output nodes and large 
-and positive for the fourth output node.
+Event data stops being reported for one or more CCD/FEP combinations and the delta 
+overclock values are peculiar, large and negative for the first three output nodes 
+and large and positive for the fourth output node.
 
 When did it happen before?
 --------------------------
@@ -30,7 +30,11 @@ Both of the following symptoms will be noticed:
 
 * One or more FEPs will stop returning event data.
 * The ``deltaOverclock`` values reported from these FEPs are large and negative 
-  for the first three output nodes and large and positive for the fourth output node.
+  for the first three output nodes and large and positive for the fourth output 
+  node. The sum of the ``initialOverclock`` and ``deltaOverclock`` values will
+  be consistent with zero for the first three output nodes and will be close to
+  a value of 4095 for the last output node. If one sees this, this is a clear
+  indication of the Hi/Lo Pixel Anomaly and not a :doc:`../fep_reset`.
 
 Both of these symptoms can be observed from one of the PMON pages. We should also
 receive red alert emails and text messages from PMON which say "Repeated consecutive 
@@ -71,8 +75,8 @@ data collection on one or more of the CCDs stopped during an observation. We nee
 Impacts
 -------
 
-* The remaining portion of the science run for that particular CCD/FEP 
-  combination will be lost. 
+* The remaining portion of the science run for the particular CCD/FEP 
+  combinations exhibiting the anomaly will be lost. 
 
 * In most situations, the following science run should be unaffected, 
   as a power-cycle of the affected board via execution of the ``WSPOW00000``

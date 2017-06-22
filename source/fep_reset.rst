@@ -9,7 +9,7 @@ What is it?
 One or more (but not all) FEPs can reset during an observation, resulting in 
 loss of science data from the affected FEP(s) for the rest of the science run. 
 The unaffected FEP(s) will continue to operate normally. This is different than 
-the :doc:`../dea_seq_reset` anomaly which shuts down all FEPs.
+the :doc:`../dea_seq_reset` anomaly which shuts down all FEPs. 
 
 When did it happen before?
 --------------------------
@@ -35,7 +35,13 @@ but others continued, then the resets were most likely caused by a
 momentary "glitch" in the DPA-B +5V supply which halted the CPUs 
 that were currently powered by that supply.
 
-Some analysis is necessary to be certain.
+If some FEPs are halted and their ``deltaOverclock`` values are 
+large and negative for the first three output nodes and large and 
+positive for the fourth output node, this may be an instance of the
+:doc:`../hi_lo_anomaly`.
+
+If this is a suspected FEP Reset anomaly, some analysis is necessary 
+to be certain.
 
 If you are watching PMON during a Comm and the event occurs while you
 are watching then:
