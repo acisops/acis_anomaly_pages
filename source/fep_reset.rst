@@ -9,7 +9,7 @@ What is it?
 One or more (but not all) FEPs can reset during an observation, resulting in 
 loss of science data from the affected FEP(s) for the rest of the science run. 
 The unaffected FEP(s) will continue to operate normally. This is different than 
-the :doc:`../dea_seq_reset` anomaly which shuts down all FEPs.
+the :doc:`../dea_seq_reset` anomaly which shuts down all FEPs. 
 
 When did it happen before?
 --------------------------
@@ -35,7 +35,13 @@ but others continued, then the resets were most likely caused by a
 momentary "glitch" in the DPA-B +5V supply which halted the CPUs 
 that were currently powered by that supply.
 
-Some analysis is necessary to be certain.
+If some FEPs are halted and their ``deltaOverclock`` values are 
+large and negative for the first three output nodes and large and 
+positive for the fourth output node, this may be an instance of the
+:doc:`../hi_lo_anomaly`.
+
+If this is a suspected FEP Reset anomaly, some analysis is necessary 
+to be certain.
 
 If you are watching PMON during a Comm and the event occurs while you
 are watching then:
@@ -52,9 +58,11 @@ are watching then:
    does not complain, but you would notice that fewer CCD/FEPs are
    accumulating statistics in the center section than you would
    expect. The header part of the middle section, with the CCD/FEP
-   assignments would still show the FEPs that had reset but there
-   would be no data below them. So there is an indication that
-   something is amiss, but it is not in red flashing letters.
+   assignments, would still show the FEPs that had reset, but the 
+   display would be static or blank depending on whether pmon had 
+   seen any data from the current observation previous to the anomaly. 
+   So there is an indication that something is amiss, but it is not 
+   in red flashing letters.
 
    If you saw the science report at the end of the run, you would see
    that the FEPs that had reset would have many fewer exposures/events/etc.
@@ -119,19 +127,22 @@ To look at these values:
 
 What is the first response?
 ---------------------------
-If you happen to observe the incident on PMON, send a warning email to
-DS Ops (Joy Nichols).  Then do the analysis above when the data is
-available. If that analysis confirms the FEP-Reset then send email to
-the Flight Directors alerting them of the incident.
 
-Most likely we will be notified by CXCDS Ops that data collection on one or more of
+If you happen to observe the incident on PMON, send a warning email to
+CXCDS Ops (send to ``operators@cfa`` or ``ascdsops@head``). Then do the 
+analysis above when the data is available. If that analysis confirms a 
+FEP reset, then send an email to the Flight Directors alerting them of 
+the incident.
+
+Most likely, we will be notified by CXCDS Ops that data collection on one or more of
 the CCDs stopped during an observation. We need to:
 
 * Send an e-mail to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz,
   and Bev LaMarr) to alert them to the existence of the anomaly.
 
-* Examine data from the next observation because the setup for the next 
-  observation should clear the problem. This can be done from the realtime SW pages.
+* Examine data from the next observation, because in most cases the setup for 
+  the next observation should clear the problem (though see the note below in 
+  :ref:`fep_reset_impacts`). This can be done from the realtime SW pages.
 
 * Process the dump data and get access to the CXC products to verify that this
   anomaly looks identical or similar to previous occurrences.
@@ -139,17 +150,19 @@ the CCDs stopped during an observation. We need to:
 * Convene a telecon with the ACIS engineering team at the next reasonable moment 
   to review the data and diagnosis.
 
+.. _fep_reset_impacts:
+
 Impacts
 -------
 
-If the target is not on one of the halted FEPs, then it is likely that
-the science objectives of the observation will still be met.  
+* If the target is not on one of the halted FEPs, then it is likely that
+  the science objectives of the observation will still be met.  
 
-The power down prior to the next observation clears the anomaly.
-
-We should examine data from the next observation because power-cycling the FEPs 
-should clear the condition. But if the next observation uses the same configuration, 
-the FEPs will not be power cycled and the anomaly will persist.
+* We should examine data from the next observation because power-cycling the FEPs 
+  via the execution of the ``WSPOW00000`` command should clear the condition. 
+  However, any run immediately following which executes ``WSVIDALLDN`` instead 
+  (such as an event histogram or no-bias run) may be affected, since in this 
+  case the anomaly is likely to persist.
 
 Relevant Notes/Memos
 --------------------
