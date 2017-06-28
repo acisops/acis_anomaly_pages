@@ -1,4 +1,4 @@
-.. _trickle-bias:
+.. _trickle-bias-tplane:
 
 Trickle Bias / T-Plane Latchup Anomaly
 ======================================
