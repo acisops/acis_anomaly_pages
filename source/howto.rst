@@ -129,12 +129,26 @@ to work, you need to have the following packages installed in your local python 
 * ``sphinx``
 * ``sphinx-bootstrap-theme``
 
-You can install these using ``pip`` if you don't have them already, e.g. ``pip install sphinx``
-(you may need to run this as ``sudo``).
+You can install these using ``pip`` if you don't have them already:
 
-Once you have these packages installed, go †o the top-level directory of the repo and type
+.. code-block:: bash
+
+    pip install sphinx sphinx-bootstrap-theme
+
+Or, if you don't have write permissions to the Python stack (like on the HEAD LAN),
+use the ``--user`` flag:
+
+.. code-block:: bash
+
+    pip install --user sphinx sphinx-bootstrap-theme
+
+Once you have these packages installed, go to the top-level directory of the repo and type
 ``make html``. The pages will be made inside the directory ``build/html``, and you can read
 them with your chosen web browser.
+
+If you want to put the pages up for the ACIS team to see them, copy the contents of ``build/html``
+to the ACIS temporary web space at http://cxc.cfa.harvard.edu/acis/tmp/ and give the directory a
+name like ``hi_lo_edits`` or something else that is descriptive.
 
 ACIS Team Review
 ----------------
@@ -149,13 +163,13 @@ merged.
 Deploying to the CXC Web Space
 ------------------------------
 
-Once the pull request has been merged, log onto the HEAD LAN as ``acisdude``. Go to
-the ``~acisdude/python/src/acis_anomaly_pages`` directory, and issue the following two
-commands:
+Once the pull request has been merged, log onto the HEAD LAN as ``acisdude``. Issue
+the following commands:
 
+* ``cd ~/python/src/acis_anomaly_pages`` (to go to the directory with the source)
 * ``source ~/python/bin/activate.csh`` (to load the Python stack with the appropriate commands)
 * ``git pull`` (make sure this completes without errors before running the next one!)
 * ``make deploy``
 
-The first command pulls the new changes into the local copy of the repository, and the
-next command builds the pages and copies them to the appropriate CXC web space.
+The third command pulls the new changes into the local copy of the repository, and the
+final command builds the pages and copies them to the appropriate CXC web space.
