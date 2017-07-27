@@ -68,7 +68,7 @@ In the somewhat unlikely event that this anomaly is
 noticed during an observation, and there is time either
 during the current comm or a following one (still on
 the same obsid), we have
-`an SOP (DEA FEP Diagnostics SOP)<http://cxc.cfa.harvard.edu/acis/cmd_seq/dea_fep_diags.pdf>`_
+`an SOP (DEA FEP Diagnostics SOP) <http://cxc.cfa.harvard.edu/acis/cmd_seq/dea_fep_diags.pdf>`_
 written to intervene if the observation with the anomaly is still in
 progress to dump diagnostic data.
 
