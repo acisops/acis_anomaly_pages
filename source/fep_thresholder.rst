@@ -49,22 +49,7 @@ These symptoms may be noticed:
 What is the first response?
 ---------------------------
 
-NOTE: We are still deciding whether it's appropriate based on the above
-symptoms to attempt to run the DEA FEP Diagnostics SOP.
-
-If this anomaly is noticed during an observation, and there is time either
-during the current comm or a following one (still on the same obsid), we
-have `a SOP (DEA FEP Diagnostics SOP)<http://cxc.cfa.harvard.edu/acis/cmd_seq/dea_fep_diags.pdf>`_
-written to intervene if the observation with the anomaly is still in
-progress to dump diagnostic data.
-
-* Send an e-mail to sot_red_alert and convene a telecon giving the plan, and the need for quick action to get the SOP done before the end of the science run.
-
-* Prepare a CAP and submit it for review to cap_review@ipa.cfa.harvard.edu
-
-* The steps below should also be followed, as appropriate.
-
-If not, we need to: 
+We need to: 
 
 * Send an email to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz, and Bev LaMarr)
 
@@ -74,10 +59,29 @@ If not, we need to:
 
 * Convene a telecon at the next reasonable moment. This would include the ACIS team as above. Agreement by MIT via e-mail is a possible alternative.
 
-* Examine data from the next observation, because the setup for the next observation will likely clear the problem. This will almost certainly be true if the FEP power is cycled, and may also work if only the video boards are cycled (verifying with MIT).
+* Examine data from the next observation, because the setup for the next observation will clear the problem.
 
 .. |sop_diagnostics| replace:: ``SOP_ACIS_DEA_FEP_DIAGNOSTICS``
 .. _sop_diagnostics: http://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_DEA_FEP_DIAGNOSTICS.pdf
+
+In the somewhat unlikely event that this anomaly is
+noticed during an observation, and there is time either
+during the current comm or a following one (still on
+the same obsid), we have
+`an SOP (DEA FEP Diagnostics SOP)<http://cxc.cfa.harvard.edu/acis/cmd_seq/dea_fep_diags.pdf>`_
+written to intervene if the observation with the anomaly is still in
+progress to dump diagnostic data.
+
+This procedure suspends the observation while the diagnostics are run, and then resumes
+all chip/FEP combinations except the problematic one. If the target is not on the
+affected chip, it may be advantageous to the user to skip the diagnostic procedure
+and finish the observation uninterrupted.
+
+* Send an e-mail to sot_red_alert and convene a telecon giving the plan, and the need for quick action to get the SOP done before the end of the science run.
+
+* Prepare a CAP and submit it for review to cap_review@ipa.cfa.harvard.edu
+
+* The steps below should also be followed, as appropriate.
 
 Impacts
 -------
