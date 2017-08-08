@@ -77,11 +77,11 @@ all chip/FEP combinations except the problematic one. If the target is not on th
 affected chip, it may be advantageous to the user to skip the diagnostic procedure
 and finish the observation uninterrupted.
 
+If it is decided to run the diagnostics procedure, do this:
+
 * Send an e-mail to sot_red_alert and convene a telecon giving the plan, and the need for quick action to get the SOP done before the end of the science run.
 
 * Prepare a CAP and submit it for review to cap_review@ipa.cfa.harvard.edu
-
-* The steps below should also be followed, as appropriate.
 
 Impacts
 -------
