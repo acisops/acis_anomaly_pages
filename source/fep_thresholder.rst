@@ -42,7 +42,7 @@ These symptoms may be noticed:
 
 *  Every other frame will be missing for one CCD after some point in the observation.  The data before this point should contain all frames.  If the anomaly occurs in realtime COM, the exposure numbers on the impacted CCD will be red on the PMON page, indicating dropped frames. But this can happen for a number of reasons (ratty COM, telemetry saturation, and this anomaly).  The telemetry will probably not saturate for this anomaly, and reported event rates may look normal for the affected CCD.  In addition, only odd or even frame numbers will be reported for that CCD.
 
-* After the anomaly occurs, there may be a region of the CCD for which events had been reported but for which no additional events are reported
+* After the anomaly occurs, there may be a region of the CCD for which events had been reported but for which no additional events are reported.
 
 * After the anomaly occurs, there may be events that are reported on consecutive (undropped) frames.  These events will have the same chipx,chipy values but the pulse heights will change slowly from frame to frame as the delta overclock values change.  The raw pulse heights for the event and the bias values are not changing, but the overclock values are changing from frame to frame.  This can lead to an event being reported at the same position on consecutive frames until the overclock values change such that the event grade changes to a grade that is not accepted.
 
@@ -55,7 +55,7 @@ We need to:
 
 * Process the dump data and get access to the CXC products
 
-* Notify sot_yellow_alert and/or brief the 9am telecon
+* Notify ``sot_yellow_alert`` and/or brief the 9am telecon
 
 * Convene a telecon at the next reasonable moment. This would include the ACIS team as above. Agreement by MIT via e-mail is a possible alternative.
 
@@ -79,9 +79,9 @@ and finish the observation uninterrupted.
 
 If it is decided to run the diagnostics procedure, do this:
 
-* Send an e-mail to sot_red_alert and convene a telecon giving the plan, and the need for quick action to get the SOP done before the end of the science run.
+* Send an e-mail to ``sot_red_alert`` and convene a telecon giving the plan, and the need for quick action to get the SOP done before the end of the science run.
 
-* Prepare a CAP and submit it for review to cap_review@ipa.cfa.harvard.edu
+* Prepare a CAP and submit it for review to capreview AT ipa DOT harvard DOT edu/.
 
 Impacts
 -------
