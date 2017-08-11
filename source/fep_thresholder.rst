@@ -81,7 +81,7 @@ If it is decided to run the diagnostics procedure, do this:
 
 * Send an e-mail to ``sot_red_alert`` and convene a telecon giving the plan, and the need for quick action to get the SOP done before the end of the science run.
 
-* Prepare a CAP and submit it for review to capreview AT ipa DOT harvard DOT edu/.
+* Prepare a CAP and submit it for review to capreview AT ipa DOT harvard DOT edu.
 
 Impacts
 -------
