@@ -58,7 +58,10 @@ We need to:
     is running
   - Warmboot the BEP and restart DEA housekeeping (|wmboot_hk|_)
 
-  There is a template CAP in acis_docs: CAPXXXX_WMBOOT_HK
+  There is a template CAP in ``acis_docs``: ``CAPXXXX_WMBOOT_HK``
+
+.. raw:: html
+    <br>
 
 * Execute the CAP at the next available comm.
 * Write a shift report and distribute to ``sot_shift`` to inform the project 
