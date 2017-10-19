@@ -6,10 +6,10 @@
 ACIS Anomaly Documentation
 ==========================
 
-These pages detail possible ACIS-related anomalies that may occur. Each page describes 
-the anomaly itself, when it has happened in the past, how likely it is to happen again, 
-and what the response should be. Appropriate links are also given to relevant flight 
-notes, procedures, and other documentation.
+These pages detail possible ACIS-related anomalies that may occur. Each page 
+describes the anomaly itself, when it has happened in the past, how likely it is
+to happen again, and what the response should be. Appropriate links are also 
+given to relevant flight notes, procedures, and other documentation.
 
 Contents:
  
@@ -21,5 +21,6 @@ Contents:
 * :doc:`hi_lo_anomaly` (Last Updated June 28, 2017)
 * :doc:`trickle_bias_tplane` (Last Updated November 18, 2016)
 * :doc:`fep_thresholder` (Last updated August 14, 2017)
+* :doc:`stuck_status_bit` (Last updated October 19, 2017)
 
 :doc:`howto`
