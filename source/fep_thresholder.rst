@@ -1,4 +1,4 @@
-.. _hi-lo-anomaly:
+.. _fep-thresholder:
 
 FEP Thresholder Anomaly
 =======================
