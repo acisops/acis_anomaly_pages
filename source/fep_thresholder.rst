@@ -24,7 +24,7 @@ When did it happen before?
 
 Once:
 
-* December 16, 2016: obsid 18278
+* December 16, 2016 (2016:351): obsid 18278
 
 Will it happen again?
 ---------------------
