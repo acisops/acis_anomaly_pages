@@ -34,6 +34,7 @@ How is this anomaly diagnosed?
 * All other indicators (ACIS voltages, input currents, power, temperatures, and
   SIM position) should indicate that the equipment has shut down as normal for 
   an SCS-107 run, so the instrument is safe.  Since SCS-107 issues a WSPOW00000 command that powers down the video boards and the FEPs, the input currents on the DPA side A and B should be:
+  
   - DPA side A, 1DPICACU < 0.6 A
   - DPA side B, 1DPICBCU < 0.4 A
 
