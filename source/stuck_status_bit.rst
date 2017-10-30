@@ -6,59 +6,59 @@ ACIS Science Run Termination Failure Anomaly
 What is it?
 -----------
 
-SCS107 command fails to terminate a science run during bias creation.
+The science run fails to terminate when SCS-107 issues two stopScience commands during bias creation.
 
 When did it happen before?
 --------------------------
 
 Twice:
 
-* March 3, 2016: 2016:063:17:11, obsid 17719
-* September 11, 2017:256:07:53, obsid 19931
+* March 3, 2016, 2016:063:17:11, obsid 17719
+* September 11, 2017, 2017:256:07:53, obsid 19931
 
 Will it happen again?
 ---------------------
 
 It appears likely that the anomaly could occur again.
 
-How is this Anomaly Diagnosed?
+How is this anomaly diagnosed?
 ------------------------------
 
-* During a safe-mode transition, the 1STAT1ST ACIS status bit fails to set as 
+* After the execution of SCS-107, the 1STAT1ST ACIS status bit fails to set as 
   expected, from Science Active (0 or RED) to Science Idle (1 or GREEN). The 
-  ACIS status bits are available on both the ACIS PMON web pages and the 
-  hardware web pages.
+  ACIS status bits are available on both the ACIS hardware web pages and the PMON web pages where 1STAT1ST is the seventh digit in the Bilevels display.
 
-* This is indicates that the science process failed to terminate and exit when 
+* The 1STAT1ST status bit indicates that the science process failed to terminate and exit when 
   SCS-107 was run.
 
 * All other indicators (ACIS voltages, input currents, power, temperatures, and
   SIM position) should indicate that the equipment has shut down as normal for 
-  an SCS-107 run, so the instrument is safe.
+  an SCS-107 run, so the instrument is safe.  Since SCS-107 issues a WSPOW00000 command that powers down the video boards and the FEPs, the input currents on the DPA side A and B should be:
+  - DPA side A, 1DPICACU < 0.6 A
+  - DPA side B, 1DPICBCU < 0.4 A
 
 What is the first response?
 ---------------------------
 
 The anomaly is most likely to be noted by ACIS ops during the first contact 
-after a safe mode transition.  It does not produce any automated alerts.
+after an SCS-107 execution.  It does not produce any automated alerts.
 
 We need to:
  
 * Send an e-mail to the ACIS team (including acisdude, Peter Ford, Bob Goeke,
   Mark Bautz, and Bev LaMarr) to alert them to the existence of the anomaly.
-* Send a notification to the Flight Directors including the time of the anomaly
-  and the Obsid when it occurred.  Paul Viens?  telecon briefing?
+* Notify the Chandra Operations team on the telecon after the SCS-107 execution was discovered.  If not possible, send email to ``sot_yellow_alert`` describing the situation, including the time of the anomaly and the Obsid when it occured.
 * Prepare a CAP and submit it for review to capreview AT ipa DOT harvard DOT edu,
   and cc: acisdude. It will also be necessary to call the OC/CC to determine 
   which number should be used for the CAP.
 
   This CAP will have the following steps:
 
-  - Confirm telemetry format is 1 or 2 and the most recent version of flight SW 
+  - Confirm telemetry format is 1 or 2 and the most recent version of flight software 
     is running
   - Warmboot the BEP and restart DEA housekeeping (|wmboot_hk|_)
 
-  There is a template CAP in ``acis_docs``: ``CAPXXXX_WMBOOT_HK``
+  There is a template CAP in ``acis_docs/CAPs``: ``CAPXXXX_WMBOOT_HK``
 
 .. raw:: html
     <br>
@@ -70,7 +70,7 @@ We need to:
 Impacts
 -------
 
-* The anomaly occurs during safe mode transition, so no science is lost.
+* The anomaly occurs after SCS-107 execution, so no science is lost.
 * The warmboot of the BEP will reset the parameters of the TXINGS patch to their
   defaults.  They can be updated in the weekly load through a SAR.
 * If a science run is started before a warmboot can be performed, testing on the 
@@ -81,7 +81,7 @@ Impacts
 .. note::
 
     As of this writing, the latest ACIS Flight Software Patch is F, Optional 
-    Patch G. An update has been developed to the ``buscrash`` patch which would
+    Patch G, Version 53. An update has been developed to the ``buscrash`` patch which would
     prevent this anomaly, but has not been deemed critical enough to drive a 
     flight software update at this time.
 
@@ -142,7 +142,7 @@ CAPs
 .. |cap1433_doc| replace:: DOC
 .. _cap1433_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1401-1500/CAP_1433__wmboot_deahk/CAP1433__wmboot_deahk.doc
 
-* CAP 1433 (ACIS BEP Warmboot and DEA housekeeping restart) (|cap1433_pdf|_) (|cap1433_doc|_)
+* CAP 1433 (ACIS BEP Warmboot and DEA housekeeping restart) (|cap1433_pdf|_) (|cap1433_doc|_)  (Note the double underscore before wmboot in the filename.)
 * CAP 1381 (ACIS BEP Warmboot and DEA housekeeping restart) (|cap1381_pdf|_) (|cap1381_doc|_)
 
 Relevant Notes/Memos
