@@ -6,21 +6,22 @@
 ACIS Anomaly Documentation
 ==========================
 
-These pages detail possible ACIS-related anomalies that may occur. Each page describes 
-the anomaly itself, when it has happened in the past, how likely it is to happen again, 
-and what the response should be. Appropriate links are also given to relevant flight 
-notes, procedures, and other documentation.
+These pages detail possible ACIS-related anomalies that may occur. Each page 
+describes the anomaly itself, when it has happened in the past, how likely it is
+to happen again, and what the response should be. Appropriate links are also 
+given to relevant flight notes, procedures, and other documentation.
 
 Contents:
  
 * :doc:`dpaa_shutdown` (Last Updated March 6, 2017)
 * :doc:`dpab_shutdown` (Last Updated March 6, 2017)
-* :doc:`dea_shutdown` (Last Updated April 3, 2017)
-* :doc:`dea_seq_reset` (Last Updated June 27, 2017)
+* :doc:`dea_shutdown` (Last Updated December 15, 2017)
+* :doc:`dea_seq_reset` (Last Updated March 20, 2018)
 * :doc:`fep_reset` (Last Updated June 28, 2017)
 * :doc:`hi_lo_anomaly` (Last Updated June 28, 2017)
 * :doc:`trickle_bias_tplane` (Last Updated November 18, 2016)
 * :doc:`fep_thresholder` (Last updated August 14, 2017)
 * :doc:`door_b_enb` (Last updated April 6, 2018) (TBR)
+* :doc:`stuck_status_bit` (Last updated October 30, 2017)
 
 :doc:`howto`
