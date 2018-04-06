@@ -3,10 +3,6 @@
 DEA-A Anomalous Shutdown
 ========================
 
-.. warning::
-
-   The FOT DEA-A On procedure and script are currently being updated.  Links will need to be checked/changed when that process completes.
-
 What is it?
 -----------
 
@@ -96,14 +92,14 @@ Impacts
 Relevant Procedures
 -------------------
 
-.. |deaa_on| replace:: ``SOP_61036_DEAA_ON``
-.. _deaa_on: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_61036_DEAA_ON.pdf
+.. |deaa_on| replace:: ``SOP_ACIS_DEAA_ON``
+.. _deaa_on: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_DEAA_ON.pdf
 
 .. |deaa_on_pdf| replace:: PDF
-.. _deaa_on_pdf: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_61036_DEAA_ON.pdf
+.. _deaa_on_pdf: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_DEAA_ON.pdf
 
 .. |deaa_on_doc| replace:: DOC
-.. _deaa_on_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_61036_DEAA_ON.doc
+.. _deaa_on_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_DEAA_ON.docx
 
 .. |wmboot_hkp| replace:: ``SOP_ACIS_WARMBOOT_DEAHOUSEKEEPING``
 .. _wmboot_hkp: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_WARMBOOT_DEAHOUSEKEEPING.pdf 
@@ -139,7 +135,7 @@ SOT Procedures
 FOT Procedures
 ++++++++++++++
 
-* ``SOP_61036_DEAA_ON`` (|deaa_on_pdf|_) (|deaa_on_doc|_)
+* ``SOP_ACIS_DEAA_ON`` (|deaa_on_pdf|_) (|deaa_on_doc|_)
 * ``SOP_ACIS_WARMBOOT_DEAHOUSEKEEPING`` (|wmboot_hkp_pdf|_) (|wmboot_hkp_doc|_)
 * ``SOT_SI_SET_ACIS_FP_TEMP_TO_M121C`` (|fptemp_121_pdf|_) (|fptemp_121_doc|_)
 
