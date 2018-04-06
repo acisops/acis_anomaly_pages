@@ -1,4 +1,4 @@
-.. _dpaa-shutdown:
+.. _door-b-enb:
 
 ACIS Door Mechanism side B Anomalous Enable
 ===========================================
@@ -33,14 +33,16 @@ Within a major frame (32.2 seconds), one should see:
   to the thermistors being powered up when the mechanism is enabled. Side A: 1MAHOAT and 1MAHCAT.
 * 1DACTAT (the Door Angle Potentiometer) should be unchanged at 70 +/- 5 degrees,
   indicating the door has not moved.
-* ACIS should still be recieving photons if a science run is in progress.
+* ACIS should still be recieving photons if a science run is in progress. For faint sources
+  it may be difficult to tell door-closed background from sky-looking signal.
 * 1MECLBCL (ACIS door closed indicator) will read NCLOS (not closed); normally this
   is unpowered and reads CLOS (closed). Note this item does not appear on the ACIS
   Real Time telemetry pages. The OC has access to this item on GRETA pages. Side A: 1MECLACL.
 
-All other hardware telemetry should be nominal. The current values for these (except 1MECLBCL)
-can be found on our Real-Time Telemetry pages.  Older data can be examined from the dump files
-or the engineering archive.
+All other hardware telemetry should be nominal. The current values
+for these (except 1MECLBCL and 1MECLACL) can be found on our Real-Time
+Telemetry pages.  Older data can be examined from the dump files or the
+engineering archive.
 
 What is the response?
 ---------------------
