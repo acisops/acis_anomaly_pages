@@ -21,5 +21,6 @@ Contents:
 * :doc:`hi_lo_anomaly` (Last Updated June 28, 2017)
 * :doc:`trickle_bias_tplane` (Last Updated November 18, 2016)
 * :doc:`fep_thresholder` (Last updated August 14, 2017)
+* :doc:`door_b_enb` (Last updated April 6, 2018) (TBR)
 
 :doc:`howto`
