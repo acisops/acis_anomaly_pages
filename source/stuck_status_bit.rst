@@ -48,7 +48,7 @@ We need to:
  
 * Send an e-mail to the ACIS team (including acisdude, Peter Ford, Bob Goeke,
   Mark Bautz, and Bev LaMarr) to alert them to the existence of the anomaly.
-* Notify the Chandra Operations team on the telecon after the SCS-107 execution was discovered.  If not possible, send email to ``sot_yellow_alert`` describing the situation, including the time of the anomaly and the Obsid when it occured.
+* Notify the Chandra Operations team on the telecon after the SCS-107 execution was discovered.  If not possible, send email to ``sot_yellow_alert@head`` describing the situation, including the time of the anomaly and the Obsid when it occured.
 * Prepare a CAP and submit it for review to capreview AT ipa DOT harvard DOT edu,
   and cc: acisdude. It will also be necessary to call the OC/CC to determine 
   which number should be used for the CAP.

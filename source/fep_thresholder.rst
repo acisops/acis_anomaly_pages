@@ -55,7 +55,7 @@ We need to:
 
 * Process the dump data and get access to the CXC products
 
-* Notify ``sot_yellow_alert`` and/or brief the 9am telecon
+* Notify ``sot_yellow_alert@head`` and/or brief the 9am telecon
 
 * Convene a telecon at the next reasonable moment. This would include the ACIS team as above. Agreement by MIT via e-mail is a possible alternative.
 

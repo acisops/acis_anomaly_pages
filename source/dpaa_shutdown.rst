@@ -65,7 +65,7 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   via email. If the diagnosis is consistent with previous DPA-A anomalies, proceed with the
   recovery. If the diagnosis is not consistent with previous DPA-A anomalies, stop and start a
   more involved analysis with the ACIS team.
-* As soon as the time of the shutdown is known, inform ``sot_yellow_alert``. 
+* As soon as the time of the shutdown is known, inform ``sot_yellow_alert@head``. 
 * Identify whether or not additional comm time is needed and if so ask the OC/LSE to request it.
 * Send an email to ``sot_red_alert@head`` and call a telecon with the FOT, SOT, and FDs to brief
   them on the diagnosis and the plan to develop a CAP to recover.
