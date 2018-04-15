@@ -39,8 +39,13 @@ Within a major frame (32.2 seconds), one should see:
   the load suddenly dropping to zero
 
 All other hardware telemetry should be nominal. The current values for these can be found 
-on our Real-Time Telemetry pages.  Older data can be examined from the dump files or the 
-engineering archive.
+on our Real-Time Telemetry pages. Older data can be examined from the dump files or the 
+engineering archive. 
+
+To extract information from the dump data, run ACORN on it as per the instructions in
+`"Running ACORN on data dumps in the case of an anomaly (04/06/16)" <http://cxc.cfa.harvard.edu/acis/memos/Dump_Acorn.html>`_. 
+Information from the tracelog files written by the ACORN tools can be plotted 
+using the Python or command-line interfaces to ACISpy, see below for details.
 
 
 What is the first response?
@@ -171,3 +176,13 @@ Relevant Notes/Memos
   <http://cxc.cfa.harvard.edu/acis/memos/Flight_Note572_DEA_Shutdown_Closeout_merged.pdf>`_
   (includes SOT memo "ACIS DEA-A Off anomaly" by Edgar & Germain)
 * `ACIS - DEA ADC Reset (Dorothy Gordon) <http://cxc.cfa.harvard.edu/acis/memos/gordon_dea_20051118.pdf>`_
+
+.. |mptl| replace:: ``multiplot_tracelog`` Command-line Script
+.. _mptl: http://cxc.cfa.harvard.edu/acis/acispy/command_line.html#multiplot-tracelog
+
+Relevant ACISpy Links
+---------------------
+
+* `Reading MSID Data from Tracelog File <http://cxc.cfa.harvard.edu/acis/acispy/loading_data.html#reading-msid-data-from-a-tracelog-file>`_
+* `Plotting Data in Python <http://cxc.cfa.harvard.edu/acis/acispy/plotting_data.html>`_
+* |mptl|_

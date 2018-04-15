@@ -42,8 +42,14 @@ Within a major frame (32.2 seconds), one should see:
 * The software and hardware bilevels will likely not have normal values if BEP side A is active.
 
 All other hardware telemetry should be nominal. The current values for these can be found
-on our Real-Time Telemetry pages.  Older data can be examined from the dump files or the
+on our Real-Time Telemetry pages. Older data can be examined from the dump files or the
 engineering archive.
+
+To extract information from the dump data, run ACORN on it as per the instructions in
+`"Running ACORN on data dumps in the case of an anomaly (04/06/16)" <http://cxc.cfa.harvard.edu/acis/memos/Dump_Acorn.html>`_. 
+Information from the tracelog files written by the ACORN tools can be plotted 
+using the Python or command-line interfaces to ACISpy, see below for details.
+
 
 What is the response?
 ---------------------
@@ -187,3 +193,13 @@ Relevant Notes/Memos
 * `Flight Note 394 <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/flightnotes/controlled/Flight_Note394_DPA_Turn_Off_Anomaly.pdf>`_
 * `Flight Note 417 <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/flightnotes/controlled/Flight_Note417_DPA_Turn_Off_Anomaly.pdf>`_
 * `Flight Note 563 <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/flightnotes/controlled/Flight_Note563_DPA-A_Turn_Off_Anomaly_Report.pdf>`_
+
+.. |mptl| replace:: ``multiplot_tracelog`` Command-line Script
+.. _mptl: http://cxc.cfa.harvard.edu/acis/acispy/command_line.html#multiplot-tracelog
+
+Relevant ACISpy Links
+---------------------
+
+* `Reading MSID Data from Tracelog File <http://cxc.cfa.harvard.edu/acis/acispy/loading_data.html#reading-msid-data-from-a-tracelog-file>`_
+* `Plotting Data in Python <http://cxc.cfa.harvard.edu/acis/acispy/plotting_data.html>`_
+* |mptl|_
