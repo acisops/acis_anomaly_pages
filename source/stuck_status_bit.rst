@@ -6,7 +6,8 @@ ACIS Science Run Termination Failure Anomaly
 What is it?
 -----------
 
-The science run fails to terminate when SCS-107 issues two stopScience commands during bias creation.
+The science run fails to terminate when SCS-107 issues two stopScience 
+commands during bias creation.
 
 When did it happen before?
 --------------------------
@@ -26,14 +27,17 @@ How is this anomaly diagnosed?
 
 * After the execution of SCS-107, the 1STAT1ST ACIS status bit fails to set as 
   expected, from Science Active (0 or RED) to Science Idle (1 or GREEN). The 
-  ACIS status bits are available on both the ACIS hardware web pages and the PMON web pages where 1STAT1ST is the seventh digit in the Bilevels display.
+  ACIS status bits are available on both the ACIS hardware web pages and the 
+  PMON web pages where 1STAT1ST is the seventh digit in the Bilevels display.
 
-* The 1STAT1ST status bit indicates that the science process failed to terminate and exit when 
-  SCS-107 was run.
+* The 1STAT1ST status bit indicates that the science process failed to terminate 
+  and exit when SCS-107 was run.
 
 * All other indicators (ACIS voltages, input currents, power, temperatures, and
   SIM position) should indicate that the equipment has shut down as normal for 
-  an SCS-107 run, so the instrument is safe.  Since SCS-107 issues a WSPOW00000 command that powers down the video boards and the FEPs, the input currents on the DPA side A and B should be:
+  an SCS-107 run, so the instrument is safe. Since SCS-107 issues a WSPOW00000 
+  command that powers down the video boards and the FEPs, the input currents on 
+  the DPA side A and B should be:
   
   - DPA side A, 1DPICACU < 0.6 A
   - DPA side B, 1DPICBCU < 0.4 A
@@ -48,7 +52,9 @@ We need to:
  
 * Send an e-mail to the ACIS team (including acisdude, Peter Ford, Bob Goeke,
   Mark Bautz, and Bev LaMarr) to alert them to the existence of the anomaly.
-* Notify the Chandra Operations team on the telecon after the SCS-107 execution was discovered.  If not possible, send email to ``sot_yellow_alert`` describing the situation, including the time of the anomaly and the Obsid when it occured.
+* Notify the Chandra Operations team on the telecon after the SCS-107 execution 
+  was discovered. If not possible, send email to ``sot_yellow_alert`` describing 
+  the situation, including the time of the anomaly and the Obsid when it occured.
 * Prepare a CAP and submit it for review to capreview AT ipa DOT harvard DOT edu,
   and cc: acisdude. It will also be necessary to call the OC/CC to determine 
   which number should be used for the CAP.
@@ -73,7 +79,7 @@ Impacts
 
 * The anomaly occurs after SCS-107 execution, so no science is lost.
 * The warmboot of the BEP will reset the parameters of the TXINGS patch to their
-  defaults.  They can be updated in the weekly load through a SAR.
+  defaults. They can be updated in the weekly load through a SAR.
 * If a science run is started before a warmboot can be performed, testing on the 
   ACIS Engineering Unit has shown that the initiation of the run will clear the 
   problem, but not without generating an error message due to "clobbering" the 
