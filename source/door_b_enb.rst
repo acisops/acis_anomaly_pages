@@ -73,8 +73,6 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 ...possibly useful things left over from the DEA-A poweroff page I cribbed from... TBR
 
 * Identify whether or not additional comm time is needed and if so ask the OC/LSE to request it.
-* Send an email to ``sot_red_alert@head`` and call a telecon with the FOT, SOT, and FDs to brief
-  them on the diagnosis and the plan to develop a CAP to recover.
 * Prepare a CAP and submit it for review to capreview AT ipa DOT harvard DOT edu, and cc: acisdude.
   It will also be necessary to call the OC/CC to determine which number should be used for the CAP.
   This CAP will have the following steps:
@@ -158,7 +156,8 @@ a large number of systems, and presumably all of them are subject to SEUs which 
 be interpreted by the hardware as spurious commanding. In nearly all cases, this
 situation is benign. For example, commanding the PSMC to the existing state is a NOP.
 Commanding something to turn on which is disabled is likewise a NOP. Disabling
-a system that's active is a NOP (TBR... is this true?).
+a system that's active turns it off. We have anomaly pages for enabling and turning on
+the systems that are normally on.
 
 There are, however, a few cases to note. Enabling a system that is normally off and
 disabled leaves us one spurious command away from activating a system inadertantly. 
