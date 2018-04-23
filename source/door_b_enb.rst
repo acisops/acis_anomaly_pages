@@ -28,19 +28,28 @@ How is this anomaly diagnosed?
 Within a major frame (32.2 seconds), one should see:
 
 * 1MDBUBON (Door Enable side B) change from 0 to 1 (Disabled to Enabled). Side A: 1MDBUAON.
+  Enabling this mechanism powers up several sensors which then begin to read actual values.
 * 1MCDRBCL (Door close drive side B) is OFF. Side A: 1MCDRACL.
+* 1MODRBOP (Door open drive side B) is OFF. Side A: 1MODRAOP. If either mechanism is active,
+  the door may be moving.
 * Temperatures 1MAHOBT and 1MAHCBT will show credible values (-2 C in this case), due
   to the thermistors being powered up when the mechanism is enabled. Side A: 1MAHOAT and 1MAHCAT.
+  Active drives will show temperatures of 71 +/- 10 C.
 * 1DACTAT (the Door Angle Potentiometer) should be unchanged at 70 +/- 5 degrees,
-  indicating the door has not moved.
+  indicating the door has not moved. If the door is closed, this will read 10 +/- 5 degrees.
+  Note there is only one sensor for this quantity.
 * ACIS should still be recieving photons if a science run is in progress. For faint sources
   it may be difficult to tell door-closed background from sky-looking signal.
-* 1MECLBCL (ACIS door closed indicator) will read NCLOS (not closed); normally this
-  is unpowered and reads CLOS (closed). Note this item does not appear on the ACIS
-  Real Time telemetry pages. The OC has access to this item on GRETA pages. Side A: 1MECLACL.
+* 1MECLBCL (ACIS door closed limit switch indicator) will read NCLOS (not closed); normally this
+  is unpowered and reads CLOS (closed).  Side A: 1MECLACL.
+* 1MEOPBOP (ACIS door open limit switch indicator) will read OPEN (not closed); normally this
+  is unpowered and reads OPEN, so it should not have changed. If the door has moved off the
+  limit switch, this will change to NOPE (not open). Side A: 1MEOPAOP.
+  Note the limit switch items do not appear on the ACIS Real Time telemetry pages.
+  The OC has access to this item on GRETA pages.
 
 All other hardware telemetry should be nominal. The current values
-for these (except 1MECLBCL and 1MECLACL) can be found on our Real-Time
+for these (except 1MECLBCL, 1MECLACL, 1MEOPBOP, and 1MEOPAOP) can be found on our Real-Time
 Telemetry pages.  Older data can be examined from the dump files or the
 engineering archive.
 
@@ -49,15 +58,29 @@ What is the response?
 
 Our real-time web pages will alert us and the Lead System Engineer will call us. We need to:
 
-* Send an email to the ACIS team at the official anomaly email address. If it is off-hours, call
-  Peter and Bob.
+* Send an email to the ACIS team at the official anomaly email address, ``acis_anomaly@head``.. 
+  If it is off-hours, another ACIS Ops team member should call Peter, Jim Francis, Kari and Bob.
 * Send an email to ``sot_red_alert@head`` announcing that the ACIS team is aware of the enabling
   of the door mechanism, and calling a telecon to discuss disabling it. Note that other
   mechanisms (valves) can be sorted out later and are not in any sense urgent.
-* Ask the Lead Systems Engineer and the Flight Director to send the command 1MCMDBDS to
+* Recommend to the Lead Systems Engineer and the Flight Director to send the command 1MCMDBDS to
   disable the door mechanism, side B. They may wish to test the command link by first
   sending a no-op command to the SI RCTU (CNOOPSI command). Use ``CAP 1438`` as a guide.
   The side A command would be 1MCMDADS.
+
+
+If there is not time during the comm at which the anomaly was discovered to send the above commands: 
+
+* Prepare a CAP using ``CAP 1438`` as a guide to send the commands at the next
+  opportunity.  Submit it for review to capreview AT ipa DOT harvard DOT edu, and cc: acisdude.
+  It will also be necessary to call the OC/CC to determine which number should be used for the CAP.
+  This CAP will have the following steps:
+
+  - Send a NO-OP command, CNOOPSI, and monitor command count increment.
+  - Send command 1MCMDBDS to disable side B of the door mechanism. (Side A: 1MCMDADS).
+  - Verify telemetry has returned to normal: Mechanism temperatures are open-circuit, ~440 C;
+    Limit switches are open circuit: OPEN and CLOS. Door position 1DACTAT is 70+/- 5 degrees.
+
 * Contact the GOT Duty Officer to inform that we need the dump data as soon as possible and to
   email or call us when the dump file is available.
 * Process the dump data and make sure that there is nothing anomalous in the data *BEFORE*
@@ -65,22 +88,9 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   If yes, it should appear as if in one frame the door mechanism was enabled.
 * Once analysis of the dump data is complete, convene a telecon at the next reasonable moment
   with the ACIS team and review the diagnosis. The MIT ACIS team (Peter Ford, Bob Goeke, Mark
-  Bautz, and Bev LaMarr) should also be included in the discussion, either in the telecon or
-  via email. If the diagnosis is consistent with previous anomalies, (TBR... proceed with the
-  recovery). If the diagnosis is not consistent with previous spurious command anomalies,
-  stop and start a more involved analysis with the ACIS team.
-
-...possibly useful things left over from the DEA-A poweroff page I cribbed from... TBR
-
-* Identify whether or not additional comm time is needed and if so ask the OC/LSE to request it.
-* Prepare a CAP and submit it for review to capreview AT ipa DOT harvard DOT edu, and cc: acisdude.
-  It will also be necessary to call the OC/CC to determine which number should be used for the CAP.
-  This CAP will have the following steps:
-
-  - Send a NOP command, CNOOPSI, and monitor command count increment.
-  - Send command 1MCMDBDS to disable side B of the door mechanism. (Side A: 1MCMDADS).
-  - Verify telemetry has returned to normal.
-
+  Bautz, Kari Haworth, Jim Francis, and Bev LaMarr) should also be included in the discussion,
+  either in the telecon or via email. If it is determined that the door has moved, this would
+  be a significant anomaly and should be discussed further.
 * Execute the CAP at the next available comm. Reloading the flight software patches can take
   a half an hour, so ensure that there is enough time in the comm to execute the entire procedure.
 * Write a shift report and distribute to ``sot_shift`` to inform the project that ACIS is restored
@@ -92,10 +102,13 @@ Impacts
 
 * While the door mechanism is enabled, any spurious command to move the door will result
 in undesired hardware action.
+* If the door were to close in flight, science data collection would stop until the door is
+reopened.
 
 Relevant Procedures
 -------------------
-
+Note these are included for reference only. DO NOT EXECUTE these SOPs without consultaiton with
+the ACIS anomaly team.
 
 SOT Procedures
 ++++++++++++++
@@ -154,8 +167,8 @@ A note on other similar potential anomalies
 Note that the hardware for communicating pulse commands to the PSMC is the same for
 a large number of systems, and presumably all of them are subject to SEUs which could
 be interpreted by the hardware as spurious commanding. In nearly all cases, this
-situation is benign. For example, commanding the PSMC to the existing state is a NOP.
-Commanding something to turn on which is disabled is likewise a NOP. Disabling
+situation is benign. For example, commanding the PSMC to the existing state is a NO-OP.
+Commanding something to turn on which is disabled is likewise a NO-OP. Disabling
 a system that's active turns it off. We have anomaly pages for enabling and turning on
 the systems that are normally on.
 
