@@ -84,7 +84,7 @@ If there is not time during the comm at which the anomaly was discovered to send
 * Contact the GOT Duty Officer to inform that we need the dump data as soon as possible and to
   email or call us when the dump file is available.
 * Process the dump data and make sure that there is nothing anomalous in the data *BEFORE*
-  the shutdown. We want to know if a new occurrence looks just like the previous occurrences.
+  the anomaly. We want to know if a new occurrence looks just like the previous occurrences.
   If yes, it should appear as if in one frame the door mechanism was enabled.
 * Once analysis of the dump data is complete, convene a telecon at the next reasonable moment
   with the ACIS team and review the diagnosis. The MIT ACIS team (Peter Ford, Bob Goeke, Mark
@@ -107,7 +107,7 @@ reopened.
 
 Relevant Procedures
 -------------------
-Note these are included for reference only. DO NOT EXECUTE these SOPs without consultaiton with
+Note these are included for reference only. DO NOT EXECUTE these SOPs without consultation with
 the ACIS anomaly team.
 
 SOT Procedures
