@@ -101,9 +101,9 @@ Impacts
 -------
 
 * While the door mechanism is enabled, any spurious command to move the door will result
-in undesired hardware action.
-* If the door were to close in flight, science data collection would stop until the door is
-reopened.
+  in undesired hardware action.
+* If the door were to close in flight, science data collection would stop until the door is 
+  reopened.
 
 Relevant Procedures
 -------------------
