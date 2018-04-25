@@ -43,6 +43,11 @@ All other hardware telemetry should be nominal. The current values for these can
 on our Real-Time Telemetry pages.  Older data can be examined from the dump files or the
 engineering archive.
 
+To extract information from the dump data, run ACORN on it as per the instructions in
+`"Running ACORN on data dumps in the case of an anomaly (04/06/16)" <http://cxc.cfa.harvard.edu/acis/memos/Dump_Acorn.html>`_. 
+Information from the tracelog files written by the ACORN tools can be plotted 
+using the Python or command-line interfaces to ACISpy, see below for details.
+
 What is the response?
 ---------------------
 
@@ -160,3 +165,13 @@ CAPs
 ++++
 
 * CAP 1055 (Commanding to Turn On DPA Side B and Warm Boot BEP Side A) (|cap1055_pdf|_) (|cap1055_doc|_)
+
+.. |mptl| replace:: ``multiplot_tracelog`` Command-line Script
+.. _mptl: http://cxc.cfa.harvard.edu/acis/acispy/command_line.html#multiplot-tracelog
+
+Relevant ACISpy Links
+---------------------
+
+* `Reading MSID Data from Tracelog File <http://cxc.cfa.harvard.edu/acis/acispy/loading_data.html#reading-msid-data-from-a-tracelog-file>`_
+* `Plotting Data in Python <http://cxc.cfa.harvard.edu/acis/acispy/plotting_data.html>`_
+* |mptl|_
