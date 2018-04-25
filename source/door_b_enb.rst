@@ -173,7 +173,7 @@ a system that's active turns it off. We have anomaly pages for enabling and turn
 the systems that are normally on.
 
 There are, however, a few cases to note. Enabling a system that is normally off and
-disabled leaves us one spurious command away from activating a system inadertantly. 
+disabled leaves us one spurious command away from activating a system inadvertently. 
 
 In the cases of the door mechanisms (side A or B) or the DEA side B, we should take
 immediate action to send a disable command, as activating the corresponding power
