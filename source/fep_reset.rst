@@ -87,12 +87,15 @@ are watching then:
 
 To look at these values:
 
-
 3. When available, obtain the relevant dump data file from the directory:
 
    ``/dsops/critical/GOT/input/`` 
    
-   which is located on the Ops LAN, and extract the relevant MSIDs.
+   which is located on the Ops LAN, and extract the relevant MSIDs using
+   ACORN, as per the instructions in
+   `"Running ACORN on data dumps in the case of an anomaly (04/06/16)" <http://cxc.cfa.harvard.edu/acis/memos/Dump_Acorn.html>`_.
+   The MSID data in the tracelog can then be examined using ACISpy, see
+   the links below for details.
 
 4. There are a total of 8 boards in the DPA, powered independently:
 
@@ -169,3 +172,13 @@ Relevant Notes/Memos
 
 * Obsid 15232: `ACIS OBSID 15232 Anomaly (5/17/2013) <ftp://acis.mit.edu/pub/acis-obsid-15232-anom.pdf>`_
 * Obsid 7647: `3-FEP reset anomaly (7/11/2007) <http://cxc.cfa.harvard.edu/acis/memos/OCCcm08039_closeout.pdf>`_
+
+.. |mptl| replace:: ``multiplot_tracelog`` Command-line Script
+.. _mptl: http://cxc.cfa.harvard.edu/acis/acispy/command_line.html#multiplot-tracelog
+
+Relevant ACISpy Links
+---------------------
+
+* `Reading MSID Data from Tracelog File <http://cxc.cfa.harvard.edu/acis/acispy/loading_data.html#reading-msid-data-from-a-tracelog-file>`_
+* `Plotting Data in Python <http://cxc.cfa.harvard.edu/acis/acispy/plotting_data.html>`_
+* |mptl|_

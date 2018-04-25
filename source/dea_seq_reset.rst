@@ -50,12 +50,16 @@ may also be red ``SMRABORT`` messages, and/or a ``FEP_IO_ERROR`` message.
 2. Run ACORN on the file as per the instructions in
    `"Running ACORN on data dumps in the case of an anomaly (04/06/16)" <http://cxc.cfa.harvard.edu/acis/memos/Dump_Acorn.html>`_.
    This provides history of input currents 1DPIC[AB]CU and the status bit 1STAT1ST mentioned above.
-
+   
 3. Run the MIT decom on the data dump as per the instructions in
    `"Memo on Running MIT tools (04/26/16)" <http://cxc.cfa.harvard.edu/acis/memos/Dump_Psci.html>`_. 
    This will provide history of the FEP temperatures mentioned above.
 
-4. MIT personnel can look at the error code, if any, in the science report packet at the
+4. Information from the tracelog files written by the ACORN and/or MIT tools can
+   be plotted using the Python or command-line interfaces to ACISpy, see below
+   for details.
+   
+5. MIT personnel can look at the error code, if any, in the science report packet at the
    end of the run, and verify the error code mentioned above.
 
 
@@ -96,3 +100,13 @@ Access locked (very terse problem reports):
 Open access, full memo:
 
 * `ACIS-MIT Software Problem Report 136 <ftp://acis.mit.edu/pub/SPR136-1.0.pdf>`_
+
+.. |mptl| replace:: ``multiplot_tracelog`` Command-line Script
+.. _mptl: http://cxc.cfa.harvard.edu/acis/acispy/command_line.html#multiplot-tracelog
+
+Relevant ACISpy Links
+---------------------
+
+* `Reading MSID Data from Tracelog File <http://cxc.cfa.harvard.edu/acis/acispy/loading_data.html#reading-msid-data-from-a-tracelog-file>`_
+* `Plotting Data in Python <http://cxc.cfa.harvard.edu/acis/acispy/plotting_data.html>`_
+* |mptl|_
