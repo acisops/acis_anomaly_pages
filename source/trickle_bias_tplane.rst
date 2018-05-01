@@ -51,13 +51,10 @@ threshold crossing values:
 
 * If bias packets appearing after the first event packets is the only symptom,
   and bias maps are truncated, this will be apparent when SSR data are processed.
-  Likely the FOT will be the first to notice it.
+  Likely the CXC DS Ops will be the first to notice it.
 * If bias packets appear after the first event packets, but biases are complete,
-  the FOT will also be unable to process the bias data, although the event data
-  will be unaffected. As in the above case, ACIS will be unlikely to notice the
-  interleaving in real time, unless we are watching pmon closely and see the
-  simultaneous arrival of bias and event packets. FOT data processing will inform
-  us of the problem.
+  the situation is benign. It will have no effect on CXC DS Ops data processing,
+  and no action (or even diagnosis) is necessary.
 * If the T-plane has latched, the most immediately obvious symptom is saturated
   telemetry on one or more FEPs, with far too many events, and skipped frames on
   those FEPs. On an affected FEP, the threshold crossing counts in pmon will not
@@ -86,11 +83,12 @@ What is the first response?
   command, and start science.
 
 * Afterward, the team may examine the telemetry stream at leisure to see what may have
-  triggered the latchup. If there was no interleaving of bias and events, look for any
-  other simultaneous high demand on DMA transfers out of the affected FEPs.
+  triggered the latchup. If there was no interleaving of bias and events, ask the MIT
+  ACIS team to look for any other simultaneous high demand on DMA transfers out of the
+  affected FEPs.
 
-* If there is no latchup, but some bias maps are truncated or missing, advise the FOT,
-  who will replace the bias maps with equivalent recent ones.
+* If there is no latchup, but some bias maps are truncated or missing, advise the CXC
+  DS Ops, who will replace the bias maps with equivalent recent ones.
 
 Impacts
 -------
@@ -98,10 +96,6 @@ Impacts
 * Once the T-plane latches, science will be lost from the latched FEPs for the rest
   of the science run, and some science is likely to be lost from remaining FEPs due
   to telemetry saturation.
-
-* In the absence of a latchup, FOT data processing will be unable to generate a bias
-  map for the observation, and wll have to revert to a recent bias map for each chip
-  with the same subarrays and exposure times.
 
 Relevant Procedures
 -------------------
@@ -112,15 +106,32 @@ Relevant Procedures
 .. |feps_down| replace:: ``1A_WS003_165.CLD``, ``WSFEPALLDN`` (command to power down all FEPs)
 .. _feps_down: http://acis.mit.edu/cgi-bin/get-cld?cld=1A_WS003_165.CLD
 
+.. |te_start| replace:: ``1A_XT000_190.CLD``, ``XTZ0000005`` (start TE science)
+.. _te_start: http://acis.mit.edu/cgi-bin/get-cld?cld=1A_XT000_190.CLD
+
+.. |cc_start| replace:: ``1A_XCZ000_190.CLD``, ``XCZ0000005`` (start CC science)
+.. _cc_start: http://acis.mit.edu/cgi-bin/get-cld?cld=1A_XCZ000_190.CLD
 
 Command Files
 +++++++++++++
 
 * |stop_sci|_
 * |feps_down|_
+* |te_start|_
+* |cc_start|_ 
 
 Currently there are 2 6-chip and 3 5-chip power commands in CLDs. The 5-chip commands
 all power an additional, unneeded FEP.
+
+==============  =====================  ============
+Power Command   CLD File               Chips
+==============  =====================  ============
+``WSPOW08F3F``  ``1A_WS03E_140.CLD``   I0-I3, S3
+``WSPOW04F3F``  ``1A_WS043F_140.CLD``  I0-I3, S2
+``WSPOW1CC3F``  ``1A_WS040_233.CLD``   I2-I3, S2-S4
+``WSPOW18F3F``  ``1A_WSPOW1_233.CLD``  I0-I3, S3-S4
+``WSPOW3F03F``  ``1A_WS00F_233.CLD``   S0-S5
+==============  =====================  ============
 
 Relevant Notes/Memos
 --------------------
