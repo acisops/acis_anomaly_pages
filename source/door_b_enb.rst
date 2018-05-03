@@ -40,25 +40,28 @@ Within a major frame (32.2 seconds), one should see:
   Note there is only one sensor for this quantity.
 * ACIS should still be recieving photons if a science run is in progress. For faint sources
   it may be difficult to tell door-closed background from sky-looking signal.
-* 1MECLBCL (ACIS door closed limit switch indicator) will read NCLOS (not closed); normally this
-  is unpowered and reads CLOS (closed).  Side A: 1MECLACL.
-* 1MEOPBOP (ACIS door open limit switch indicator) will read OPEN (not closed); normally this
-  is unpowered and reads OPEN, so it should not have changed. If the door has moved off the
-  limit switch, this will change to NOPE (not open). Side A: 1MEOPAOP.
-  Note the limit switch items do not appear on the ACIS Real Time telemetry pages.
-  The OC has access to this item on GRETA pages.
 
 All other hardware telemetry should be nominal. The current values
 for these (except 1MECLBCL, 1MECLACL, 1MEOPBOP, and 1MEOPAOP) can be found on our Real-Time
 Telemetry pages.  Older data can be examined from the dump files or the
 engineering archive.
 
+The following limit switch items to not appear on the Real-Time Telemetry pages, but the OC
+can see them on Greta displays.
+
+* 1MECLBCL (ACIS door closed limit switch indicator) will read NCLOS (not closed); normally this
+  is unpowered and reads CLOS (closed).  Side A: 1MECLACL.
+* 1MEOPBOP (ACIS door open limit switch indicator) will read OPEN; normally this
+  is unpowered and reads OPEN, so it should not have changed. If the door has moved off the
+  limit switch, this will change to NOPE (not open). Side A: 1MEOPAOP.
+
+
 What is the response?
 ---------------------
 
 Our real-time web pages will alert us and the Lead System Engineer will call us. We need to:
 
-* Send an email to the ACIS team at the official anomaly email address, ``acis_anomaly@head``.. 
+* Send an email to the ACIS team at the official anomaly email address, ``acis-anomaly -at- googlegroups -dot- com``.. 
   If it is off-hours, another ACIS Ops team member should call Peter, Jim Francis, Kari and Bob.
 * Send an email to ``sot_red_alert@head`` announcing that the ACIS team is aware of the enabling
   of the door mechanism, and calling a telecon to discuss disabling it. Note that other
@@ -91,8 +94,7 @@ If there is not time during the comm at which the anomaly was discovered to send
   Bautz, Kari Haworth, Jim Francis, and Bev LaMarr) should also be included in the discussion,
   either in the telecon or via email. If it is determined that the door has moved, this would
   be a significant anomaly and should be discussed further.
-* Execute the CAP at the next available comm. Reloading the flight software patches can take
-  a half an hour, so ensure that there is enough time in the comm to execute the entire procedure.
+* Execute the CAP at the next available comm. 
 * Write a shift report and distribute to ``sot_shift`` to inform the project that ACIS is restored
   to its default configuration.
 
@@ -178,7 +180,7 @@ disabled leaves us one spurious command away from activating a system inadverten
 In the cases of the door mechanisms (side A or B) or the DEA side B, we should take
 immediate action to send a disable command, as activating the corresponding power
 supply would have negative consequences. The command to disable DEA side B is 1DEPSBDS.
-The ACIS hardware commands are documented `here <http://acis.mit.edu/acis/ipcl/ipcl-cmds-08jun98.html>`_
+The ACIS hardware commands are documented `here <http://cxc.cfa.harvard.edu/acis/ACIS_Hardware_Commands.html>`_
 (among other places).
 In the cases of the vent valve mechanisms, either the small or large vent valve,
 either side A or side B, this can be done at our leisure, since even if these
