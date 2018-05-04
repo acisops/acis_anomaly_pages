@@ -46,7 +46,7 @@ for these (except 1MECLBCL, 1MECLACL, 1MEOPBOP, and 1MEOPAOP) can be found on ou
 Telemetry pages.  Older data can be examined from the dump files or the
 engineering archive.
 
-The following limit switch items to not appear on the Real-Time Telemetry pages, but the OC
+The following limit switch items do not appear on the Real-Time Telemetry pages, but the OC
 can see them on Greta displays.
 
 * 1MECLBCL (ACIS door closed limit switch indicator) will read NCLOS (not closed); normally this
@@ -81,7 +81,9 @@ If there is not time during the comm at which the anomaly was discovered to send
 
   - Send a NO-OP command, CNOOPSI, and monitor command count increment.
   - Send command 1MCMDBDS to disable side B of the door mechanism. (Side A: 1MCMDADS).
-  - Verify telemetry has returned to normal: Mechanism temperatures are open-circuit, ~440 C;
+  - Verify telemetry has returned to normal: 
+    1MDBUBON (Door Enable side B) changed from 1 to 0 (Enabled to Disabled; Side A: 1MDBUAON);
+    Mechanism temperatures are open-circuit, ~440 C;
     Limit switches are open circuit: OPEN and CLOS. Door position 1DACTAT is 70+/- 5 degrees.
 
 * Contact the GOT Duty Officer to inform that we need the dump data as soon as possible and to
