@@ -17,14 +17,14 @@ When did it happen before?
 
 Thirteen times:
 
-* June 26, 2000: 3 FEPs latched
+* June 26, 2000: 2 FEPs latched
 * January 21, 2001: interleaving of bias and events, no latchup
 * March 14, 2001: interleaving, no latchup, one short bias
 * October 29, 2001: 2 FEPs latched
 * November 4, 2001: 1 FEP latched
-* July 9, 2005: interleaving only
+* July 9, 2005: 2 FEPs latched
 * May 9, 2006: interleaving only
-* April 19, 2006: interleaving only
+* April 19, 2008: interleaving only
 * March 25, 2011: interleaving only
 * March 28, 2012: interleaving only
 * June 22, 2012: interleaving only
@@ -58,8 +58,9 @@ threshold crossing values:
 * If the T-plane has latched, the most immediately obvious symptom is saturated
   telemetry on one or more FEPs, with far too many events, and skipped frames on
   those FEPs. On an affected FEP, the threshold crossing counts in pmon will not
-  change from one frame to the next. The symptoms disappear with the next science
-  run, and may become apparent only when SSR data are examined.
+  change from one frame to the next. The symptoms disappear after the FEP power 
+  cycle in the next science run,, and may become apparent only when SSR data are 
+  examined. 
 
 If the next science run has started before the next comm, a latched T-plane
 anomaly will not be apparent until SSR data are processed.
@@ -74,13 +75,14 @@ What is the first response?
 
 * A special case: if the following science run is a no-bias version of the same
   SI mode, it will not recycle the FEP power. Send a stop science and a
-  ``WSFEPALLDN`` command to ACIS.
+  ``WSFEPALLDN`` command to ACIS. The following run will now take a bias.
 
 * If we see T-plane latchup on coming into comm, it may be worth trying to salvage
   the remainder of the science run. Check whether a CLD exists for a ``WSPOWXXXXX``
   packet to command the required set of DEA boards and FEPs. If so, and significant
   time remains for the obsid, execute stop science, ``WSFEPALLDN``, the ``WSPOWXXXXX``
-  command, and start science.
+  command, and start science. Because the FEPs have been recycled, the bias will be 
+  recomputed, so not all the subsequent science time will be recovered.
 
 * Afterward, the team may examine the telemetry stream at leisure to see what may have
   triggered the latchup. If there was no interleaving of bias and events, ask the MIT
@@ -120,18 +122,37 @@ Command Files
 * |te_start|_
 * |cc_start|_ 
 
-Currently there are 2 6-chip and 3 5-chip power commands in CLDs. The 5-chip commands
-all power an additional, unneeded FEP.
+Currently there are 3 6-chip, 4 5-chip, and 1 4-chip power commands in CLDs. 
+These commands power on all 6 FEPs, whether or not they are in use.
 
-==============  =====================  ============
-Power Command   CLD File               Chips
-==============  =====================  ============
-``WSPOW08F3F``  ``1A_WS03E_140.CLD``   I0-I3, S3
-``WSPOW04F3F``  ``1A_WS043F_140.CLD``  I0-I3, S2
-``WSPOW1CC3F``  ``1A_WS040_233.CLD``   I2-I3, S2-S4
-``WSPOW18F3F``  ``1A_WSPOW1_233.CLD``  I0-I3, S3-S4
-``WSPOW3F03F``  ``1A_WS00F_233.CLD``   S0-S5
-==============  =====================  ============
+6-chip power commands:
+
+==============  ======================  ============
+Power Command   CLD File                Chips
+==============  ======================  ============
+``WSPOW0CF3F``	``1A_WS028_140.CLD``	  I0-I3, S2-S3
+``WSPOW3F03F``	``1A_WS00F_233.CLD``	  S0-S5
+``WSPOW18F3F``	``1A_WSPOW1_233.CLD``	  I0-I3, S3-S4
+==============  ======================  ============
+
+5-chip power commands:
+
+==============  ======================  ============
+Power Command   CLD File                Chips
+==============  ======================  ============
+``WSPOW08F3F``	``1A_WS03E_140.CLD``	  I0-I3, S3
+``WSPOW04F3F``	``1A_WSP043F_140.CLD``  I0-I3, S2
+``WSPOW1CC3F``	``1A_WS040_233.CLD``	  I2-I3, S2-S4
+``WSPOW3E03F``	``1A_WS03F_233.CLD``	  S1-S5
+==============  ======================  ============
+
+4-chip power commands:
+
+==============  ======================  ============
+Power Command   CLD File                Chips
+==============  ======================  ============
+``WSPOW003F``	  ``1A_WS045_140.CLD``	  I0-I3
+==============  ======================  ============
 
 Relevant Notes/Memos
 --------------------
