@@ -59,7 +59,7 @@ threshold crossing values:
   telemetry on one or more FEPs, with far too many events, and skipped frames on
   those FEPs. On an affected FEP, the threshold crossing counts in pmon will not
   change from one frame to the next. The symptoms disappear after the FEP power 
-  cycle in the next science run,, and may become apparent only when SSR data are 
+  cycle in the next science run, and may become apparent only when SSR data are 
   examined. 
 
 If the next science run has started before the next comm, a latched T-plane
@@ -111,8 +111,8 @@ Relevant Procedures
 .. |te_start| replace:: ``1A_XT000_190.CLD``, ``XTZ0000005`` (start TE science)
 .. _te_start: http://acis.mit.edu/cgi-bin/get-cld?cld=1A_XT000_190.CLD
 
-.. |cc_start| replace:: ``1A_XCZ000_190.CLD``, ``XCZ0000005`` (start CC science)
-.. _cc_start: http://acis.mit.edu/cgi-bin/get-cld?cld=1A_XCZ000_190.CLD
+.. |cc_start| replace:: ``1A_XC000_190.CLD``, ``XCZ0000005`` (start CC science)
+.. _cc_start: http://acis.mit.edu/cgi-bin/get-cld?cld=1A_XC000_190.CLD
 
 Command Files
 +++++++++++++
@@ -130,9 +130,9 @@ These commands power on all 6 FEPs, whether or not they are in use.
 ==============  ======================  ============
 Power Command   CLD File                Chips
 ==============  ======================  ============
-``WSPOW0CF3F``	``1A_WS028_140.CLD``	  I0-I3, S2-S3
-``WSPOW3F03F``	``1A_WS00F_233.CLD``	  S0-S5
-``WSPOW18F3F``	``1A_WSPOW1_233.CLD``	  I0-I3, S3-S4
+``WSPOW0CF3F``	``1A_WS028_140.CLD``	I0-I3, S2-S3
+``WSPOW3F03F``	``1A_WS00F_233.CLD``	S0-S5
+``WSPOW18F3F``	``1A_WSPOW1_233.CLD``	I0-I3, S3-S4
 ==============  ======================  ============
 
 5-chip power commands:
@@ -140,10 +140,10 @@ Power Command   CLD File                Chips
 ==============  ======================  ============
 Power Command   CLD File                Chips
 ==============  ======================  ============
-``WSPOW08F3F``	``1A_WS03E_140.CLD``	  I0-I3, S3
+``WSPOW08F3F``	``1A_WS03E_140.CLD``	I0-I3, S3
 ``WSPOW04F3F``	``1A_WSP043F_140.CLD``  I0-I3, S2
-``WSPOW1CC3F``	``1A_WS040_233.CLD``	  I2-I3, S2-S4
-``WSPOW3E03F``	``1A_WS03F_233.CLD``	  S1-S5
+``WSPOW1CC3F``	``1A_WS040_233.CLD``	I2-I3, S2-S4
+``WSPOW3E03F``	``1A_WS03F_233.CLD``	S1-S5
 ==============  ======================  ============
 
 4-chip power commands:
@@ -151,7 +151,7 @@ Power Command   CLD File                Chips
 ==============  ======================  ============
 Power Command   CLD File                Chips
 ==============  ======================  ============
-``WSPOW003F``	  ``1A_WS045_140.CLD``	  I0-I3
+``WSPOW00F3F``	``1A_WS045_140.CLD``	I0-I3
 ==============  ======================  ============
 
 Relevant Notes/Memos
