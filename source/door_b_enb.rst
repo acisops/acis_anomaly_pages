@@ -146,10 +146,10 @@ CAPs
 ++++
 
 .. |cap1438_pdf| replace:: PDF
-.. _cap1438_pdf: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1301_1400/CAP_1438_dpaa_poweroff_recovery/CAP_1438_dpaa_poweroff_recovery.pdf
+.. _cap1438_pdf: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1401-1500/CAP_1438_ACIS_Mechanism_Disable/CAP_1438_ACIS_Mechanism_Disable.pdf
 
 .. |cap1438_doc| replace:: DOC
-.. _cap1438_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1301_1400/CAP_1438_dpaa_poweroff_recovery/CAP_1438_dpaa_poweroff_recovery.doc
+.. _cap1438_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1401-1500/CAP_1438_ACIS_Mechanism_Disable/CAP_1438_ACIS_Mechanism_Disable.doc
 
 .. |temp_cap1438_pdf| replace:: TEMP PDF
 .. _temp_cap1438_pdf: https://occweb.cfa.harvard.edu/occweb/FOT/operations/caps_in_process/CAP_1438_ACIS_Mechanism_Disable.pdf
@@ -157,7 +157,7 @@ CAPs
 .. |temp_cap1438_doc| replace:: TEMP DOC
 .. _temp_cap1438_doc: https://occweb.cfa.harvard.edu/occweb/FOT/operations/caps_in_process/CAP_1438_ACIS_Mechanism_Disable.doc
 
-* CAP 1438 (ACIS Mechanism Disable) (|temp_cap1438_pdf|_) (|temp_cap1438_doc|_) (link TBR: these are in the caps in process area)
+* CAP 1438 (ACIS Mechanism Disable) (|cap1438_pdf|_) (|cap1438_doc|_) (link TBR: these are in the caps in process area)
 
 Relevant Notes/Memos
 --------------------
