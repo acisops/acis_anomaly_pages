@@ -61,9 +61,9 @@ What is the response?
 
 Our real-time web pages will alert us and the Lead System Engineer will call us. We need to:
 
-* Send an email to the ACIS team at the official anomaly email address, ``acis-anomaly -at- googlegroups -dot- com``.. 
+* Send an email to the ACIS team at the official anomaly email address, ``acis-anomaly -at- googlegroups -dot- com``.
   If it is off-hours, another ACIS Ops team member should call Peter, Jim Francis, Kari and Bob.
-* Send an email to ``sot_red_alert@head`` announcing that the ACIS team is aware of the enabling
+* Send an email to ``sot_red_alert@cfa`` announcing that the ACIS team is aware of the enabling
   of the door mechanism, and calling a telecon to discuss disabling it. Note that other
   mechanisms (valves) can be sorted out later and are not in any sense urgent.
 * Recommend to the Lead Systems Engineer and the Flight Director to send the command 1MCMDBDS to

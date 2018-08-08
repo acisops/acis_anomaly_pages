@@ -54,7 +54,7 @@ What is the first response?
 Our real-time web pages will alert us and the Lead System Engineer will call us. We need to:
  
 * Send an email to the ACIS team at the official anomaly email address.  If it is off-hours, call Peter and Bob.
-* Send an email to ``sot_red_alert@head`` announcing that the ACIS team is aware of the DEA-A shutdown
+* Send an email to ``sot_red_alert@cfa`` announcing that the ACIS team is aware of the DEA-A shutdown
   and is investigating, and that a telecon will be called when more information is available.
 * Contact the GOT Duty Officer to inform that we need the dump data as soon as possible and to
   email or call us when the dump file is available.
@@ -68,9 +68,9 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   via email. If the diagnosis is consistent with previous DEA-A anomalies, proceed with the
   recovery. If the diagnosis is not consistent with previous DEA-A anomalies, stop and start a
   more involved analysis with the ACIS team.
-* As soon as the time of the shutdown is known, inform ``sot_yellow_alert@head``. 
+* As soon as the time of the shutdown is known, inform ``sot_yellow_alert@cfa``.
 * Identify whether or not additional comm time is needed and if so ask the OC/LSE to request it.
-* Send an email to ``sot_red_alert@head`` and call a telecon with the FOT, SOT, and FDs to brief
+* Send an email to ``sot_red_alert@cfa`` and call a telecon with the FOT, SOT, and FDs to brief
   them on the diagnosis and the plan to develop a CAP to recover.
 * Prepare a CAP and submit it for review to capreview AT ipa DOT harvard DOT edu, and cc: acisdude.
   It will also be necessary to call the OC/CC to determine which number should be used for the CAP.
