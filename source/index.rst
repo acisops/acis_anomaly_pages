@@ -16,7 +16,7 @@ Contents:
 * :doc:`dpaa_shutdown` (Last Updated March 6, 2017)
 * :doc:`dpab_shutdown` (Last Updated March 6, 2017)
 * :doc:`dea_shutdown` (Last Updated December 15, 2017)
-* :doc:`dea_seq_reset` (Last Updated March 20, 2018)
+* :doc:`dea_seq_reset` (Last Updated September 11, 2018)
 * :doc:`fep_reset` (Last Updated June 28, 2017)
 * :doc:`hi_lo_anomaly` (Last Updated June 28, 2017)
 * :doc:`trickle_bias_tplane` (Last Updated May 21, 2018)
