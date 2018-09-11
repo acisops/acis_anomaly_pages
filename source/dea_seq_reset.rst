@@ -28,7 +28,7 @@ How is this Anomaly Diagnosed?
 ------------------------------
 
 * The science run will be terminated, sending a ``scienceReport`` packet that will contain
-  non-zero ``fepErrorCodes`` and a non-zero ``terminationCode``.
+  non-zero ``fepErrorCodes`` and an anomalous ``terminationCode``.  A normal science run ends with a ``terminationCode = 1 # SMTERM_STOPCMD``.  The DEA sequencer reset will likely result in a ``terminationCode = 15 # SMTERM_FEP_IO_ERROR``.  The full list of ``terminationCode`` values is `here <http://acis.mit.edu/acis/ipcl/ipcl_notes.html#HDR31a>`_.
 * Within a major frame (32.2 seconds), there will be a slight drop in DPA Input Current A and/or B,
   (1DPICACU and/or 1DPICBCU) ~0.2-0.3 A. The drop in two input currents depends on which FEPs
   were active (DPA Side A runs FEPs 0, 1, and 2; DPA side B runs FEPs 3, 4, and 5.)
