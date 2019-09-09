@@ -85,7 +85,7 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   - Power on the DPA side A (|dpaa_on|_)
   - It is likely advisable to first issue a ``WSVIDALLDN`` to power off the video boards (|wsvidalldn|), 
     particularly if *Chandra* is heading into the radiation belts.  (The video boards are powered 
-    through the DEA and so would remain on if the DPA tripped during a science run.)
+    through the DEA and so would remain on if the DPA powered off during a science run.)
   - Reload the patches and restart DEA housekeeping (|stdfoptg|_)
   - Reset the focal plane temperature to -121 :math:`^\circ{\rm C}` (|fptemp_121|_)
 
