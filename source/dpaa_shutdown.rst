@@ -41,7 +41,7 @@ Within a major frame (32.2 seconds), one should see:
 * DPA-A POWER should go to zero
 * 1DP28AVO (DPA-A +28V Input Voltage) is expected to have a small uptick, ~0.5 V, consistent with
   the load suddenly dropping to zero
-* The software and hardware bilevels will likely not have normal values if BEP side A is inactive.
+* The software and hardware bilevels will likely not have normal values if BEP side A is active.
 
 All other hardware telemetry should be nominal. The current values for these can be found
 on our Real-Time Telemetry pages. Older data can be examined from the dump files or the
