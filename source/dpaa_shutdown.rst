@@ -12,6 +12,8 @@ The DPA-A shuts down anomalously, presumably due to a spurious command.
 
     The diagnosis and response to this anomaly presented in this document assumes that the
     active BEP is powered by DPA side A.
+    
+    *This anomaly requires human intervention to recover to science operations.*
 
 When did it happen before?
 --------------------------
