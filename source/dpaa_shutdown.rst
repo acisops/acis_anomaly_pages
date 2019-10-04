@@ -12,6 +12,8 @@ The DPA-A shuts down anomalously, presumably due to a spurious command.
 
     The diagnosis and response to this anomaly presented in this document assumes that the
     active BEP is powered by DPA side A.
+    
+    *This anomaly requires human intervention to recover to science operations.*
 
 When did it happen before?
 --------------------------
@@ -58,7 +60,7 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 
 * Send an email to the ACIS team at the official anomaly email address,
   ``acis-anomaly -at- googlegroups -dot- com``. If it is off-hours,
-  another ACIS Ops team member should call Peter, Bob, Kari, and Jim Francis.
+  another ACIS Ops team member should call Peter, Bob, and Jim Francis.
 * Send an email to ``sot_red_alert@cfa`` announcing that the ACIS team is aware of the DPA-A shutdown
   and is investigating, and that a telecon will be called when more information is available.
 * Contact the GOT Duty Officer to inform that we need the dump data as soon as possible and to
@@ -81,8 +83,9 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   This CAP will have the following steps:
 
   - Power on the DPA side A (|dpaa_on|_)
-  - If *Chandra* is heading into the radiation belts, it may be necessary to also issue a ``WSVIDALLDN``
-    command to power off the video boards (|wsvidalldn|_)
+  - It is likely advisable to first issue a ``WSVIDALLDN`` to power off the video boards (|wsvidalldn|), 
+    particularly if *Chandra* is heading into the radiation belts.  (The video boards are powered 
+    through the DEA and so would remain on if the DPA powered off during a science run.)
   - Reload the patches and restart DEA housekeeping (|stdfoptg|_)
   - Reset the focal plane temperature to -121 :math:`^\circ{\rm C}` (|fptemp_121|_)
 
