@@ -11,7 +11,8 @@ The DPA-B shuts down anomalously, presumably due to a spurious command.
 .. note::
 
     The diagnosis and response to this anomaly presented in this document assumes that the
-    active BEP is powered by DPA side A.
+    active BEP is powered by DPA side A.  This anomaly requires human
+    intervention to recover to science operations.
 
 When did it happen before?
 --------------------------
@@ -35,9 +36,10 @@ Within a major frame (32.2 seconds), one should see:
 * 1DPICBCU (DPA-B Input Current) drop to < 0.2 A (this value is noisy, so take an average)
 * DPA-B POWER should go to zero
 * 1DP28BVO (DPA-B +28V Input Voltage) is expected to have a small uptick, ~0.5 V, consistent with
-  the load suddenly dropping to zero
+  the load suddenly dropping to zero. May require more than 1 MJF.
 * If 1STAT2ST = 0, the DPA-B shutdown has caused a watchdog reboot of the BEP in use. This will
-  happen if the DPA-B shuts down during an observation which is using B-side FEPs.
+  happen if the DPA-B shuts down during an observation which is using
+  B-side FEPs. If a watchdog reboot occurs, the software will revert to Version 11.
 
 All other hardware telemetry should be nominal. The current values for these can be found
 on our Real-Time Telemetry pages.  Older data can be examined from the dump files or the
@@ -55,7 +57,7 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 
 * Send an email to the ACIS team at the official anomaly email address,
   ``acis-anomaly -at- googlegroups -dot- com``. If it is off-hours, 
-  another ACIS Ops team member should call Peter, Bob, Kari, and Jim Francis.
+  another ACIS Ops team member should call Peter, Bob, and Jim Francis.
 * Send an email to ``sot_red_alert@cfa`` announcing that the ACIS team is aware of the DPA-B shutdown
   and is investigating, and that a telecon will be called when more information is available.
 * Contact the GOT Duty Officer to inform that we need the dump data as soon as possible and to
@@ -81,17 +83,24 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   that a watchdog reboot of the BEP will be avoided only if it occurs during an observation using
   only 1 or 2 CCDs, and until an observation occurs using 3 or more CCDs.
 
-  1. If the BEP has not executed a watchdog reboot, the steps should be:
+  At this point, there are 2 possible responses:
+
+     If the BEP has not executed a watchdog reboot, the steps should be:
 
      - Turn on DPA side B (|dpab_on|_, this can be executed even if a science run is currently in
        progress, see note below).
 
-  2. If the BEP has executed a watchdog reboot, the steps should be:
+     Otherewise, if the BEP has executed a watchdog reboot, the steps should be:
 
      - Stop the science run and power down the FEPs and video boards (|standby|_)
      - Turn on DPA side B (|dpab_on|_)
      - Warm-boot the BEP and start a DEA housekeeping run (|warmboot|_).
 
+  Unique circumstances occur during perigee passages. Presently, after the inbound ECS measurement is 
+  complete, a WSPOW00000 is issued followed by a WSPOW0002A an hour later. Timing of the shutdown as 
+  well as the Comm in which the shuitdown is detected could mean that either or both of the WSPOW
+  commands were not executed.  In this case the appropriate WSPOW command(s) should be added to the CAP.
+ 
 * Execute the CAP at the next available comm.
 * Write a shift report and distribute to ``sot_shift`` to inform the project that ACIS is restored
   to its default configuration.
@@ -169,6 +178,15 @@ CAPs
 
 .. |mptl| replace:: ``multiplot_tracelog`` Command-line Script
 .. _mptl: http://cxc.cfa.harvard.edu/acis/acispy/command_line.html#multiplot-tracelog
+
+
+Relevan Notes/Memos
++++++++++++++++++++
+
+* `Flight Note 417 <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/flightnotes/controlled/Flight_Note417_DPA_Turn_Off_Anomaly.pdf>`_
+
+This flight note covered the December 2002 DPA-A Shutdown and was used to close this issue out as well.
+
 
 Relevant ACISpy Links
 ---------------------
