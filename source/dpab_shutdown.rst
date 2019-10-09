@@ -11,8 +11,9 @@ The DPA-B shuts down anomalously, presumably due to a spurious command.
 .. note::
 
     The diagnosis and response to this anomaly presented in this document assumes that the
-    active BEP is powered by DPA side A.  This anomaly requires human
-    intervention to recover to science operations.
+    active BEP is powered by DPA side A.  
+
+    *This anomaly requires human intervention to recover to science operations.*
 
 When did it happen before?
 --------------------------
@@ -36,7 +37,7 @@ Within a major frame (32.2 seconds), one should see:
 * 1DPICBCU (DPA-B Input Current) drop to < 0.2 A (this value is noisy, so take an average)
 * DPA-B POWER should go to zero
 * 1DP28BVO (DPA-B +28V Input Voltage) is expected to have a small uptick, ~0.5 V, consistent with
-  the load suddenly dropping to zero. May require more than 1 MJF.
+  the load suddenly dropping to zero. May require more than 1 major frame.
 * If 1STAT2ST = 0, the DPA-B shutdown has caused a watchdog reboot of the BEP in use. This will
   happen if the DPA-B shuts down during an observation which is using
   B-side FEPs. If a watchdog reboot occurs, the software will revert to Version 11.
@@ -90,15 +91,15 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
      - Turn on DPA side B (|dpab_on|_, this can be executed even if a science run is currently in
        progress, see note below).
 
-     Otherewise, if the BEP has executed a watchdog reboot, the steps should be:
+     Otherwise, if the BEP has executed a watchdog reboot, the steps should be:
 
      - Stop the science run and power down the FEPs and video boards (|standby|_)
      - Turn on DPA side B (|dpab_on|_)
      - Warm-boot the BEP and start a DEA housekeeping run (|warmboot|_).
 
   Unique circumstances occur during perigee passages. Presently, after the inbound ECS measurement is 
-  complete, a WSPOW00000 is issued followed by a WSPOW0002A an hour later. Timing of the shutdown as 
-  well as the Comm in which the shuitdown is detected could mean that either or both of the WSPOW
+  complete, a ``WSPOW00000`` is issued followed by a ``WSPOW0002A`` an hour later. Timing of the shutdown as 
+  well as the Comm in which the shutdown is detected could mean that either or both of the WSPOW
   commands were not executed.  In this case the appropriate WSPOW command(s) should be added to the CAP.
  
 * Execute the CAP at the next available comm.
@@ -180,7 +181,7 @@ CAPs
 .. _mptl: http://cxc.cfa.harvard.edu/acis/acispy/command_line.html#multiplot-tracelog
 
 
-Relevan Notes/Memos
+Relevant Notes/Memos
 +++++++++++++++++++
 
 * `Flight Note 417 <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/flightnotes/controlled/Flight_Note417_DPA_Turn_Off_Anomaly.pdf>`_
