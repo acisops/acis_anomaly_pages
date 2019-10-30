@@ -11,6 +11,10 @@ loss of science data from the affected FEP(s) for the rest of the science run.
 The unaffected FEP(s) will continue to operate normally. This is different than 
 the :doc:`../dea_seq_reset` anomaly which shuts down all FEPs. 
 
+It is possible that this anomaly occurs while the bias is being taken, which 
+would result in no science data from the affected FEPs for the entire
+observation. 
+
 When did it happen before?
 --------------------------
 
@@ -19,6 +23,8 @@ FEP resets have occurred three times during the mission; most recently in 2013:
 * April 6, 2007, 2007:096:19:24:38.27, obsid: 7647
 * March 10, 2008, 2008:070:15:31:51.08, obsid: 7783
 * May 16, 2013, 2013:136:19:57:18, obsid: 15232
+* October 23, 2019, 2019:296:09:50:00, obsid: 47788 (this anomaly occurred 
+  during the taking of the bias)
 
 Will it happen again?
 ---------------------
@@ -141,7 +147,7 @@ Most likely, we will be notified by CXCDS Ops that data collection on one or mor
 the CCDs stopped during an observation. We need to:
 
 * Send an e-mail to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz,
-  and Bev LaMarr) to alert them to the existence of the anomaly.
+  Jim Francis, and Bev LaMarr) to alert them to the existence of the anomaly.
 
 * Examine data from the next observation, because in most cases the setup for 
   the next observation should clear the problem (though see the note below in 
