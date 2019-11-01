@@ -111,7 +111,7 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   anomaly occur during an ECS measurment.  Presently, after the inbound ECS measurement is 
   complete, a ``WSPOW00000`` is issued followed by a ``WSPOW0002A`` an hour later. Timing of the shutdown
   could mean that either or both of the WSPOW commands were not executed.  In this case the  
-  WSPOW0002A command should be added to the CAP.
+  WSPOW0002A command should be added to the CAP, if time permits.
  
 * Execute the CAP at the next available comm.
 * Write a shift report and distribute to ``sot_shift`` to inform the project that ACIS is restored
