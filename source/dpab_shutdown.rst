@@ -10,10 +10,11 @@ The DPA-B shuts down anomalously, presumably due to a spurious command.
 
 .. note::
 
-    The diagnosis and response to this anomaly presented in this document assumes that the
-    active BEP is powered by DPA side A.  
+    **IMPORTANT:** The diagnosis and response to this anomaly presented in this document assumes that
+    BEP A,  powered by DPA side A, is the active BEP.  
 
     *This anomaly requires human intervention to recover to science operations.*
+
 
 When did it happen before?
 --------------------------
@@ -48,8 +49,7 @@ engineering archive.
 
 To extract information from the dump data, run ACORN on it as per the instructions in
 `"Running ACORN on data dumps in the case of an anomaly (04/06/16)" <http://cxc.cfa.harvard.edu/acis/memos/Dump_Acorn.html>`_. 
-Information from the tracelog files written by the ACORN tools can be plotted 
-using the Python or command-line interfaces to ACISpy, see below for details.
+Information from the tracelog files written by the ACORN tools can be plotted using the Python or command-line interfaces to ACISpy, see below for details. 
 
 What is the response?
 ---------------------
@@ -59,48 +59,59 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 * Send an email to the ACIS team at the official anomaly email address,
   ``acis-anomaly -at- googlegroups -dot- com``. If it is off-hours, 
   another ACIS Ops team member should call Peter, Bob, and Jim Francis.
+
 * Send an email to ``sot_red_alert@cfa`` announcing that the ACIS team is aware of the DPA-B shutdown
   and is investigating, and that a telecon will be called when more information is available.
+
 * Contact the GOT Duty Officer to inform that we need the dump data as soon as possible and to
   email or call us when the dump file is available.
+
 * Process the dump data and make sure that there is nothing anomalous in the data *BEFORE*
   the shutdown. We want to know if a new occurrence looks just like the single previous 
   occurrence. If yes, it should appear as if in one frame the DPA-B turned off.
+
 * Once analysis of the dump data is complete, convene a telecon at the next reasonable moment
   with the ACIS team and review the diagnosis. The MIT ACIS team (Peter Ford, Bob Goeke, Mark
   Bautz, and Bev LaMarr) should also be included in the discussion, either in the telecon or
   via email. If the diagnosis is consistent with previous DPA-B anomalies, proceed with the
   recovery. If the diagnosis is not consistent with previous DPA-B anomalies, stop and start a
   more involved analysis with the ACIS team.
+
 * As soon as the time of the DPA-B shutdown is known, inform ``sot_yellow_alert@cfa``.
+
 * Identify whether or not additional comm time is needed and if so ask the OC/LSE to request it.
+
 * Send an email to ``sot_red_alert@cfa`` and call a telecon with the FOT, SOT, and FDs to brief
   them on the diagnosis and the plan to develop a CAP to recover.
+
+
 * Prepare a CAP and submit it for review to capreview AT ipa DOT harvard DOT edu, and cc: acisdude.
-  It will also be necessary to call the OC/CC to determine which number should be used for the CAP.
+  Call the OC/CC to determine which number should be used for the CAP.
+
   The steps in the CAP will depend on whether or not the active BEP has executed a watchdog reboot.
   This may happen if the shutdown occurs during an observation that utilitizes the side B FEPs
-  (side B powers FEPs 3-5), or if a subsequent observation requests them. Note that this implies
+  (DPA side B powers FEPs 3-5), or if a subsequent observation requests them. Note that this implies
   that a watchdog reboot of the BEP will be avoided only if it occurs during an observation using
   only 1 or 2 CCDs, and until an observation occurs using 3 or more CCDs.
 
-  At this point, there are 2 possible responses:
-
-     If the BEP has not executed a watchdog reboot, the steps should be:
+     If BEP A - the active BEP - has not executed a watchdog reboot, the steps should be:
 
      - Turn on DPA side B (|dpab_on|_, this can be executed even if a science run is currently in
        progress, see note below).
 
-     Otherwise, if the BEP has executed a watchdog reboot, the steps should be:
+
+     Otherwise if, in addition to this anomaly,  the BEP A has executed a watchdog reboot, the steps should be:
 
      - Stop the science run and power down the FEPs and video boards (|standby|_)
      - Turn on DPA side B (|dpab_on|_)
      - Warm-boot the BEP and start a DEA housekeeping run (|warmboot|_).
 
-  Unique circumstances occur during perigee passages. Presently, after the inbound ECS measurement is 
-  complete, a ``WSPOW00000`` is issued followed by a ``WSPOW0002A`` an hour later. Timing of the shutdown as 
-  well as the Comm in which the shutdown is detected could mean that either or both of the WSPOW
-  commands were not executed.  In this case the appropriate WSPOW command(s) should be added to the CAP.
+  Unique circumstances occur during perigee passages. As of now, an ECS
+  measurement will use no less than 4 chips. This means that a watchdog boot will occur should the
+  anomaly occur during an ECS measurment.  Presently, after the inbound ECS measurement is 
+  complete, a ``WSPOW00000`` is issued followed by a ``WSPOW0002A`` an hour later. Timing of the shutdown
+  could mean that either or both of the WSPOW commands were not executed.  In this case the  
+  WSPOW0002A command should be added to the CAP.
  
 * Execute the CAP at the next available comm.
 * Write a shift report and distribute to ``sot_shift`` to inform the project that ACIS is restored
@@ -113,6 +124,7 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
    believed that it is safe to power on the DPA side B during a science run that does not use
    these FEPs. If this practice is changed later in the mission, this procedure may have to be
    revisited.
+
 
 Impacts
 -------
@@ -158,6 +170,20 @@ Relevant Procedures
 .. |cap1055_doc| replace:: DOC
 .. _cap1055_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1001_1100/CAP_1055_Turn_on_DPA_B/CAP_1055_Turn_on_DPA-B.doc
 
+.. |wsvidalldn| replace:: ``1A_WS007_164.CLD``
+.. _wsvidalldn: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/archive/cld/1A_WS007_164.CLD
+
+
+
+.. |wspow0002a| replace:: ``1A_WS030_199.CLD``
+.. _wspow0002a: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/archive/cld/1A_WS030_199.CLD
+
+
+
+.. |stdfoptgssc| replace:: ``I_ACIS_SW_STDFOPTG.ssc``
+.. _stdfoptgssc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/products/ssc/I_ACIS_SW_STDFOPTG.ssc
+
+
 SOT Procedures
 ++++++++++++++
 
@@ -171,6 +197,14 @@ FOT Procedures
 * ``SOP_ACIS_DPAB_ON`` (|dpab_on_pdf|_) (|dpab_on_doc|_)
 * ``SOP_61021_STANDBY`` (|standby_pdf|_) (|standby_doc|_)
 * ``SOP_ACIS_WARMBOOT_DEAHOUSEKEEPING`` (|warmboot_pdf|_) (|warmboot_doc|_)
+
+
+CLD Scripts
++++++++++++
+
+* |wspow0002a|_
+1AWSPOW00002A_206.cld
+
 
 CAPs
 ++++
