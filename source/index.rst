@@ -13,11 +13,11 @@ given to relevant flight notes, procedures, and other documentation.
 
 Contents:
  
-* :doc:`dpaa_shutdown` (A-side OBC) (Last Updated November 4, 2019)
-* :doc:`dpab_shutdown` (A-side OBC) (Last Updated November 4, 2019)
+* :doc:`dpaa_shutdown` (BEP A active) (Last Updated November 4, 2019)
+* :doc:`dpab_shutdown` (BEP A active) (Last Updated November 4, 2019)
 
-* dpaa_shutdown (B-side OBC)
-* dpab_shutdown (B-side OBC)
+* dpaa_shutdown (BEP B active)
+* dpab_shutdown (BEP B active)
 
 
 
