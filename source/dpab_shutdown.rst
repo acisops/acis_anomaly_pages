@@ -173,13 +173,6 @@ Relevant Procedures
 .. |wsvidalldn| replace:: ``1A_WS007_164.CLD``
 .. _wsvidalldn: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/archive/cld/1A_WS007_164.CLD
 
-
-
-.. |wspow0002a| replace:: ``1A_WS030_199.CLD``
-.. _wspow0002a: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/archive/cld/1A_WS030_199.CLD
-
-
-
 .. |stdfoptgssc| replace:: ``I_ACIS_SW_STDFOPTG.ssc``
 .. _stdfoptgssc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/products/ssc/I_ACIS_SW_STDFOPTG.ssc
 
@@ -202,9 +195,8 @@ FOT Procedures
 CLD Scripts
 +++++++++++
 
-* |wspow0002a|_
-1AWSPOW00002A_206.cld
 
+   1AWSPOW00002A_206.cld (OBC-A side)
 
 CAPs
 ++++

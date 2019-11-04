@@ -13,8 +13,14 @@ given to relevant flight notes, procedures, and other documentation.
 
 Contents:
  
-* :doc:`dpaa_shutdown` (Last Updated March 6, 2017)
-* :doc:`dpab_shutdown` (Last Updated March 6, 2017)
+* :doc:`dpaa_shutdown` (A-side OBC) (Last Updated November 4, 2019)
+* :doc:`dpab_shutdown` (A-side OBC) (Last Updated November 4, 2019)
+
+* dpaa_shutdown (B-side OBC)
+* dpab_shutdown (B-side OBC)
+
+
+
 * :doc:`dea_shutdown` (Last Updated December 15, 2017)
 * :doc:`dea_seq_reset` (Last Updated September 11, 2018)
 * :doc:`fep_reset` (Last Updated June 28, 2017)
