@@ -10,8 +10,8 @@ The DPA-A shuts down anomalously, presumably due to a spurious command.
 
 .. note::
 
-    The diagnosis and response to this anomaly presented in this document assumes that the
-    active BEP is powered by DPA side A.
+    The diagnosis and response to this anomaly presented in this document assumes that BEP A, powered by 
+    DPA side A, is the active BEP
     
     *This anomaly requires human intervention to recover to science operations.*
 
@@ -40,7 +40,7 @@ Within a major frame (32.2 seconds), one should see:
 * 1DPICACU (DPA-A Input Current) drop to < 0.2 A (this value is noisy, so take an average)
 * DPA-A POWER should go to zero
 * 1DP28AVO (DPA-A +28V Input Voltage) is expected to have a small uptick, ~0.5 V, consistent with
-  the load suddenly dropping to zero
+  the load suddenly dropping to zero.  May require more than 1 major frame.
 * The software and hardware bilevels will likely not have normal values if BEP side A is active.
 
 All other hardware telemetry should be nominal. The current values for these can be found
@@ -86,6 +86,8 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   - It is likely advisable to first issue a ``WSVIDALLDN`` to power off the video boards (|wsvidalldn|), 
     particularly if *Chandra* is heading into the radiation belts.  (The video boards are powered 
     through the DEA and so would remain on if the DPA powered off during a science run.)
+  - If a long downtime remains before science resumes or if *Chandra* is in the belts, consider 
+    powering on 3 FEPs with a ``WSPOW0002A`` (|wspow0002a|).
   - Reload the patches and restart DEA housekeeping (|stdfoptg|_)
   - Reset the focal plane temperature to -121 :math:`^\circ{\rm C}` (|fptemp_121|_)
 
@@ -96,8 +98,8 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 
 .. note::
 
-   As of this writing, the latest ACIS Flight Software Patch is F, Optional Patch G. Before preparing
-   the CAP, the latest version of the procedure should be checked.
+   As of this writing, the next ACIS Flight Software Patch is G, Optional Patch H, which will be installed soon. 
+   Before preparing the CAP, the latest version of the procedure should be checked.
 
 Impacts
 -------
@@ -142,6 +144,9 @@ Relevant Procedures
 .. |wsvidalldn| replace:: ``1A_WS007_164.CLD``
 .. _wsvidalldn: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/archive/cld/1A_WS007_164.CLD
 
+.. |wspow0002a| replace:: ``1AWSPOW0002A_206.CLD``
+.. _wspow0002a: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/archive/cld/1AWSPOW0002A_206.CLD
+
 .. |stdfoptgssc| replace:: ``I_ACIS_SW_STDFOPTG.ssc``
 .. _stdfoptgssc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/products/ssc/I_ACIS_SW_STDFOPTG.ssc
 
@@ -168,6 +173,7 @@ CLD Scripts
 +++++++++++
 
 * |wsvidalldn|_
+* |wspow0002a|_
 
 CAPs
 ++++
