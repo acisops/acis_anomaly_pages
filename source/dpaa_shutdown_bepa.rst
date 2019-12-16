@@ -1,7 +1,7 @@
-.. _dpaa-shutdown:
+.. _dpaa-shutdown-bepa:
 
-DPA-A Anomalous Shutdown 
-========================
+DPA-A Anomalous Shutdown (BEP-A Active)
+=======================================
 
 What is it?
 -----------
@@ -10,8 +10,8 @@ The DPA-A shuts down anomalously, presumably due to a spurious command.
 
 .. note::
 
-    The diagnosis and response to this anomaly presented in this document assumes that BEP A, powered by 
-    DPA side A, is the active BEP
+    **IMPORTANT:** The diagnosis and response to this anomaly presented in this document assumes that 
+    BEP A, powered by DPA side A, is the active BEP
     
     *This anomaly requires human intervention to recover to science operations.*
 
