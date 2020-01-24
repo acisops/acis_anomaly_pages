@@ -88,7 +88,7 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
     through the DEA and so would remain on if the DPA powered off during a science run.)
   - If a long downtime remains before science resumes or if *Chandra* is in the belts, consider 
     powering on 3 FEPs with a ``WSPOW0002A`` (|wspow0002a|).
-  - Reload the patches and restart DEA housekeeping (|stdfoptg|_)
+  - Reload the patches and restart DEA housekeeping (|stdgopth|_)
   - Reset the focal plane temperature to -121 :math:`^\circ{\rm C}` (|fptemp_121|_)
 
 * Execute the CAP at the next available comm. Reloading the flight software patches can take
@@ -98,8 +98,8 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 
 .. note::
 
-   As of this writing, the next ACIS Flight Software Patch is G, Optional Patch H, which will be installed soon. 
-   Before preparing the CAP, the latest version of the procedure should be checked.
+   As of this writing, the ACIS Flight Software Patch level is standard G, optional H, version = 56. 
+   Before preparing the CAP, check that this is the correct version.
 
 Impacts
 -------
@@ -123,14 +123,14 @@ Relevant Procedures
 .. |dpaa_on_doc| replace:: DOC
 .. _dpaa_on_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_DPAA_ON.doc
 
-.. |stdfoptg| replace:: ``SOP_ACIS_SW_STDFOPTG``
-.. _stdfoptg: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDFOPTG.pdf
+.. |stdgopth| replace:: ``SOP_ACIS_SW_STDGOPTH``
+.. _stdgopth: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDGOPTH.pdf
 
-.. |stdfoptg_pdf| replace:: PDF
-.. _stdfoptg_pdf: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDFOPTG.pdf
+.. |stdgopth_pdf| replace:: PDF
+.. _stdgopth_pdf: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDGOPTH.pdf
 
-.. |stdfoptg_doc| replace:: DOC
-.. _stdfoptg_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDFOPTG.doc
+.. |stdgopth_doc| replace:: DOC
+.. _stdgopth_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDGOPTH.doc
 
 .. |fptemp_121| replace:: ``SOT_SI_SET_ACIS_FP_TEMP_TO_M121C``
 .. _fptemp_121: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_SI_SET_ACIS_FP_TEMP_TO_M121C.pdf
@@ -147,27 +147,27 @@ Relevant Procedures
 .. |wspow0002a| replace:: ``1AWSPOW0002A_206.CLD``
 .. _wspow0002a: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/archive/cld/1AWSPOW0002A_206.CLD
 
-.. |stdfoptgssc| replace:: ``I_ACIS_SW_STDFOPTG.ssc``
-.. _stdfoptgssc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/products/ssc/I_ACIS_SW_STDFOPTG.ssc
+.. |stdgopthssc| replace:: ``I_ACIS_SW_STDGOPTH.ssc``
+.. _stdgopthssc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/products/ssc/I_ACIS_SW_STDGOPTH.ssc
 
 SOT Procedures
 ++++++++++++++
 
 * `Turn On DPA-A <http://cxc.cfa.harvard.edu/acis/cmd_seq/dpaa_on.pdf>`_
-* `Flight Software Standard Patch F, Optional Patch G <http://cxc.cfa.harvard.edu/acis/cmd_seq/sw_stdfoptg.pdf>`_
+* `Flight Software Standard Patch G, Optional Patch H <http://cxc.cfa.harvard.edu/acis/cmd_seq/sw_stdgopth.pdf>`_
 * `Set Focal Plane Temperature to -121 C <http://cxc.cfa.harvard.edu/acis/cmd_seq/setfp_m121.pdf>`_
 
 FOT Procedures
 ++++++++++++++
 
 * ``SOP_ACIS_DPAA_ON`` (|dpaa_on_pdf|_) (|dpaa_on_doc|_)
-* ``SOP_ACIS_SW_STDFOPTG`` (|stdfoptg_pdf|_) (|stdfoptg_doc|_)
+* ``SOP_ACIS_SW_STDGOPTH`` (|stdgopth_pdf|_) (|stdgopth_doc|_)
 * ``SOT_SI_SET_ACIS_FP_TEMP_TO_M121C`` (|fptemp_121_pdf|_) (|fptemp_121_doc|_)
 
 FOT Scripts
 +++++++++++
 
-* |stdfoptgssc|_
+* |stdgopthssc|_
 
 CLD Scripts
 +++++++++++
