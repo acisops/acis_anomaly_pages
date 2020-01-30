@@ -13,7 +13,7 @@ given to relevant flight notes, procedures, and other documentation.
 
 Contents:
  
-* :doc:`dpaa_shutdown` (BEP A active) (Last Updated November 4, 2019)
+* :doc:`dpaa_shutdown` (BEP A active) (Last Updated January 30, 2020)
 * :doc:`dpab_shutdown` (BEP A active) (Last Updated November 4, 2019)
 
 * dpaa_shutdown (BEP B active)
