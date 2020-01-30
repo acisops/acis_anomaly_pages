@@ -80,15 +80,15 @@ are watching then:
 
 2. Look at the following DEA Housekeeping and MSID values:
 
-   DEA Housekeeping: DPA5VHKB
+   DEA Housekeeping: ``DPA5VHKB``
 
-   Telemetry MSIDs: 1DPICBCU, 1DPP0BVO, 1DPICACU
+   Telemetry MSIDs: ``1DPICBCU``, ``1DPP0BVO``, ``1DPICACU``
 
-   Typically, DPA5VHKB bounces around +/- a volt. However, if you see
+   Typically, ``DPA5VHKB`` bounces around +/- a volt. However, if you see
    it steadies up right around the time of the FEP halt, this indicates
    that all DPA-B boards were in a reset state. Check to see if the DPA-B
-   current (1DPICBCU) dropped at around the same time while the DPA-B 
-   voltage (1DPP0BVO) and the DPA-A current and voltage remained steady. 
+   current (``1DPICBCU``) dropped at around the same time while the DPA-B 
+   voltage (``1DPP0BVO``) and the DPA-A current and voltage remained steady. 
    The above behavior confirms that the FEPs actually reset.
 
 To look at these values:
@@ -112,10 +112,10 @@ To look at these values:
    Previous occurrences of this anomaly were on the DPA-B side,
    affecting only the side B FEPs. In that case, one should see:
 
-   - No change in behavior of DPA 5V Analog A (1DPP0AVO) and DPA Input 
-     Current A (1DPICACU) within one major frame (32.2 seconds)
-   - DPA 5V Analog B (1DPP0BVO) becomes steady (also seen in DEA
-     Housekeeping, DPA5VHKB)
+   - No change in behavior of DPA 5V Analog A (``1DPP0AVO``) and DPA Input 
+     Current A (``1DPICACU``) within one major frame (32.2 seconds)
+   - DPA 5V Analog B (``1DPP0BVO``) becomes steady (also seen in DEA
+     Housekeeping, ``DPA5VHKB``)
    - DPA Input Current B (1DPICBCU) drops
 
 .. raw:: html
@@ -126,7 +126,9 @@ To look at these values:
    Joan Quigley, Royce Buehler, or Catherine Grant can do that. They
    should find the time of the last event packets from the affected FEPs
    and the time that the FEP resets were reported in software
-   housekeeping.
+   housekeeping. If the anomaly occurs during bias creation, there will 
+   not be any event packets from the affected FEPs and there may not be 
+   any ``FEPREC_RESET`` messages in software housekeeping.
 
    If the time between these two events is less than 449 seconds, then
    the reset was not due to a watchdog timer reset. See 
