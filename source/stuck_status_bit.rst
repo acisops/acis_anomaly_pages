@@ -20,7 +20,7 @@ Twice:
 Will it happen again?
 ---------------------
 
-It appears likely that the anomaly could occur again.
+Hopefully not.  The update to buscrash patch, installed in Flight Software Version standard G optional H in 2020 is intended to fix this problem.
 
 How is this anomaly diagnosed?
 ------------------------------
@@ -87,10 +87,9 @@ Impacts
 
 .. note::
 
-    As of this writing, the latest ACIS Flight Software Patch is F, Optional 
-    Patch G, Version 53. An update has been developed to the ``buscrash`` patch which would
-    prevent this anomaly, but has not been deemed critical enough to drive a 
-    flight software update at this time.
+    As of this writing, the latest ACIS Flight Software Patch is standard G, optional 
+    H, Version 56. This includes an update to the ``buscrash`` patch which should
+    prevent this anomaly going forward.
 
 Relevant Procedures
 -------------------
