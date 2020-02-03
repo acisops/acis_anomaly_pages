@@ -11,6 +11,10 @@ loss of science data from the affected FEP(s) for the rest of the science run.
 The unaffected FEP(s) will continue to operate normally. This is different than 
 the :doc:`../dea_seq_reset` anomaly which shuts down all FEPs. 
 
+It is possible that this anomaly occurs while the bias is being taken, which 
+would result in no science data from the affected FEPs for the entire
+observation. 
+
 When did it happen before?
 --------------------------
 
@@ -19,6 +23,8 @@ FEP resets have occurred three times during the mission; most recently in 2013:
 * April 6, 2007, 2007:096:19:24:38.27, obsid: 7647
 * March 10, 2008, 2008:070:15:31:51.08, obsid: 7783
 * May 16, 2013, 2013:136:19:57:18, obsid: 15232
+* October 23, 2019, 2019:296:09:50:00, obsid: 47788 (this anomaly occurred 
+  during the taking of the bias)
 
 Will it happen again?
 ---------------------
@@ -74,15 +80,15 @@ are watching then:
 
 2. Look at the following DEA Housekeeping and MSID values:
 
-   DEA Housekeeping: DPA5VHKB
+   DEA Housekeeping: ``DPA5VHKB``
 
-   Telemetry MSIDs: 1DPICBCU, 1DPP0BVO, 1DPICACU
+   Telemetry MSIDs: ``1DPICBCU``, ``1DPP0BVO``, ``1DPICACU``
 
-   Typically, DPA5VHKB bounces around +/- a volt. However, if you see
+   Typically, ``DPA5VHKB`` bounces around +/- a volt. However, if you see
    it steadies up right around the time of the FEP halt, this indicates
    that all DPA-B boards were in a reset state. Check to see if the DPA-B
-   current (1DPICBCU) dropped at around the same time while the DPA-B 
-   voltage (1DPP0BVO) and the DPA-A current and voltage remained steady. 
+   current (``1DPICBCU``) dropped at around the same time while the DPA-B 
+   voltage (``1DPP0BVO``) and the DPA-A current and voltage remained steady. 
    The above behavior confirms that the FEPs actually reset.
 
 To look at these values:
@@ -106,10 +112,10 @@ To look at these values:
    Previous occurrences of this anomaly were on the DPA-B side,
    affecting only the side B FEPs. In that case, one should see:
 
-   - No change in behavior of DPA 5V Analog A (1DPP0AVO) and DPA Input 
-     Current A (1DPICACU) within one major frame (32.2 seconds)
-   - DPA 5V Analog B (1DPP0BVO) becomes steady (also seen in DEA
-     Housekeeping, DPA5VHKB)
+   - No change in behavior of DPA 5V Analog A (``1DPP0AVO``) and DPA Input 
+     Current A (``1DPICACU``) within one major frame (32.2 seconds)
+   - DPA 5V Analog B (``1DPP0BVO``) becomes steady (also seen in DEA
+     Housekeeping, ``DPA5VHKB``)
    - DPA Input Current B (1DPICBCU) drops
 
 .. raw:: html
@@ -120,7 +126,9 @@ To look at these values:
    Joan Quigley, Royce Buehler, or Catherine Grant can do that. They
    should find the time of the last event packets from the affected FEPs
    and the time that the FEP resets were reported in software
-   housekeeping.
+   housekeeping. If the anomaly occurs during bias creation, there will 
+   not be any event packets from the affected FEPs and there may not be 
+   any ``FEPREC_RESET`` messages in software housekeeping.
 
    If the time between these two events is less than 449 seconds, then
    the reset was not due to a watchdog timer reset. See 
@@ -141,7 +149,7 @@ Most likely, we will be notified by CXCDS Ops that data collection on one or mor
 the CCDs stopped during an observation. We need to:
 
 * Send an e-mail to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz,
-  and Bev LaMarr) to alert them to the existence of the anomaly.
+  Jim Francis, and Bev LaMarr) to alert them to the existence of the anomaly.
 
 * Examine data from the next observation, because in most cases the setup for 
   the next observation should clear the problem (though see the note below in 
