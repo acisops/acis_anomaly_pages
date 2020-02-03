@@ -56,8 +56,8 @@ html:
 
 .PHONY: deploy
 deploy: html
-	rm -rf /proj/web-cxc-dmz/htdocs/acis/acis_anomaly_pages
-	cp -rf build/html /proj/web-cxc-dmz/htdocs/acis/acis_anomaly_pages
+	rm -rf /proj/web-cxc/htdocs/acis/acis_anomaly_pages
+	cp -rf build/html /proj/web-cxc/htdocs/acis/acis_anomaly_pages
 
 .PHONY: dirhtml
 dirhtml:
