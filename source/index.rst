@@ -19,7 +19,7 @@ Contents:
 * :doc:`dpab_shutdown_bepb`
 * :doc:`dea_shutdown` (Last Updated December 15, 2017)
 * :doc:`dea_seq_reset` (Last Updated September 11, 2018)
-* :doc:`fep_reset` (Last Updated June 28, 2017)
+* :doc:`fep_reset` (Last Updated February 3, 2020)
 * :doc:`hi_lo_anomaly` (Last Updated June 28, 2017)
 * :doc:`trickle_bias_tplane` (Last Updated May 21, 2018)
 * :doc:`fep_thresholder` (Last updated August 14, 2017)
