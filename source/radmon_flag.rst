@@ -18,26 +18,28 @@ This anomaly has not previously occurred.
 Will it happen again?
 ---------------------
 
-There have been no spurious hardware serial digital commands in ACIS
-to date.  (Peter should verify this statement!)
+There have been no spurious hardware serial digital commands in ACIS to date.  (Peter should verify this statement!)
 
 How is this anomaly diagnosed?
 ------------------------------
 
 If the radmon flag is asserted during real-time contact with ACIS,
-* SWSTAT_SCI_INHIBIT_ON = 74  Inhibited science runs
-* SWSTAT_DEACCD_POWEROFF = 81 Power off to the DEA video boards
-* If a science run was in progress, SMTERM_RADMON in the Science Report
+
+* In software housekeeping,
+
+  * SWSTAT_SCI_INHIBIT_ON = 74
+  * SWSTAT_DEACCD_POWEROFF = 81
+
+* If a science run was in progress, terminationCode = SMTERM_RADMON in the scienceReport
 
 While science is inhibited:
-* Bilevels are (science idle or science active)
-* a dump of sysConfig would show all video boards down and FEPs in the
-  correct configuration from the command load
-* DEA currents & power consistent with video boards off (TBD)
+
+* Bilevels are (science idle or science active, PGF & JF need to check on EU)
+* a dump of sysConfig would show all video boards down and FEPs in the correct configuration from the command load
+* DEA current consistent with video boards off (Need to add value)
 * No event data, even if the command load implies there should be
-* If a start science command is issued, command echo result = 13
-  (CMDRESULT_INHIBITED)
- * If a stop science command is issues, command echo result = 13 (CMDRESULT_INHIBITED)
+* If a start science command is issued, command echo result = 13 (CMDRESULT_INHIBITED)
+* If a stop science command is issued, command echo result = 13 (CMDRESULT_INHIBITED)
 
 What is the response?
 ---------------------
