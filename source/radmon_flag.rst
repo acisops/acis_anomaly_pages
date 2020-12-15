@@ -10,6 +10,8 @@ What is it?
 
 The ACIS Radiation Monitor Flag was asserted anomalously, presumably due to a spurious command.  This suspends any active science runs and powers off the video boards.
 
+Note that the radiation monitor flag discussed here is entirely different from the TXINGS patch, which uses ACIS data to detect high radiation environment and then sets the ACIS bilevels to a particular pattern for the OBC to act upon.  The ACIS radiation monitor flag is not used in current operations at all.
+
 When did it happen before?
 --------------------------
 
@@ -34,9 +36,10 @@ If the radmon flag is asserted during real-time contact with ACIS,
 
 While science is inhibited:
 
-* Bilevels are (science idle or science active, PGF & JF need to check on EU)
+* Bilevels are (science idle or science active, 1STAT1ST = 1 or 0), PGF & JF need to check on EU
 * a dump of sysConfig would show all video boards down and FEPs in the correct configuration from the command load
-* DEA current consistent with video boards off (Need to add value)
+* DEA current consistent with video boards off (1DEICACU ~ 0.7 - 0.9 A)
+* DPA current consistent with the number of FEPs powered on in the command load
 * No event data, even if the command load implies there should be
 * If a start science command is issued, command echo result = 13 (CMDRESULT_INHIBITED)
 * If a stop science command is issued, command echo result = 13 (CMDRESULT_INHIBITED)
@@ -44,13 +47,12 @@ While science is inhibited:
 What is the response?
 ---------------------
 
-(will this show up in a standard SOH by OC/CC?  Don't think so but
-need to check)
+We do not think this anomaly would show up in a standard state of health check done by the OC/CC at the start of each comm.  An exception may be if the anomaly leaves 1STAT1ST as science active and the comm is during a radiation belt passage.  (May need to check with FOT to confirm this.)
+
 We need to:
 
 * Send an email to the ACIS team at the official anomaly email address, ``acis-anomaly -at- googlegroups -dot- com``.
-  If it is off-hours, another ACIS Ops team member should call Peter
-  Ford, Jim Francis, and Bob Goeke.
+  If it is off-hours, another ACIS Ops team member should call Peter Ford, Jim Francis, and Bob Goeke.
 * Send an email to ``sot_red_alert@cfa`` announcing that the ACIS
   radiation monitor flag has been enabled and that science data will
   not be collected until it is disabled.
@@ -117,4 +119,3 @@ A note on other similar potential anomalies
 
 Spurious high level pulse commands to the PSMC have caused anomalies, but there have been no spurious serial digital commands as of yet.
 
-Note that the radiation monitor flag discussed here is entirely different from the TXINGS patch, which uses ACIS data to detect high radiation environment and then sets the ACIS bilevels to a particular pattern for the OBC to act upon.  The ACIS radiation monitor flag is not used in current operation at all.
