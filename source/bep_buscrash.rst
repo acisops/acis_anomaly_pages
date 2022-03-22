@@ -7,7 +7,7 @@ What is it?
 -----------
 
 
-A ``FATAL_INTR_FEP_BUS_ERROR`` on ACIS causes a watchdog reboot to ACIS v11 flight software.  This is thought to be caused by an SEU in the BEP or FEP memory.  ACIS will continue to perform observations, but the calibration will be unreliable.
+A ``FATAL_INTR_FEP_BUS_ERROR`` on ACIS causes a watchdog reboot to ACIS v11 flight software.  This is thought to be caused by an SEU in the BEP or FEP memory.  ACIS will continue to perform observations, but the calibration will be unreliable and patched observing modes (e.g., CC3x3) will not be recognized.
 
 
 When did it happen before?
@@ -27,11 +27,18 @@ There is nothing to prevent another similar SEU (which is the leading candidate 
 How is this Anomaly Diagnosed?
 ------------------------------
 
-PMON will show that the software will has reset to v11, with the watchdogFlag set to 1.  (Note that the warmbootFlag will likely be set to unity, which does not indicate that a warmboot occurred, but rather than a commanded boot would apply patches.)  A fatalMessage packet written into telemetry by the active BEP reports the BEP CPU's BadVaddr register.
+PMON will show that the software will has reset to v11, with the 1STAT2ST bilevel set to 0, indicating a watchdog boot.  DPA power and current (``1DPICACU``, ``1DPICBCU``) will drop at the time of reset, on either or both sides.  But at the next science observation will resume usual and expected behavior.  DEA power and current (``1DEICACU``) should be unaffected.  DPA voltages may exhibit a very minor drop, but this change would be miniscule compared to the impact on currents.
+
+If the anomaly occured while not in comm, these issues will be marked in red once PMON has come up:
+
+* 1STAT2ST=0, indicating a watchdog boot
+* A status message that FSW VERSION = 11
+* The SW HK packets will show VERSION = 11
 
 
-DPA power and current (``1DPICACU``, ``1DPICBCU``)
-will drop at the time of reset, on either or both sides.  But at the next science observation will resume usual and expected behavior.  DEA power and current (``1DEICACU``) should be unaffected.  DPA voltages may exhibit a very minor drop, but this change would be miniscule compared to the impact on currents.  
+  
+If the anomaly happens during comm, in addition to the PMON behavior above, a FATAL ERROR message will appear, and will soon be overwritten by the FSW VERSION = 11 message. You will also see the time of boot.  The fatalMessage packet written into telemetry by the active BEP reports the BEP CPU's BadVaddr register, the details of which are described in `Peter Ford's memo <https://acisweb.mit.edu/pub/buserr-25741-v1.1.pdf>`_.  Note that the warmbootFlag at BEP startup will likely be set to unity, which does not indicate that a warmboot occurred, but rather than a commanded boot would apply patches.
+
 
 
 To diagnose the event:
@@ -68,7 +75,7 @@ What is the first response?
   
 * Convene a telecon with the ACIS engineering team at the next reasonable moment  to review the data and diagnosis.
   
-* Prepare a CAP to dump patches and to warmboot upon successful patch verification.  (CAP 1597, by Ken Gage, should be the template; see below.)
+* Prepare a CAP to dump patches and to warmboot upon successful patch verification.  (`CAP 1597 to restart ACIS <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1501-1600/CAP_1597_Restart%20ACIS/CAP_1597_Restart%20ACIS.pdf>`_ should be the template.)
 
 .. _fep_reset_impacts:
 
@@ -90,7 +97,7 @@ Relevant Notes/Memos
 
 * ObsID 9209: `ACIS OBSID 9209 Anomaly Closeout (9/8/2009) <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/flightnotes/controlled/Flight_Note498_ACIS_OBSID_9209_Anomaly.pdf>`_
 
-* CAP 1597: `Restart ACIS <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1501-1600/CAP_1597_Restart_ACIS/CAP_1597_Restart_ACIS.pdf>`_
+* CAP 1597: `Restart ACIS <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1501-1600/CAP_1597_Restart%20ACIS/CAP_1597_Restart%20ACIS.pdf>`_
   
 .. |mptl| replace:: ``multiplot_tracelog`` Command-line Script
 .. _mptl: http://cxc.cfa.harvard.edu/acis/acispy/command_line.html#multiplot-tracelog
