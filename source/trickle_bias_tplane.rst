@@ -40,7 +40,7 @@ B-opt-C in 2003, calls all ``biasThief`` methods from within the science thread,
 preventing latchup. The installation of ``buscrash``, and later of an updated
 ``buscrash2`` patch in Flight Software version F-opt-G in 2013, eliminated the
 trickle-bias failure altogether. F-opt-G also retired the ``untricklebias`` patch.
-This history is best described in `MIT ECO-1047 <http://acis.mit.edu/axaf/eco/eco-1047.pdf>`_.
+This history is best described in `MIT ECO-1047 <http://acisweb.mit.edu/axaf/eco/eco-1047.pdf>`_.
 
 
 How is this Anomaly Diagnosed?
@@ -103,16 +103,16 @@ Relevant Procedures
 -------------------
 
 .. |stop_sci| replace:: ``1A_AA000_191.CLD``, ``AA00000000`` (stop science command)
-.. _stop_sci: http://acis.mit.edu/cgi-bin/get-cld?cld=1A_AA000_191.CLD
+.. _stop_sci: http://acisweb.mit.edu/cgi-bin/get-cld?cld=1A_AA000_191.CLD
 
 .. |feps_down| replace:: ``1A_WS003_165.CLD``, ``WSFEPALLDN`` (command to power down all FEPs)
-.. _feps_down: http://acis.mit.edu/cgi-bin/get-cld?cld=1A_WS003_165.CLD
+.. _feps_down: http://acisweb.mit.edu/cgi-bin/get-cld?cld=1A_WS003_165.CLD
 
 .. |te_start| replace:: ``1A_XT000_190.CLD``, ``XTZ0000005`` (start TE science)
-.. _te_start: http://acis.mit.edu/cgi-bin/get-cld?cld=1A_XT000_190.CLD
+.. _te_start: http://acisweb.mit.edu/cgi-bin/get-cld?cld=1A_XT000_190.CLD
 
 .. |cc_start| replace:: ``1A_XC000_190.CLD``, ``XCZ0000005`` (start CC science)
-.. _cc_start: http://acis.mit.edu/cgi-bin/get-cld?cld=1A_XC000_190.CLD
+.. _cc_start: http://acisweb.mit.edu/cgi-bin/get-cld?cld=1A_XC000_190.CLD
 
 Command Files
 +++++++++++++
@@ -157,10 +157,10 @@ Power Command   CLD File                Chips
 Relevant Notes/Memos
 --------------------
 
-* `ACIS Software Problem Report M00062901: SPR 133: Event Packets interleaved with Bias Packets, causing FEP T-Plane Lock-Up. <http://acis.mit.edu/axaf/spr/prob0133.html>`_
-* `ACIS Software Problem Report M13021701: SPR 148: Premature end of biasThief output <http://acis.mit.edu/axaf/spr/prob0148.html>`_
-* `ACIS Software Problem Report M13080801: SPR 150: Missing exposures after trickleBias anomaly in 53531 <http://acis.mit.edu/axaf/spr/prob0150.html>`_
-* `MIT ECO 36-1028 untricklebias: Patch to run bias thief methods from science task <http://acis.mit.edu/axaf/eco/eco-1028.pdf>`_
-* `MIT ECO 36-1034 Flight S/W patch to prevent bus crash on FEP power-down <http://acis.mit.edu/axaf/eco/eco-1034.pdf>`_
-* `MIT ECO 36-1038 Flight S/W patch to prevent bus crash on FEP power-down <http://acis.mit.edu/axaf/eco/eco-1038.pdf>`_
-* `MIT ECO 36-1047 buscrash2 patch to prevent Trickle-Bias anomalies and BEP crashes <http://acis.mit.edu/axaf/eco/eco-1047.pdf>`_
+* `ACIS Software Problem Report M00062901: SPR 133: Event Packets interleaved with Bias Packets, causing FEP T-Plane Lock-Up. <http://acisweb.mit.edu/axaf/spr/prob0133.html>`_
+* `ACIS Software Problem Report M13021701: SPR 148: Premature end of biasThief output <http://acisweb.mit.edu/axaf/spr/prob0148.html>`_
+* `ACIS Software Problem Report M13080801: SPR 150: Missing exposures after trickleBias anomaly in 53531 <http://acisweb.mit.edu/axaf/spr/prob0150.html>`_
+* `MIT ECO 36-1028 untricklebias: Patch to run bias thief methods from science task <http://acisweb.mit.edu/axaf/eco/eco-1028.pdf>`_
+* `MIT ECO 36-1034 Flight S/W patch to prevent bus crash on FEP power-down <http://acisweb.mit.edu/axaf/eco/eco-1034.pdf>`_
+* `MIT ECO 36-1038 Flight S/W patch to prevent bus crash on FEP power-down <http://acisweb.mit.edu/axaf/eco/eco-1038.pdf>`_
+* `MIT ECO 36-1047 buscrash2 patch to prevent Trickle-Bias anomalies and BEP crashes <http://acisweb.mit.edu/axaf/eco/eco-1047.pdf>`_

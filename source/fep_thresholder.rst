@@ -123,7 +123,7 @@ FOT Procedures
 Relevant Notes/Memos
 --------------------
 
-* `ACIS FEP Anomaly during OBSID 18278 <ftp://acis.mit.edu/pub/acis-18278-anom-v1.2.pdf>`_
+* `ACIS FEP Anomaly during OBSID 18278 <ftp://acisweb.mit.edu/pub/acis-18278-anom-v1.2.pdf>`_
 
 * `Flight Note 585 <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/flightnotes/controlled/Flight_Note585_ACIS_S1_Dropped_Frames_Closeout.pdf>`_
 
