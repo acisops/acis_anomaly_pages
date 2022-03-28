@@ -154,5 +154,5 @@ CAPs
 Relevant Notes/Memos
 --------------------
 
-* `ACIS-MIT Software Problem Report 151 <http://acis.mit.edu/axaf/spr/prob0151.html>`_
+* `ACIS-MIT Software Problem Report 151 <http://acisweb.mit.edu/axaf/spr/prob0151.html>`_
 * `Flight Note 574 <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/flightnotes/controlled/Flight_Note574_Sci_Run_Termination_Failure_Closeout.pdf>`_

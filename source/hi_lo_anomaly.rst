@@ -103,4 +103,4 @@ Relevant Notes/Memos
 --------------------
 
 * `Hi/Lo Pixel Anomaly Closeout Report <http://cxc.cfa.harvard.edu/acis/memos/OCCcm09291_DDTS_Closeout.txt>`_
-* `The ACIS Hi-Lo Pixel Anomaly <ftp://acis.mit.edu/pub/hi-lo-pixel-anomaly-v1.4.pdf>`_
+* `The ACIS Hi-Lo Pixel Anomaly <https://acisweb.mit.edu/pub/hi-lo-pixel-anomaly-v1.4.pdf>`_

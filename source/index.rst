@@ -25,5 +25,6 @@ Contents:
 * :doc:`fep_thresholder` (Last updated August 14, 2017)
 * :doc:`door_b_enb` (Last updated May 4, 2018)
 * :doc:`stuck_status_bit` (Last updated January 30, 2020)
-
+* :doc:`bep_buscrash` (Last updated March 21, 2022)
+  
 :doc:`howto`

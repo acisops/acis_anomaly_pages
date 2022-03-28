@@ -132,7 +132,7 @@ To look at these values:
 
    If the time between these two events is less than 449 seconds, then
    the reset was not due to a watchdog timer reset. See 
-   `Peter Ford's Obsid 15232 memo <ftp://acis.mit.edu/pub/acis-obsid-15232-anom.pdf>`_ 
+   `Peter Ford's Obsid 15232 memo <https://acisweb.mit.edu/pub/acis-obsid-15232-anom.pdf>`_ 
    for more information. 
 
 
@@ -178,7 +178,7 @@ Impacts
 Relevant Notes/Memos
 --------------------
 
-* Obsid 15232: `ACIS OBSID 15232 Anomaly (5/17/2013) <ftp://acis.mit.edu/pub/acis-obsid-15232-anom.pdf>`_
+* Obsid 15232: `ACIS OBSID 15232 Anomaly (5/17/2013) <https://acisweb.mit.edu/pub/acis-obsid-15232-anom.pdf>`_
 * Obsid 7647: `3-FEP reset anomaly (7/11/2007) <http://cxc.cfa.harvard.edu/acis/memos/OCCcm08039_closeout.pdf>`_
 
 .. |mptl| replace:: ``multiplot_tracelog`` Command-line Script

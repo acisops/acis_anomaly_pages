@@ -28,7 +28,7 @@ How is this Anomaly Diagnosed?
 ------------------------------
 
 * The science run will be terminated, sending a ``scienceReport`` packet that will contain
-  non-zero ``fepErrorCodes`` and an anomalous ``terminationCode``.  A normal science run ends with a ``terminationCode = 1 # SMTERM_STOPCMD``.  The DEA sequencer reset will likely result in a ``terminationCode = 15 # SMTERM_FEP_IO_ERROR``.  The full list of ``terminationCode`` values is `here <http://acis.mit.edu/acis/ipcl/ipcl_notes.html#HDR31a>`_.
+  non-zero ``fepErrorCodes`` and an anomalous ``terminationCode``.  A normal science run ends with a ``terminationCode = 1 # SMTERM_STOPCMD``.  The DEA sequencer reset will likely result in a ``terminationCode = 15 # SMTERM_FEP_IO_ERROR``.  The full list of ``terminationCode`` values is `here <http://acisweb.mit.edu/acis/ipcl/ipcl_notes.html#HDR31a>`_.
 * Within a major frame (32.2 seconds), there will be a slight drop in DPA Input Current A and/or B,
   (1DPICACU and/or 1DPICBCU) ~0.2-0.3 A. The drop in two input currents depends on which FEPs
   were active (DPA Side A runs FEPs 0, 1, and 2; DPA side B runs FEPs 3, 4, and 5.)
@@ -93,13 +93,13 @@ Relevant Notes/Memos
 
 Access locked (very terse problem reports):
 
-* `ACIS-MIT SPR 136 <http://acis.mit.edu/axaf/spr/prob0136.html>`_
-* `ACIS-MIT SPR 143 <http://acis.mit.edu/axaf/spr/prob0143.html>`_
-* `ACIS-MIT SPR 149 <http://acis.mit.edu/axaf/spr/prob0149.html>`_
+* `ACIS-MIT SPR 136 <http://acisweb.mit.edu/axaf/spr/prob0136.html>`_
+* `ACIS-MIT SPR 143 <http://acisweb.mit.edu/axaf/spr/prob0143.html>`_
+* `ACIS-MIT SPR 149 <http://acisweb.mit.edu/axaf/spr/prob0149.html>`_
 
 Open access, full memo:
 
-* `ACIS-MIT Software Problem Report 136 <ftp://acis.mit.edu/pub/SPR136-1.0.pdf>`_
+* `ACIS-MIT Software Problem Report 136 <https://acisweb.mit.edu/pub/SPR136-1.0.pdf>`_
 
 .. |mptl| replace:: ``multiplot_tracelog`` Command-line Script
 .. _mptl: http://cxc.cfa.harvard.edu/acis/acispy/command_line.html#multiplot-tracelog
