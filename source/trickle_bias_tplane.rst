@@ -15,7 +15,7 @@ FEP(s) being locked.
 When did it happen before?
 --------------------------
 
-Thirteen times:
+Fifteen times:
 
 * June 26, 2000: 2 FEPs latched
 * January 21, 2001: interleaving of bias and events, no latchup
@@ -31,6 +31,7 @@ Thirteen times:
 * February 17, 2013: interleaving, bias maps truncated or lost
 * April 1, 2013: interleaving only
 * July 24, 2013: interleaving, 4 bias maps truncated or lost
+* March 22, 2022: During ObsID 24760, FEP-0 latched, cause believed to be a SEU in this case
 
 Will it happen again?
 ---------------------

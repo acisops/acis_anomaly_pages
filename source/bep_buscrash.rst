@@ -7,7 +7,8 @@ What is it?
 -----------
 
 
-A ``FATAL_INTR_FEP_BUS_ERROR`` on ACIS causes a watchdog reboot to ACIS v11 flight software.  This is thought to be caused by an SEU in the BEP or FEP memory.  ACIS will continue to perform observations, but the calibration will be unreliable and patched observing modes (e.g., CC3x3) will not be recognized.
+A ``FATAL_INTR_FEP_BUS_ERROR`` on ACIS causes a watchdog reboot to ACIS v11 flight software.  This is thought to be caused by an SEU in the BEP or FEP memory.  ACIS will continue to perform observations but without the patches that provide various bug fixes, condition the overclocks, and the CC3x3 and event histogram observing modes.
+
 
 
 When did it happen before?
@@ -53,7 +54,9 @@ To diagnose the event:
    The MSID data in the tracelog can then be examined using ACISpy, see
    the links below for details.
 
+   Up-to-date telemetry data can also be examined via `MAUDE <https://occweb.cfa.harvard.edu/occweb/web/web_dev/smancini/mqb/maude_query_builder.php>`_.
 
+   
 2. The timeline of events in the anomaly can be reconstructed by
    examining the packet data in the MIT psci data files. Peter Ford,
    Joan Quigley, Royce Buehler, or Catherine Grant can do that. They
