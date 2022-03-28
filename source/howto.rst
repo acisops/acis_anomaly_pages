@@ -166,8 +166,8 @@ Deploying to the CXC Web Space
 Once the pull request has been merged, log onto the HEAD LAN as ``acisdude``. Issue
 the following commands:
 
-* ``cd ~/python/src/acis_anomaly_pages`` (to go to the directory with the source)
-* ``source ~/python/bin/activate.csh`` (to load the Python stack with the appropriate commands)
+* ``cd /data/acis/ska_pkg/acis_anomaly_pages`` (to go to the directory with the source)
+* ``acisska`` (to load the Python stack with the appropriate commands)
 * ``git pull`` (make sure this completes without errors before running the next one!)
 * ``make deploy``
 
