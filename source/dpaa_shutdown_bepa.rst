@@ -77,10 +77,10 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 * As soon as the time of the shutdown is known, inform ``sot_yellow_alert@cfa``.
 * Identify whether or not additional comm time is needed and if so ask the OC/LSE to request it.
 * Send an email to ``sot_red_alert@cfa`` and call a telecon with the FOT, SOT, and FDs to brief
-  them on the diagnosis and the plan to develop a CAP to recover.
-* Prepare a CAP and submit it for review to capreview AT ipa DOT harvard DOT edu, and cc: acisdude.
-  It will also be necessary to call the OC/CC to determine which number should be used for the CAP.
-  This CAP will have the following steps:
+  them on the diagnosis and the plan to develop CAPs to recover.
+* Prepare the CAPs and submit them for review to capreview AT ipa DOT harvard DOT edu, and cc: acisdude.
+  It will also be necessary to call the OC/CC to determine which number should be used for the CAPs.
+  The main recovery CAP will have the following steps:
 
   - Power on the DPA side A (|dpaa_on|_)
   - It is likely advisable to first issue a ``WSVIDALLDN`` to power off the video boards (|wsvidalldn|), 
@@ -91,22 +91,29 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   - Reload the patches and restart DEA housekeeping (|stdgopti|_)
   - Reset the focal plane temperature to -121 :math:`^\circ{\rm C}` (|fptemp_121|_)
 
-* Execute the CAP at the next available comm. Reloading the flight software patches can take
+  A CAP to update *txings* values from their defaults to most-recent settings should follow the
+  main recovery CAP if possible.  
+
+* Execute the CAPs at the next available comm. Reloading the flight software patches can take
   a half an hour, so ensure that there is enough time in the comm to execute the entire procedure.
 * Write a shift report and distribute to ``sot_shift`` to inform the project that ACIS is restored
   to its default configuration.
 
+* Upon warmboot it is essential to update *txings* parameters as quickly as possible to the most recent values in order to prevent undesired radiation triggers.
+  CAP 1622 to update *txings* parameter values is the template for this.  A template for this is in ``acis_docs/CAPs``: ``CAP1622_TXINGB_SETPARAMS``.
+
+
 .. note::
 
    As of this writing, the ACIS Flight Software Patch level is standard G, optional I, version = 58. 
-   Before preparing the CAP, check that this is the correct version.
+   Before preparing the CAPs, check that this is the correct version.
 
 Impacts
 -------
 
 * Until the DPA-A is powered back on, science operations will be interrupted.
 * The warmboot of the BEP will reset the parameters of the TXINGS patch to their defaults. 
-  They can be updated in the weekly load through a SAR.
+  If not updated during initial recovery as above, *txings* settings should be updated as soon as possible via CAP (see CAP 1622) or SAR to prevent undesired radiation shutdown.
 * After recovery from a DPA-A shutdown, the power status may be in an unusual state (e.g., lower
   than expected input current) due to FEPs being off. This situation should resolve itself with 
   the next observation.
@@ -193,6 +200,7 @@ CAPs
 .. |cap1407_doc| replace:: DOC
 .. _cap1407_doc: http://cxc.cfa.harvard.edu/acis/CAPs/CAP1407_dpaa_poweroff_recovery.doc
 
+* CAP 1622 (Update TXINGS Parameter Values)  (``acis_docs/CAPs/CAP1622_TXINGB_SETPARAMS.pdf``) (``acis_docs/CAPs/CAP1622_TXINGB_SETPARAMS.docx``)
 * CAP 1407 (DPA-A Poweroff Recovery) (|cap1407_pdf|_) (|cap1407_doc|_)
 * CAP 1342 (DPA-A Poweroff Recovery) (|cap1342_pdf|_) (|cap1342_doc|_)
 * CAP 818 (DPA-A Side Recovery from Enabled/Powered Off State) (|cap818_pdf|_)

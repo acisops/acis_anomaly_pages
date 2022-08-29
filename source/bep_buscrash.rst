@@ -80,6 +80,9 @@ What is the first response?
   
 * Prepare a CAP to dump patches and to warmboot upon successful patch verification.  (`CAP 1597 to restart ACIS <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1501-1600/CAP_1597_Restart%20ACIS/CAP_1597_Restart%20ACIS.pdf>`_ should be the template.)
 
+* Upon warmboot it is essential to update *txings* parameters as quickly as possible to the most recent values in order to prevent undesired radiation triggers.
+  Use CAP 1622 as the template to develop a new CAP that updates *txings* parameter values ``acis_docs/CAPs``: ``CAP1622_TXINGB_SETPARAMS``.
+
 .. _fep_reset_impacts:
 
 
@@ -101,6 +104,8 @@ Relevant Notes/Memos
 * ObsID 9209: `ACIS OBSID 9209 Anomaly Closeout (9/8/2009) <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/flightnotes/controlled/Flight_Note498_ACIS_OBSID_9209_Anomaly.pdf>`_
 
 * CAP 1597: `Restart ACIS <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1501-1600/CAP_1597_Restart%20ACIS/CAP_1597_Restart%20ACIS.pdf>`_
+
+* CAP 1622: Update TXINGS Parameter Vaues. (``acis_docs/CAPs/CAP1622_TXINGB_SETPARAMS.pdf``) (``acis_docs/CAPs/CAP1622_TXINGB_SETPARAMS.docx``)
   
 .. |mptl| replace:: ``multiplot_tracelog`` Command-line Script
 .. _mptl: http://cxc.cfa.harvard.edu/acis/acispy/command_line.html#multiplot-tracelog

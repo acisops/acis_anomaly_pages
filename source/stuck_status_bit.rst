@@ -55,11 +55,11 @@ We need to:
 * Notify the Chandra Operations team on the telecon after the SCS-107 execution 
   was discovered. If not possible, send email to ``sot_yellow_alert@cfa`` describing
   the situation, including the time of the anomaly and the Obsid when it occured.
-* Prepare a CAP and submit it for review to capreview AT ipa DOT harvard DOT edu,
+* Prepare the CAPs and submit them for review to capreview AT ipa DOT harvard DOT edu,
   and cc: acisdude. It will also be necessary to call the OC/CC to determine 
-  which number should be used for the CAP.
+  which number should be used for the CAPs.
 
-  This CAP will have the following steps:
+  The main recovery CAP will have the following steps:
 
   - Confirm telemetry format is 1 or 2 and the most recent version of flight software 
     is running
@@ -67,6 +67,10 @@ We need to:
 
   There is a template CAP in ``acis_docs/CAPs``: ``CAPXXXX_WMBOOT_HK``
 
+  A CAP to update *txings* values from their defaults to most-recent settings should follow the
+  main recovery CAP if possible.  A template for this is in ``acis_docs/CAPs``: ``CAP1622_TXINGB_SETPARAMS``.
+
+  
 .. raw:: html
     <br>
 
@@ -79,7 +83,9 @@ Impacts
 
 * The anomaly occurs after SCS-107 execution, so no science is lost.
 * The warmboot of the BEP will reset the parameters of the TXINGS patch to their
-  defaults. They can be updated in the weekly load through a SAR.
+  defaults.
+  If not updated during initial recovery as above, *txings* settings should be updated as soon as possible via CAP (see CAP 1622) or SAR to prevent undesired radiation shutdown.
+
 * If a science run is started before a warmboot can be performed, testing on the 
   ACIS Engineering Unit has shown that the initiation of the run will clear the 
   problem, but not without generating an error message due to "clobbering" the 
@@ -148,6 +154,7 @@ CAPs
 .. |cap1433_doc| replace:: DOC
 .. _cap1433_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1401-1500/CAP_1433__wmboot_deahk/CAP1433__wmboot_deahk.doc
 
+* CAP 1622 (Update TXINGS Parameter Values)  (``acis_docs/CAPs/CAP1622_TXINGB_SETPARAMS.pdf``) (``acis_docs/CAPs/CAP1622_TXINGB_SETPARAMS.docx``)
 * CAP 1433 (ACIS BEP Warmboot and DEA housekeeping restart) (|cap1433_pdf|_) (|cap1433_doc|_)  (Note the double underscore before wmboot in the filename.)
 * CAP 1381 (ACIS BEP Warmboot and DEA housekeeping restart) (|cap1381_pdf|_) (|cap1381_doc|_)
 

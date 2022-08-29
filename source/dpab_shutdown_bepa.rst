@@ -82,13 +82,13 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 * Identify whether or not additional comm time is needed and if so ask the OC/LSE to request it.
 
 * Send an email to ``sot_red_alert@cfa`` and call a telecon with the FOT, SOT, and FDs to brief
-  them on the diagnosis and the plan to develop a CAP to recover.
+  them on the diagnosis and the plan to develop CAPs to recover.
 
 
-* Prepare a CAP and submit it for review to capreview AT ipa DOT harvard DOT edu, and cc: acisdude.
-  Call the OC/CC to determine which number should be used for the CAP.
+* Prepare the CAPs and submit them for review to capreview AT ipa DOT harvard DOT edu, and cc: acisdude.
+  Call the OC/CC to determine which number should be used for the CAPs.
 
-  The steps in the CAP will depend on whether or not the active BEP has executed a watchdog reboot.
+  The steps in the main CAP will depend on whether or not the active BEP has executed a watchdog reboot.
   This may happen if the shutdown occurs during an observation that utilitizes the side B FEPs
   (DPA side B powers FEPs 3-5), or if a subsequent observation requests them. Note that this implies
   that a watchdog reboot of the BEP will be avoided only if it occurs during an observation using
@@ -112,8 +112,13 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   complete, a ``WSPOW00000`` is issued followed by a ``WSPOW0002A`` an hour later. Timing of the shutdown
   could mean that either or both of the WSPOW commands were not executed.  In this case the  
   WSPOW0002A command should be added to the CAP, if time permits.
+
+  A CAP to update *txings* values from their defaults to most-recent settings should follow the
+  main recovery CAP if possible. A template for this is in ``acis_docs/CAPs``: ``CAP1622_TXINGB_SETPARAMS``.
+
  
-* Execute the CAP at the next available comm.
+* Execute the recovery CAPs at the next available comm.
+
 * Write a shift report and distribute to ``sot_shift`` to inform the project that ACIS is restored
   to its default configuration.
 
@@ -132,7 +137,8 @@ Impacts
 * Until the DPA-B is powered back on, science operations which require the use of the side B FEPs
   will be affected.
 * If it is necessary to warm boot the BEP, this will reset the parameters of the TXINGS patch 
-  to their defaults. They can be updated in the weekly load through a SAR.
+  to their defaults. 
+  If not updated during initial recovery as above, *txings* settings should be updated as soon as possible via CAP (see CAP 1622) or SAR to prevent undesired radiation shutdown.
 
 Relevant Procedures
 -------------------
@@ -201,8 +207,9 @@ CLD Scripts
 CAPs
 ++++
 
+* CAP 1622 (Update TXINGS Parameter Values)  (``acis_docs/CAPs/CAP1622_TXINGB_SETPARAMS.pdf``) (``acis_docs/CAPs/CAP1622_TXINGB_SETPARAMS.docx``)
 * CAP 1055 (Commanding to Turn On DPA Side B and Warm Boot BEP Side A) (|cap1055_pdf|_) (|cap1055_doc|_)
-
+  
 .. |mptl| replace:: ``multiplot_tracelog`` Command-line Script
 .. _mptl: http://cxc.cfa.harvard.edu/acis/acispy/command_line.html#multiplot-tracelog
 

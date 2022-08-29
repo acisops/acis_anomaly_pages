@@ -17,7 +17,7 @@ Contents:
 * :doc:`dpab_shutdown_bepa` (Last Updated August 29, 2022)
 * :doc:`dpaa_shutdown_bepb` 
 * :doc:`dpab_shutdown_bepb`
-* :doc:`dea_shutdown` (Last Updated December 15, 2017)
+* :doc:`dea_shutdown` (Last Updated August 29,2022)
 * :doc:`dea_seq_reset` (Last Updated September 11, 2018)
 * :doc:`fep_reset` (Last Updated February 3, 2020)
 * :doc:`hi_lo_anomaly` (Last Updated June 28, 2017)
@@ -25,6 +25,6 @@ Contents:
 * :doc:`fep_thresholder` (Last updated August 14, 2017)
 * :doc:`door_b_enb` (Last updated May 4, 2018)
 * :doc:`stuck_status_bit` (Last updated August 29, 2022)
-* :doc:`bep_buscrash` (Last updated February 15, 2022)
+* :doc:`bep_buscrash` (Last updated August 29, 2022)
   
 :doc:`howto`
