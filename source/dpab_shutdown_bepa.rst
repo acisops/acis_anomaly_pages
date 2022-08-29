@@ -173,8 +173,8 @@ Relevant Procedures
 .. |wsvidalldn| replace:: ``1A_WS007_164.CLD``
 .. _wsvidalldn: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/archive/cld/1A_WS007_164.CLD
 
-.. |stdfoptgssc| replace:: ``I_ACIS_SW_STDFOPTG.ssc``
-.. _stdfoptgssc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/products/ssc/I_ACIS_SW_STDFOPTG.ssc
+.. |stdgoptissc| replace:: ``I_ACIS_SW_STDGOPTI.ssc``
+.. _stdgoptissc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/products/ssc/I_ACIS_SW_STDGOPTI.ssc
 
 
 SOT Procedures

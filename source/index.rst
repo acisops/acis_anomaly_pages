@@ -13,8 +13,8 @@ given to relevant flight notes, procedures, and other documentation.
 
 Contents:
  
-* :doc:`dpaa_shutdown_bepa` (Last Updated January 30, 2020)
-* :doc:`dpab_shutdown_bepa` (Last Updated November 4, 2019)
+* :doc:`dpaa_shutdown_bepa` (Last Updated August 29, 2022)
+* :doc:`dpab_shutdown_bepa` (Last Updated August 29, 2022)
 * :doc:`dpaa_shutdown_bepb` 
 * :doc:`dpab_shutdown_bepb`
 * :doc:`dea_shutdown` (Last Updated December 15, 2017)
@@ -24,7 +24,7 @@ Contents:
 * :doc:`trickle_bias_tplane` (Last Updated May 21, 2018)
 * :doc:`fep_thresholder` (Last updated August 14, 2017)
 * :doc:`door_b_enb` (Last updated May 4, 2018)
-* :doc:`stuck_status_bit` (Last updated January 30, 2020)
-* :doc:`bep_buscrash` (Last updated March 21, 2022)
+* :doc:`stuck_status_bit` (Last updated August 29, 2022)
+* :doc:`bep_buscrash` (Last updated February 15, 2022)
   
 :doc:`howto`
