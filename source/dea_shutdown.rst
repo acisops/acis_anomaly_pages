@@ -71,15 +71,19 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 * As soon as the time of the shutdown is known, inform ``sot_yellow_alert@cfa``.
 * Identify whether or not additional comm time is needed and if so ask the OC/LSE to request it.
 * Send an email to ``sot_red_alert@cfa`` and call a telecon with the FOT, SOT, and FDs to brief
-  them on the diagnosis and the plan to develop a CAP to recover.
-* Prepare a CAP and submit it for review to capreview AT ipa DOT harvard DOT edu, and cc: acisdude.
-  It will also be necessary to call the OC/CC to determine which number should be used for the CAP.
-  This CAP will have the following steps:
+  them on the diagnosis and the plan to develop CAPs to recover.
+* Prepare the CAPs and submit them for review to capreview AT ipa DOT harvard DOT edu, and cc: acisdude.
+  It will also be necessary to call the OC/CC to determine which number should be used for the CAPs.
+  This main recovery CAP will have the following steps:
 
   - Power on the DEA side A (|deaa_on|_)
   - Warm boot the BEP and restart housekeeping (|wmboot_hkp|_)
   - Set the focal plane temperature to -121 :math:`^{\circ}\rm{C}` (|fptemp_121|_)
-    
+
+  A CAP to update *txings* values from their defaults to most-recent settings should follow the
+  main recovery CAP if possible.  A template for this is in ``acis_docs/CAPs``: ``CAP1622_TXINGB_SETPARAMS``.
+
+
 * Execute the CAP at the next available comm.
 * Write a shift report and distribute to ``sot_shift`` to inform the project that ACIS is restored
   to its default configuration.
@@ -91,8 +95,9 @@ Impacts
 * Until the DEA is powered back on, science operations will be interrupted.
 * After DEA is powered back on, the focal plane temperature will be unregulated and possibly uncalibrated. Recovery
   requires a BEP warmboot and setting the focal plane temperature to -121 :math:`^{\circ}\rm{C}`.
-* The warmboot of the BEP will reset the parameters of the TXINGS patch to their defaults. They can be updated in the
-  weekly load through a SAR.
+* The warmboot of the BEP will reset the parameters of the TXINGS patch to their defaults.
+  If not updated during initial recovery as above, *txings* settings should be updated as soon as possible via CAP (see CAP 1622) or SAR to prevent undesired radiation shutdown.
+
 
 Relevant Procedures
 -------------------
@@ -168,7 +173,8 @@ CAPs
 
 * CAP 980 (DEA-A Recovery) (|cap980_pdf|_)
 * CAP 981 (ACIS DEA Warm Boot) (|cap981_pdf|_)
-
+* CAP 1622 (Update TXINGS Parameter Values) (``acis_docs/CAPs/CAP1622_TXINGB_SETPARAMS.pdf``) (``acis_docs/CAPs/CAP1622_TXINGB_SETPARAMS.docx``)
+  
 Relevant Notes/Memos
 --------------------
 
