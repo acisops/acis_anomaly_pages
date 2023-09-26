@@ -10,7 +10,7 @@ The DPA-A shuts down anomalously, presumably due to a spurious command.
 
 .. note::
 
-    **IMPORTANT:** The diagnosis and response to this anomaly presented in this document assumes that 
+    **IMPORTANT:** The diagnosis and response to the anomaly presented in this document assumes that 
     BEP A, powered by DPA side A, is the active BEP
     
     *This anomaly requires human intervention to recover to science operations.*
@@ -88,7 +88,7 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
     through the DEA and so would remain on if the DPA powered off during a science run.)
   - If a long downtime remains before science resumes or if *Chandra* is in the belts, consider 
     powering on 3 FEPs with a ``WSPOW0002A`` (|wspow0002a|).
-  - Reload the patches and restart DEA housekeeping (|stdgopti|_)
+  - Reload the patches and restart DEA housekeeping (|stdhoptj|_)
   - Reset the focal plane temperature to -121 :math:`^\circ{\rm C}` (|fptemp_121|_)
 
   A CAP to update *txings* values from their defaults to most-recent settings should follow the
@@ -100,12 +100,12 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   to its default configuration.
 
 * Upon warmboot it is essential to update *txings* parameters as quickly as possible to the most recent values in order to prevent undesired radiation triggers.
-  CAP 1622 to update *txings* parameter values is the template for this.  A template for this is in ``acis_docs/CAPs``: ``CAP1622_TXINGB_SETPARAMS``.
+  CAP 1708 to update *txings* parameter values is the template for this.  A template for this is in ``acis_docs/CAPs``: ``CAP1708_TXINGB_SETPARAMS``.
 
 
 .. note::
 
-   As of this writing, the ACIS Flight Software Patch level is standard G, optional I, version = 58. 
+   As of this writing, the ACIS Flight Software Patch level is standard H, optional J, version = 60. 
    Before preparing the CAPs, check that this is the correct version.
 
 Impacts
@@ -113,7 +113,7 @@ Impacts
 
 * Until the DPA-A is powered back on, science operations will be interrupted.
 * The warmboot of the BEP will reset the parameters of the TXINGS patch to their defaults. 
-  If not updated during initial recovery as above, *txings* settings should be updated as soon as possible via CAP (see CAP 1622) or SAR to prevent undesired radiation shutdown.
+  If not updated during initial recovery as above, *txings* settings should be updated as soon as possible via CAP (see CAP 1708) or SAR to prevent undesired radiation shutdowns.
 * After recovery from a DPA-A shutdown, the power status may be in an unusual state (e.g., lower
   than expected input current) due to FEPs being off. This situation should resolve itself with 
   the next observation.
@@ -130,14 +130,16 @@ Relevant Procedures
 .. |dpaa_on_doc| replace:: DOC
 .. _dpaa_on_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_DPAA_ON.doc
 
-.. |stdgopti| replace:: ``SOP_ACIS_SW_STDGOPTI``
-.. _stdgopti: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDGOPTI.pdf
+.. |stdhoptj| replace:: ``SOP_ACIS_SW_STDHOPTJ``
+.. _stdhoptj: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDHOPTJ.pdf
 
-.. |stdgopti_pdf| replace:: PDF
-.. _stdgopti_pdf: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDGOPTI.pdf
+.. |stdhoptj_pdf| replace:: PDF
+.. _stdhoptj_pdf: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDHOPTJ.pdf
 
-.. |stdgopti_doc| replace:: DOC
-.. _stdgopti_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDGOPTI.doc
+.. |stdhoptj_doc| replace:: DOC
+.. _stdhoptj_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDHOPTJ.doc
+
+
 
 .. |fptemp_121| replace:: ``SOT_SI_SET_ACIS_FP_TEMP_TO_M121C``
 .. _fptemp_121: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_SI_SET_ACIS_FP_TEMP_TO_M121C.pdf
@@ -154,27 +156,29 @@ Relevant Procedures
 .. |wspow0002a| replace:: ``1AWSPOW0002A_206.CLD``
 .. _wspow0002a: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/archive/cld/1AWSPOW0002A_206.CLD
 
-.. |stdgoptissc| replace:: ``I_ACIS_SW_STDGOPTI.ssc``
-.. _stdgoptissc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/products/ssc/I_ACIS_SW_STDGOPTI.ssc
+.. |stdhoptjssc| replace:: ``I_ACIS_SW_STDHOPTJ.ssc``
+.. _stdhoptjssc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/products/ssc/I_ACIS_SW_STDHOPTJ.ssc
+
+
 
 SOT Procedures
 ++++++++++++++
 
 * `Turn On DPA-A <http://cxc.cfa.harvard.edu/acis/cmd_seq/dpaa_on.pdf>`_
-* `Flight Software Standard Patch G, Optional Patch I <http://cxc.cfa.harvard.edu/acis/cmd_seq/sw_stdgopti.pdf>`_
+* `Flight Software Standard Patch H, Optional Patch J <http://cxc.cfa.harvard.edu/acis/cmd_seq/sw_stdhoptj.pdf>`_
 * `Set Focal Plane Temperature to -121 C <http://cxc.cfa.harvard.edu/acis/cmd_seq/setfp_m121.pdf>`_
 
 FOT Procedures
 ++++++++++++++
 
 * ``SOP_ACIS_DPAA_ON`` (|dpaa_on_pdf|_) (|dpaa_on_doc|_)
-* ``SOP_ACIS_SW_STDGOPTI`` (|stdgopti_pdf|_) (|stdgopti_doc|_)
+* ``SOP_ACIS_SW_STDHOPTJ`` (|stdhoptj_pdf|_) (|stdhoptj_doc|_)
 * ``SOT_SI_SET_ACIS_FP_TEMP_TO_M121C`` (|fptemp_121_pdf|_) (|fptemp_121_doc|_)
 
 FOT Scripts
 +++++++++++
 
-* |stdgoptissc|_
+* |stdhoptjssc|_
 
 CLD Scripts
 +++++++++++
@@ -200,7 +204,10 @@ CAPs
 .. |cap1407_doc| replace:: DOC
 .. _cap1407_doc: http://cxc.cfa.harvard.edu/acis/CAPs/CAP1407_dpaa_poweroff_recovery.doc
 
-* CAP 1622 (Update TXINGS Parameter Values)  (``acis_docs/CAPs/CAP1622_TXINGB_SETPARAMS.pdf``) (``acis_docs/CAPs/CAP1622_TXINGB_SETPARAMS.docx``)
+* CAP 1708 (Update TXINGS Parameter Values)  (``acis_docs/CAPs/CAP1708_TXINGB_SETPARAMS.pdf``)
+  (``acis_docs/CAPs/CAP1708_TXINGB_SETPARAMS.docx``)
+
+  
 * CAP 1407 (DPA-A Poweroff Recovery) (|cap1407_pdf|_) (|cap1407_doc|_)
 * CAP 1342 (DPA-A Poweroff Recovery) (|cap1342_pdf|_) (|cap1342_doc|_)
 * CAP 818 (DPA-A Side Recovery from Enabled/Powered Off State) (|cap818_pdf|_)
