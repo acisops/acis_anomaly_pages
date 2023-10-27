@@ -99,9 +99,11 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 * Write a shift report and distribute to ``sot_shift`` to inform the project that ACIS is restored
   to its default configuration.
 
-* Upon warmboot it is essential to update *txings* parameters as quickly as possible to the most recent values in order to prevent undesired radiation triggers.
-  CAP 1708 to update *txings* parameter values is the template for this.  A template for this is in ``acis_docs/CAPs``: ``CAP1708_TXINGB_SETPARAMS``.
-
+* Upon warmboot it is essential to update the *txings* parameters to the most recent values as quickly as possible in order
+  to prevent undesired radiation triggers.   CAP 1708  was used at the latest ACIS FSW patch: HJK Version 60.  You can
+  use that CAP  as a  **template** for this.   But you must use the latest txing parameter set (which may not be the
+  values used in 1708). You can find CAP1708_TXINGB_SETPARAMS.docx  in ``acis_docs/CAPs``: ``CAP1708_TXINGB_SETPARAMS``.
+  Refer to the most recent txings SAR for the current optimal values for the txings parameters.
 
 .. note::
 
@@ -204,10 +206,13 @@ CAPs
 .. |cap1407_doc| replace:: DOC
 .. _cap1407_doc: http://cxc.cfa.harvard.edu/acis/CAPs/CAP1407_dpaa_poweroff_recovery.doc
 
-* CAP 1708 (Update TXINGS Parameter Values)  (``acis_docs/CAPs/CAP1708_TXINGB_SETPARAMS.pdf``)
-  (``acis_docs/CAPs/CAP1708_TXINGB_SETPARAMS.docx``)
+.. |cap1708_pdf| replace:: PDF
+.. _cap1708_pdf: http://cxc.cfa.harvard.edu/acis/CAPs/CAP1708_TXINGB_SETPARAMS.pdf
 
-  
+.. |cap1708_doc| replace:: DOC
+.. _cap1708_doc: http://cxc.cfa.harvard.edu/acis/CAPs/CAP1708_TXINGB_SETPARAMS.docx
+
+* CAP 1708 (Update TXINGS Parameter Values) (|cap1708_pdf|_) (|cap1708_doc|_)
 * CAP 1407 (DPA-A Poweroff Recovery) (|cap1407_pdf|_) (|cap1407_doc|_)
 * CAP 1342 (DPA-A Poweroff Recovery) (|cap1342_pdf|_) (|cap1342_doc|_)
 * CAP 818 (DPA-A Side Recovery from Enabled/Powered Off State) (|cap818_pdf|_)
