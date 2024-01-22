@@ -84,7 +84,7 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 
   - Power on the DPA side A (|dpaa_on|_)
  
-  - Power down the video boards and leave 3 FEPs on by issuing a WSPOW0002A command.
+  - Power down the video boards and leave 3 FEPs on by issuing a WSPOW0002A command (1AWSPOW0002A_206.CLD).
     
   - Reload the patches and restart DEA housekeeping (|stdhoptj|_)
   - Reset the focal plane temperature setpoint to -121 :math:`^\circ{\rm C}` (|fptemp_121|_)
