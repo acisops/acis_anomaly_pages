@@ -10,7 +10,7 @@ The DPA-A shuts down anomalously, presumably due to a spurious command.
 
 .. note::
 
-    **IMPORTANT:** The diagnosis and response to this anomaly presented in this document assumes that 
+    **IMPORTANT:** The diagnosis and response to the anomaly presented in this document assumes that 
     BEP A, powered by DPA side A, is the active BEP
     
     *This anomaly requires human intervention to recover to science operations.*
@@ -28,7 +28,7 @@ The DPA-A has shut down 4 times over the mission:
 Will it happen again?
 ---------------------
 
-It appears likely that the anomaly will occur again if the mission continues.
+It appears likely that the anomaly will occur again.
 
 How is this anomaly diagnosed?
 ------------------------------
@@ -37,15 +37,15 @@ Within a major frame (32.2 seconds), one should see:
 
 * 1DPPSA (DPA-A Power Supply On/Off) change from 1 to 0 (On to Off)
 * 1DPP0AVO (DPA-A +5V Analog Voltage) drop to 0.0 +/- 0.3 V
-* 1DPICACU (DPA-A Input Current) drop to < 0.2 A (this value is noisy, so take an average)
-* DPA-A POWER should go to zero
+* 1DPICACU (DPA-A Input Current) drop to < 0.2 A 
+* DPA-A POWER should go to ~zero
 * 1DP28AVO (DPA-A +28V Input Voltage) is expected to have a small uptick, ~0.5 V, consistent with
   the load suddenly dropping to zero.  May require more than 1 major frame.
 * The software and hardware bilevels will likely not have normal values if BEP side A is active.
 
 All other hardware telemetry should be nominal. The current values for these can be found
 on our Real-Time Telemetry pages. Older data can be examined from the dump files or the
-engineering archive.
+engineering archive.  
 
 To extract information from the dump data, run ACORN on it as per the instructions in
 `"Running ACORN on data dumps in the case of an anomaly (04/06/16)" <http://cxc.cfa.harvard.edu/acis/memos/Dump_Acorn.html>`_. 
@@ -83,13 +83,11 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   The main recovery CAP will have the following steps:
 
   - Power on the DPA side A (|dpaa_on|_)
-  - It is likely advisable to first issue a ``WSVIDALLDN`` to power off the video boards (|wsvidalldn|), 
-    particularly if *Chandra* is heading into the radiation belts.  (The video boards are powered 
-    through the DEA and so would remain on if the DPA powered off during a science run.)
-  - If a long downtime remains before science resumes or if *Chandra* is in the belts, consider 
-    powering on 3 FEPs with a ``WSPOW0002A`` (|wspow0002a|).
-  - Reload the patches and restart DEA housekeeping (|stdgopti|_)
-  - Reset the focal plane temperature to -121 :math:`^\circ{\rm C}` (|fptemp_121|_)
+ 
+  - Power down the video boards and leave 3 FEPs on by issuing a WSPOW0002A command (1AWSPOW0002A_206.CLD).
+    
+  - Reload the patches and restart DEA housekeeping (|stdhoptj|_)
+  - Reset the focal plane temperature setpoint to -121 :math:`^\circ{\rm C}` (|fptemp_121|_)
 
   A CAP to update *txings* values from their defaults to most-recent settings should follow the
   main recovery CAP if possible.  
@@ -99,24 +97,25 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 * Write a shift report and distribute to ``sot_shift`` to inform the project that ACIS is restored
   to its default configuration.
 
-* Upon warmboot it is essential to update *txings* parameters as quickly as possible to the most recent values in order to prevent undesired radiation triggers.
-  CAP 1622 to update *txings* parameter values is the template for this.  A template for this is in ``acis_docs/CAPs``: ``CAP1622_TXINGB_SETPARAMS``.
-
+* Upon warmboot it is essential to update the *txings* parameters to the most recent values as quickly as possible in order
+  to prevent undesired radiation triggers.   CAP 1708  was used at the latest ACIS FSW patch: HJK Version 60.  You can
+  use that CAP  as a  **template** for this.   But you must use the latest txing parameter set (which may not be the
+  values used in 1708). You can find CAP1708_TXINGB_SETPARAMS.docx  in ``acis_docs/CAPs``: ``CAP1708_TXINGB_SETPARAMS``.
+  Refer to the most recent txings SAR for the current optimal values for the txings parameters.
 
 .. note::
 
-   As of this writing, the ACIS Flight Software Patch level is standard G, optional I, version = 58. 
+   As of this writing, the ACIS Flight Software Patch level is standard H, optional J, version = 60. 
    Before preparing the CAPs, check that this is the correct version.
 
 Impacts
 -------
 
 * Until the DPA-A is powered back on, science operations will be interrupted.
+  
 * The warmboot of the BEP will reset the parameters of the TXINGS patch to their defaults. 
-  If not updated during initial recovery as above, *txings* settings should be updated as soon as possible via CAP (see CAP 1622) or SAR to prevent undesired radiation shutdown.
-* After recovery from a DPA-A shutdown, the power status may be in an unusual state (e.g., lower
-  than expected input current) due to FEPs being off. This situation should resolve itself with 
-  the next observation.
+  If not updated during initial recovery as above, *txings* settings should be updated as soon as possible via CAP (see CAP 1708) or SAR to prevent undesired radiation shutdowns.
+
 
 Relevant Procedures
 -------------------
@@ -130,14 +129,16 @@ Relevant Procedures
 .. |dpaa_on_doc| replace:: DOC
 .. _dpaa_on_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_DPAA_ON.doc
 
-.. |stdgopti| replace:: ``SOP_ACIS_SW_STDGOPTI``
-.. _stdgopti: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDGOPTI.pdf
+.. |stdhoptj| replace:: ``SOP_ACIS_SW_STDHOPTJ``
+.. _stdhoptj: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDHOPTJ.pdf
 
-.. |stdgopti_pdf| replace:: PDF
-.. _stdgopti_pdf: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDGOPTI.pdf
+.. |stdhoptj_pdf| replace:: PDF
+.. _stdhoptj_pdf: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDHOPTJ.pdf
 
-.. |stdgopti_doc| replace:: DOC
-.. _stdgopti_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDGOPTI.doc
+.. |stdhoptj_doc| replace:: DOC
+.. _stdhoptj_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDHOPTJ.doc
+
+
 
 .. |fptemp_121| replace:: ``SOT_SI_SET_ACIS_FP_TEMP_TO_M121C``
 .. _fptemp_121: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_SI_SET_ACIS_FP_TEMP_TO_M121C.pdf
@@ -148,40 +149,39 @@ Relevant Procedures
 .. |fptemp_121_doc| replace:: DOC
 .. _fptemp_121_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_SI_SET_ACIS_FP_TEMP_TO_M121C.pdf
 
-.. |wsvidalldn| replace:: ``1A_WS007_164.CLD``
-.. _wsvidalldn: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/archive/cld/1A_WS007_164.CLD
+.. |stdhoptjssc| replace:: ``I_ACIS_SW_STDHOPTJ.ssc``
+.. _stdhoptjssc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/products/ssc/I_ACIS_SW_STDHOPTJ.ssc
 
-.. |wspow0002a| replace:: ``1AWSPOW0002A_206.CLD``
-.. _wspow0002a: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/archive/cld/1AWSPOW0002A_206.CLD
 
-.. |stdgoptissc| replace:: ``I_ACIS_SW_STDGOPTI.ssc``
-.. _stdgoptissc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/products/ssc/I_ACIS_SW_STDGOPTI.ssc
 
 SOT Procedures
 ++++++++++++++
 
 * `Turn On DPA-A <http://cxc.cfa.harvard.edu/acis/cmd_seq/dpaa_on.pdf>`_
-* `Flight Software Standard Patch G, Optional Patch I <http://cxc.cfa.harvard.edu/acis/cmd_seq/sw_stdgopti.pdf>`_
+* `Flight Software Standard Patch H, Optional Patch J <http://cxc.cfa.harvard.edu/acis/cmd_seq/sw_stdhoptj.pdf>`_
 * `Set Focal Plane Temperature to -121 C <http://cxc.cfa.harvard.edu/acis/cmd_seq/setfp_m121.pdf>`_
 
 FOT Procedures
 ++++++++++++++
 
 * ``SOP_ACIS_DPAA_ON`` (|dpaa_on_pdf|_) (|dpaa_on_doc|_)
-* ``SOP_ACIS_SW_STDGOPTI`` (|stdgopti_pdf|_) (|stdgopti_doc|_)
+* ``SOP_ACIS_SW_STDHOPTJ`` (|stdhoptj_pdf|_) (|stdhoptj_doc|_)
 * ``SOT_SI_SET_ACIS_FP_TEMP_TO_M121C`` (|fptemp_121_pdf|_) (|fptemp_121_doc|_)
 
 FOT Scripts
 +++++++++++
 
-* |stdgoptissc|_
+* |stdhoptjssc|_
 
-CLD Scripts
+CLD Files
 +++++++++++
 
-* |wsvidalldn|_
-* |wspow0002a|_
+* 1AWSPOW0002A_206.cld
+    - Located at: /data/acis/acis_docs/command_load/1AWSPOW0002A_206.cld and 1AWSPOW0002A_206.txt
 
+
+
+  
 CAPs
 ++++
 
@@ -200,7 +200,13 @@ CAPs
 .. |cap1407_doc| replace:: DOC
 .. _cap1407_doc: http://cxc.cfa.harvard.edu/acis/CAPs/CAP1407_dpaa_poweroff_recovery.doc
 
-* CAP 1622 (Update TXINGS Parameter Values)  (``acis_docs/CAPs/CAP1622_TXINGB_SETPARAMS.pdf``) (``acis_docs/CAPs/CAP1622_TXINGB_SETPARAMS.docx``)
+.. |cap1708_pdf| replace:: PDF
+.. _cap1708_pdf: http://cxc.cfa.harvard.edu/acis/CAPs/CAP1708_TXINGB_SETPARAMS.pdf
+
+.. |cap1708_doc| replace:: DOC
+.. _cap1708_doc: http://cxc.cfa.harvard.edu/acis/CAPs/CAP1708_TXINGB_SETPARAMS.docx
+
+* CAP 1708 (Update TXINGS Parameter Values) (|cap1708_pdf|_) (|cap1708_doc|_)
 * CAP 1407 (DPA-A Poweroff Recovery) (|cap1407_pdf|_) (|cap1407_doc|_)
 * CAP 1342 (DPA-A Poweroff Recovery) (|cap1342_pdf|_) (|cap1342_doc|_)
 * CAP 818 (DPA-A Side Recovery from Enabled/Powered Off State) (|cap818_pdf|_)
@@ -213,11 +219,11 @@ Relevant Notes/Memos
 * `Flight Note 563 <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/flightnotes/controlled/Flight_Note563_DPA-A_Turn_Off_Anomaly_Report.pdf>`_
 
 .. |mptl| replace:: ``multiplot_tracelog`` Command-line Script
-.. _mptl: http://cxc.cfa.harvard.edu/acis/acispy/command_line.html#multiplot-tracelog
+.. _mptl: http://cxc.cfa.harvard.edu/acis/acispy_cmd/#multiplot-tracelog
 
 Relevant ACISpy Links
 ---------------------
 
 * `Reading MSID Data from Tracelog File <http://cxc.cfa.harvard.edu/acis/acispy/loading_data.html#reading-msid-data-from-a-tracelog-file>`_
-* `Plotting Data in Python <http://cxc.cfa.harvard.edu/acis/acispy/plotting_data.html>`_
+* `Plotting Data in Python <http://cxc.cfa.harvard.edu/acis/acispy/Plotting_Data.html>`_
 * |mptl|_
