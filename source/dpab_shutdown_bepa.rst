@@ -10,8 +10,8 @@ The DPA-B shuts down anomalously, presumably due to a spurious command.
 
 .. note::
 
-    **IMPORTANT:** The diagnosis and response to this anomaly presented in this document assumes that
-    BEP A, powered by DPA side A, is the active BEP.  
+    **IMPORTANT:** The diagnosis and response to the anomaly presented in this document assumes that
+    BEP A, powered by DPA side A, is the active BEP.
 
     *This anomaly requires human intervention to recover to science operations.*
 
@@ -26,7 +26,7 @@ The DPA-B has shut down once:
 Will it happen again?
 ---------------------
 
-It appears likely that the anomaly will occur again if the mission continues.
+It appears likely that the anomaly will occur again.
 
 How is this anomaly diagnosed?
 ------------------------------
@@ -35,7 +35,7 @@ Within a major frame (32.2 seconds), one should see:
 
 * 1DPPSB (DPA-B Power Supply On/Off) change from 1 to 0 (On to Off)
 * 1DPP0BVO (DPA-B +5V Analog Voltage) drop to 0.0 +/- 0.3 V
-* 1DPICBCU (DPA-B Input Current) drop to < 0.2 A (this value is noisy, so take an average)
+* 1DPICBCU (DPA-B Input Current) drop to < 0.2 A
 * DPA-B POWER should go to zero
 * 1DP28BVO (DPA-B +28V Input Voltage) is expected to have a small uptick, ~0.5 V, consistent with
   the load suddenly dropping to zero. May require more than 1 major frame.
@@ -49,7 +49,8 @@ engineering archive.
 
 To extract information from the dump data, run ACORN on it as per the instructions in
 `"Running ACORN on data dumps in the case of an anomaly (04/06/16)" <http://cxc.cfa.harvard.edu/acis/memos/Dump_Acorn.html>`_. 
-Information from the tracelog files written by the ACORN tools can be plotted using the Python or command-line interfaces to ACISpy, see below for details. 
+Information from the tracelog files written by the ACORN tools can be plotted
+using the Python or command-line interfaces to ACISpy, see below for details. 
 
 What is the response?
 ---------------------
@@ -57,7 +58,7 @@ What is the response?
 Our real-time web pages will alert us and the Lead System Engineer will call us. We need to:
 
 * Send an email to the ACIS team at the official anomaly email address,
-  ``acis-anomaly -at- googlegroups -dot- com``. If it is off-hours, 
+  ``acis-anomaly -at- googlegroups -dot- com``. If it is off-hours,
   another ACIS Ops team member should call Peter, Bob, and Jim Francis.
 
 * Send an email to ``sot_red_alert@cfa`` announcing that the ACIS team is aware of the DPA-B shutdown
@@ -86,13 +87,13 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 
 
 * Prepare the CAPs and submit them for review to capreview AT ipa DOT harvard DOT edu, and cc: acisdude.
-  Call the OC/CC to determine which number should be used for the CAPs.
+  It will also be necessary to call the OC/CC to determine which number should be used for the CAPs.
 
-  The steps in the main CAP will depend on whether or not the active BEP has executed a watchdog reboot.
+  The steps in the main recovery CAP will depend on whether or not the active BEP has executed a watchdog reboot.
   This may happen if the shutdown occurs during an observation that utilitizes the side B FEPs
-  (DPA side B powers FEPs 3-5), or if a subsequent observation requests them. Note that this implies
-  that a watchdog reboot of the BEP will be avoided only if it occurs during an observation using
-  only 1 or 2 CCDs, and until an observation occurs using 3 or more CCDs.
+  (DPA side B powers FEPs 3-5), or if a subsequent observation requests them. Presently, because
+  FEP 0 is the last FEP to be used, this means that a watchdog reboot of the BEP will be avoided
+  only if it occurs during an observation using only 1 or 2 CCDs, and until an observation occurs using 3 or more CCDs.
 
      If BEP A - the active BEP - has not executed a watchdog reboot, the steps should be:
 
@@ -105,26 +106,39 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
      - Stop the science run and power down the FEPs and video boards (|standby|_)
      - Turn on DPA side B (|dpab_on|_)
      - Warm-boot the BEP and start a DEA housekeeping run (|warmboot|_).
+     - Set 3 FEPs on by issuing a WSPOW0002A command (1AWSPOW0002A_206.CLD).
 
-  Unique circumstances occur during perigee passages. As of now, an ECS
-  measurement will use no less than 4 chips. This means that a watchdog boot will occur should the
+	
+  Unique circumstances occur during perigee passages. If an ECS
+  measurement uses 3, or more, chips a watchdog boot will occur should the
   anomaly occur during an ECS measurment.  Presently, after the inbound ECS measurement is 
-  complete, a ``WSPOW00000`` is issued followed by a ``WSPOW0002A`` an hour later. Timing of the shutdown
+  complete, a ``WSPOW00000`` is issued followed by a ``WSPOW0002A``. Timing of the shutdown
   could mean that either or both of the WSPOW commands were not executed.  In this case the  
   WSPOW0002A command should be added to the CAP, if time permits.
 
-  A CAP to update *txings* values from their defaults to most-recent settings should follow the
-  main recovery CAP if possible. A template for this is in ``acis_docs/CAPs``: ``CAP1622_TXINGB_SETPARAMS``.
+  A CAP to update *txings* values from their defaults to the most-recent settings should follow the
+  main recovery CAP if possible.   CAP 1708  was used at the latest ACIS FSW patch: HJK Version 60.  You can
+  use that CAP  as a  **template** for this.   But you must use the latest txing parameter set (which may not be the
+  values used in 1708). You can find CAP1708_TXINGB_SETPARAMS.docx  in ``acis_docs/CAPs``: ``CAP1708_TXINGB_SETPARAMS``.
+  Refer to the most recent txings SAR for the current optimal values for the txings parameters.
 
  
-* Execute the recovery CAPs at the next available comm.
+* Execute the recovery CAPs at the next available comm. Reloading the flight software patches can take
+  a half an hour, so ensure that there is enough time in the comm to execute the entire procedure.
+  
+* Write a shift report and distribute to ``sot_shift`` to inform the project that ACIS is restored
+  to its default configuration.
 
+  
 * Write a shift report and distribute to ``sot_shift`` to inform the project that ACIS is restored
   to its default configuration.
 
 .. note::
 
-   At this point in the mission (Jan 2017), it is standard practice to power off unused FEPs to
+   As of this writing, the ACIS Flight Software Patch level is standard H, optional J, version = 60. 
+   Before preparing the CAPs, check that this is the correct version.
+
+   At this point in the mission (Jan 2017), during observations, it is standard practice to power off unused FEPs to
    reduce power consumption and keep the electronics temperatures lower. For this reason, it is
    believed that it is safe to power on the DPA side B during a science run that does not use
    these FEPs. If this practice is changed later in the mission, this procedure may have to be
@@ -138,7 +152,7 @@ Impacts
   will be affected.
 * If it is necessary to warm boot the BEP, this will reset the parameters of the TXINGS patch 
   to their defaults. 
-  If not updated during initial recovery as above, *txings* settings should be updated as soon as possible via CAP (see CAP 1622) or SAR to prevent undesired radiation shutdown.
+  If not updated during initial recovery as above, *txings* settings should be updated as soon as possible via CAP (see CAP 1708) or SAR to prevent undesired radiation shutdown.
 
 Relevant Procedures
 -------------------
@@ -179,8 +193,37 @@ Relevant Procedures
 .. |wsvidalldn| replace:: ``1A_WS007_164.CLD``
 .. _wsvidalldn: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/archive/cld/1A_WS007_164.CLD
 
-.. |stdgoptissc| replace:: ``I_ACIS_SW_STDGOPTI.ssc``
-.. _stdgoptissc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/products/ssc/I_ACIS_SW_STDGOPTI.ssc
+.. |stdhoptjssc| replace:: ``I_ACIS_SW_STDHOPTJ.ssc``
+.. _stdhoptjssc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/products/ssc/I_ACIS_SW_STDHOPTJ.ssc
+
+.. |cap1708_pdf| replace:: PDF
+.. _cap1708_pdf: http://cxc.cfa.harvard.edu/acis/CAPs/CAP1708_TXINGB_SETPARAMS.pdf
+
+.. |cap1708_doc| replace:: DOC
+.. _cap1708_doc: http://cxc.cfa.harvard.edu/acis/CAPs/CAP1708_TXINGB_SETPARAMS.docx
+
+.. |stdhoptj| replace:: ``SOP_ACIS_SW_STDHOPTJ``
+.. _stdhoptj: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDHOPTJ.pdf
+
+.. |stdhoptj_pdf| replace:: PDF
+.. _stdhoptj_pdf: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDHOPTJ.pdf
+
+.. |stdhoptj_doc| replace:: DOC
+.. _stdhoptj_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDHOPTJ.doc
+
+
+.. |stdhoptjssc| replace:: ``I_ACIS_SW_STDHOPTJ.ssc``
+.. _stdhoptjssc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/products/ssc/I_ACIS_SW_STDHOPTJ.ssc
+
+
+.. |fptemp_121| replace:: ``SOT_SI_SET_ACIS_FP_TEMP_TO_M121C``
+.. _fptemp_121: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_SI_SET_ACIS_FP_TEMP_TO_M121C.pdf
+
+.. |fptemp_121_pdf| replace:: PDF
+.. _fptemp_121_pdf: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_SI_SET_ACIS_FP_TEMP_TO_M121C.pdf
+
+.. |fptemp_121_doc| replace:: DOC
+.. _fptemp_121_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_SI_SET_ACIS_FP_TEMP_TO_M121C.pdf
 
 
 SOT Procedures
@@ -188,8 +231,14 @@ SOT Procedures
 
 * `Turn On DPA-B <http://cxc.cfa.harvard.edu/acis/cmd_seq/dpab_on.pdf>`_
 * `Put ACIS Into Thermal Standby Mode <http://cxc.cfa.harvard.edu/acis/cmd_seq/standby.pdf>`_
-* `Warm Boot the Active ACIS BEP and Start DEA Housekeeping Run <http://cxc.cfa.harvard.edu/acis/cmd_seq/warmboot_hkp.pdf>`_
+* `Warm Boot the Active ACIS BEP and Start DEA Housekeeping Run
+  <http://cxc.cfa.harvard.edu/acis/cmd_seq/warmboot_hkp.pdf>`_
 
+  [ Do we need FP Temp Set in case the system configuration table got corrupted FSW 3.1.3.4 item #2]
+  
+* `Set Focal Plane Temperature to -121 C <http://cxc.cfa.harvard.edu/acis/cmd_seq/setfp_m121.pdf>`_
+* `Flight Software Standard Patch H, Optional Patch J <http://cxc.cfa.harvard.edu/acis/cmd_seq/sw_stdhoptj.pdf>`_
+  
 FOT Procedures
 ++++++++++++++
 
@@ -197,21 +246,26 @@ FOT Procedures
 * ``SOP_61021_STANDBY`` (|standby_pdf|_) (|standby_doc|_)
 * ``SOP_ACIS_WARMBOOT_DEAHOUSEKEEPING`` (|warmboot_pdf|_) (|warmboot_doc|_)
 
+  Again do we need the following two procedures to be listed just in case?
+  
+* ``SOP_ACIS_SW_STDHOPTJ`` (|stdhoptj_pdf|_) (|stdhoptj_doc|_)
+* ``SOT_SI_SET_ACIS_FP_TEMP_TO_M121C`` (|fptemp_121_pdf|_) (|fptemp_121_doc|_)
 
 CLD Scripts
 +++++++++++
 
 
    1AWSPOW00002A_206.cld (OBC-A side)
+    - Located at: /data/acis/acis_docs/command_load/1AWSPOW0002A_206.cld and 1AWSPOW0002A_206.txt
 
 CAPs
 ++++
 
-* CAP 1622 (Update TXINGS Parameter Values)  (``acis_docs/CAPs/CAP1622_TXINGB_SETPARAMS.pdf``) (``acis_docs/CAPs/CAP1622_TXINGB_SETPARAMS.docx``)
+* CAP 1708 (Update TXINGS Parameter Values) (|cap1708_pdf|_) (|cap1708_doc|_)
 * CAP 1055 (Commanding to Turn On DPA Side B and Warm Boot BEP Side A) (|cap1055_pdf|_) (|cap1055_doc|_)
   
 .. |mptl| replace:: ``multiplot_tracelog`` Command-line Script
-.. _mptl: http://cxc.cfa.harvard.edu/acis/acispy/command_line.html#multiplot-tracelog
+.. _mptl: http://cxc.cfa.harvard.edu/acis/acispy_cmd/#multiplot-archive
 
 
 Relevant Notes/Memos
@@ -226,5 +280,5 @@ Relevant ACISpy Links
 ---------------------
 
 * `Reading MSID Data from Tracelog File <http://cxc.cfa.harvard.edu/acis/acispy/loading_data.html#reading-msid-data-from-a-tracelog-file>`_
-* `Plotting Data in Python <http://cxc.cfa.harvard.edu/acis/acispy/plotting_data.html>`_
+* `Plotting Data in Python <http://cxc.cfa.harvard.edu/acis/acispy/Plotting_Data.html>`_
 * |mptl|_
