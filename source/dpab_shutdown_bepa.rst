@@ -129,10 +129,6 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 * Write a shift report and distribute to ``sot_shift`` to inform the project that ACIS is restored
   to its default configuration.
 
-  
-* Write a shift report and distribute to ``sot_shift`` to inform the project that ACIS is restored
-  to its default configuration.
-
 .. note::
 
    As of this writing, the ACIS Flight Software Patch level is standard H, optional J, version = 60. 
