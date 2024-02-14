@@ -14,7 +14,7 @@ given to relevant flight notes, procedures, and other documentation.
 Contents:
  
 * :doc:`dpaa_shutdown_bepa` (Last Updated January 19, 2024)
-* :doc:`dpab_shutdown_bepa` (Last Updated August 29, 2022)
+* :doc:`dpab_shutdown_bepa` (Last Updated February 14, 2024)
 * :doc:`dpaa_shutdown_bepb` 
 * :doc:`dpab_shutdown_bepb`
 * :doc:`dea_shutdown` (Last Updated August 29,2022)
