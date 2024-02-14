@@ -90,10 +90,13 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   It will also be necessary to call the OC/CC to determine which number should be used for the CAPs.
 
   The steps in the main recovery CAP will depend on whether or not the active BEP has executed a watchdog reboot.
-  This may happen if the shutdown occurs during an observation that utilitizes the side B FEPs
-  (DPA side B powers FEPs 3-5), or if a subsequent observation requests them. Presently, because
-  FEP 0 is the last FEP to be used, this means that a watchdog reboot of the BEP will be avoided
-  only if it occurs during an observation using only 1 or 2 CCDs, and until an observation occurs using 3 or more CCDs.
+  This may happen if the shutdown occurs during an observation that utilizes the side B FEPs
+  (DPA side B powers FEPs 3-5), or if a subsequent observation requests them.  Observations using three or more
+  CCDs require DPA Side-B FEPs and will result in a bus error/watchdog reset (Side-A's FEP 0 is reserved for six
+  CCD observations). Observations using only one or two CCDs need only DPA Side-A FEPs and won't be watchdog
+  reset upon loss of the Side-B power. (As of this writing there are two exceptions, the Next-In-Line and the 2-CCD
+  ECS SI modes which use FEPs 1 & 4 and would cause a watchdog reboot.)
+  
 
      If BEP A - the active BEP - has not executed a watchdog reboot, the steps should be:
 
@@ -108,13 +111,10 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
      - Warm-boot the BEP and start a DEA housekeeping run (|warmboot|_).
      - Set 3 FEPs on by issuing a WSPOW0002A command (1AWSPOW0002A_206.CLD).
 
-	
-  Unique circumstances occur during perigee passages. If an ECS
-  measurement uses 3, or more, chips a watchdog boot will occur should the
-  anomaly occur during an ECS measurment.  Presently, after the inbound ECS measurement is 
-  complete, a ``WSPOW00000`` is issued followed by a ``WSPOW0002A``. Timing of the shutdown
-  could mean that either or both of the WSPOW commands were not executed.  In this case the  
-  WSPOW0002A command should be added to the CAP, if time permits.
+
+The current standard, safe configuration for ACIS is 3 FEPs (1, 3, & 5) powered on and not clocking.
+The last step in the recovery in the case of a watchdog reboot listed above issues a WSPOW0002A
+command to put ACIS in the 3 FEPs powered on and not clocking configuration.
 
   A CAP to update *txings* values from their defaults to the most-recent settings should follow the
   main recovery CAP if possible.   CAP 1708  was used at the latest ACIS FSW patch: HJK Version 60.  You can
@@ -123,16 +123,12 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   Refer to the most recent txings SAR for the current optimal values for the txings parameters.
 
  
-* Execute the recovery CAPs at the next available comm. Reloading the flight software patches can take
-  a half an hour, so ensure that there is enough time in the comm to execute the entire procedure.
+* Execute the recovery CAPs at the next available comm. 
   
 * Write a shift report and distribute to ``sot_shift`` to inform the project that ACIS is restored
   to its default configuration.
 
 .. note::
-
-   As of this writing, the ACIS Flight Software Patch level is standard H, optional J, version = 60. 
-   Before preparing the CAPs, check that this is the correct version.
 
    At this point in the mission (Jan 2017), during observations, it is standard practice to power off unused FEPs to
    reduce power consumption and keep the electronics temperatures lower. For this reason, it is
@@ -186,40 +182,11 @@ Relevant Procedures
 .. |cap1055_doc| replace:: DOC
 .. _cap1055_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1001_1100/CAP_1055_Turn_on_DPA_B/CAP_1055_Turn_on_DPA-B.doc
 
-.. |wsvidalldn| replace:: ``1A_WS007_164.CLD``
-.. _wsvidalldn: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/archive/cld/1A_WS007_164.CLD
-
-.. |stdhoptjssc| replace:: ``I_ACIS_SW_STDHOPTJ.ssc``
-.. _stdhoptjssc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/products/ssc/I_ACIS_SW_STDHOPTJ.ssc
-
 .. |cap1708_pdf| replace:: PDF
 .. _cap1708_pdf: http://cxc.cfa.harvard.edu/acis/CAPs/CAP1708_TXINGB_SETPARAMS.pdf
 
 .. |cap1708_doc| replace:: DOC
 .. _cap1708_doc: http://cxc.cfa.harvard.edu/acis/CAPs/CAP1708_TXINGB_SETPARAMS.docx
-
-.. |stdhoptj| replace:: ``SOP_ACIS_SW_STDHOPTJ``
-.. _stdhoptj: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDHOPTJ.pdf
-
-.. |stdhoptj_pdf| replace:: PDF
-.. _stdhoptj_pdf: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDHOPTJ.pdf
-
-.. |stdhoptj_doc| replace:: DOC
-.. _stdhoptj_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDHOPTJ.doc
-
-
-.. |stdhoptjssc| replace:: ``I_ACIS_SW_STDHOPTJ.ssc``
-.. _stdhoptjssc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/products/ssc/I_ACIS_SW_STDHOPTJ.ssc
-
-
-.. |fptemp_121| replace:: ``SOT_SI_SET_ACIS_FP_TEMP_TO_M121C``
-.. _fptemp_121: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_SI_SET_ACIS_FP_TEMP_TO_M121C.pdf
-
-.. |fptemp_121_pdf| replace:: PDF
-.. _fptemp_121_pdf: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_SI_SET_ACIS_FP_TEMP_TO_M121C.pdf
-
-.. |fptemp_121_doc| replace:: DOC
-.. _fptemp_121_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_SI_SET_ACIS_FP_TEMP_TO_M121C.pdf
 
 
 SOT Procedures
@@ -230,10 +197,6 @@ SOT Procedures
 * `Warm Boot the Active ACIS BEP and Start DEA Housekeeping Run
   <http://cxc.cfa.harvard.edu/acis/cmd_seq/warmboot_hkp.pdf>`_
 
-  [ Do we need FP Temp Set in case the system configuration table got corrupted FSW 3.1.3.4 item #2]
-  
-* `Set Focal Plane Temperature to -121 C <http://cxc.cfa.harvard.edu/acis/cmd_seq/setfp_m121.pdf>`_
-* `Flight Software Standard Patch H, Optional Patch J <http://cxc.cfa.harvard.edu/acis/cmd_seq/sw_stdhoptj.pdf>`_
   
 FOT Procedures
 ++++++++++++++
@@ -241,11 +204,6 @@ FOT Procedures
 * ``SOP_ACIS_DPAB_ON`` (|dpab_on_pdf|_) (|dpab_on_doc|_)
 * ``SOP_61021_STANDBY`` (|standby_pdf|_) (|standby_doc|_)
 * ``SOP_ACIS_WARMBOOT_DEAHOUSEKEEPING`` (|warmboot_pdf|_) (|warmboot_doc|_)
-
-  Again do we need the following two procedures to be listed just in case?
-  
-* ``SOP_ACIS_SW_STDHOPTJ`` (|stdhoptj_pdf|_) (|stdhoptj_doc|_)
-* ``SOT_SI_SET_ACIS_FP_TEMP_TO_M121C`` (|fptemp_121_pdf|_) (|fptemp_121_doc|_)
 
 CLD Scripts
 +++++++++++
