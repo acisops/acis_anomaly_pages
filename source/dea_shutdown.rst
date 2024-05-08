@@ -165,7 +165,7 @@ CAPs
 
    The response to the first occurence of the DEA-A anomaly did not
    include all the steps above and included additional testing of S0 and
-   commanding of a CTI run, neither of which is necessary for a repeat occurence.
+   commanding of a CTI run, neither of which is necessary for an *identical* repeat occurrence.
    Response to future DEA anomalies should follow the above
    steps.
 
