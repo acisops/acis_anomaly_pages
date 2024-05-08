@@ -17,7 +17,7 @@ Contents:
 * :doc:`dpab_shutdown_bepa` (Last Updated February 14, 2024)
 * :doc:`dpaa_shutdown_bepb` 
 * :doc:`dpab_shutdown_bepb`
-* :doc:`dea_shutdown` (Last Updated May 6,2024)
+* :doc:`dea_shutdown` (Last Updated August 29,2022)
 * :doc:`dea_seq_reset` (Last Updated September 11, 2018)
 * :doc:`fep_reset` (Last Updated February 3, 2020)
 * :doc:`hi_lo_anomaly` (Last Updated June 28, 2017)

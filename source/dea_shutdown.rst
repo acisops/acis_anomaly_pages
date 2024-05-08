@@ -28,7 +28,7 @@ It appears it could happen again, but one occurrence provides little guidance.
 How is this Anomaly Diagnosed?
 ------------------------------
 
-Upon review of the telemetry data leading to the anomaly, within a major frame (32.2 seconds), one should see:
+Within a major frame (32.2 seconds), one should see:
 
 * 1DEPSA (DEA-A Power Supply On/Off) change from 1 to 0 (On to Off)
 * All DEA-A Analog Voltages (1DEP3AVO, 1DEP2AVO, 1DEP1AVO, 1DEP0AVO, 1DEN0AVO, 1DEN1AVO) 
@@ -38,16 +38,14 @@ Upon review of the telemetry data leading to the anomaly, within a major frame (
 * 1DE28AVO (DEA-A +28V Input Voltage) is expected to have a small uptick, ~0.5 V, consistent with
   the load suddenly dropping to zero
 
-These would be seen to remain in off/powered-down states when reviewing current values on our Real-Time Telemetry pages.
-All other hardware telemetry should be nominal. Older data can be examined from the dump files or the 
+All other hardware telemetry should be nominal. The current values for these can be found 
+on our Real-Time Telemetry pages. Older data can be examined from the dump files or the 
 engineering archive. 
 
 To extract information from the dump data, run ACORN on it as per the instructions in
 `"Running ACORN on data dumps in the case of an anomaly (04/06/16)" <http://cxc.cfa.harvard.edu/acis/memos/Dump_Acorn.html>`_. 
 Information from the tracelog files written by the ACORN tools can be plotted 
 using the Python or command-line interfaces to ACISpy, see below for details.
-Alternatively, one may use the
-`MAUDE query utility <https://occweb.cfa.harvard.edu/occweb/web/web_dev/smancini/mqb/maude_query_builder.php>`_.
 
 
 What is the first response?
@@ -76,7 +74,6 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   them on the diagnosis and the plan to develop CAPs to recover.
 * Prepare the CAPs and submit them for review to capreview AT ipa DOT harvard DOT edu, and cc: acisdude.
   It will also be necessary to call the OC/CC to determine which number should be used for the CAPs.
-  The CAP should be executed during an interval with no other ACIS commanding.  If that is not possible, the team can discuss running an SCS-107. 
   This main recovery CAP will have the following steps:
 
   - Power on the DEA side A (|deaa_on|_)
@@ -164,9 +161,8 @@ CAPs
 .. note::
 
    The response to the first occurence of the DEA-A anomaly did not
-   include all the steps above and included additional testing of S0 and
-   commanding of a CTI run, neither of which is necessary for a repeat occurence.
-   Response to future DEA anomalies should follow the above
+   include all the steps above and included additional commanding of a
+   CTI run.  Response to future DEA anomalies should follow the above
    steps.
 
 .. |cap980_pdf| replace:: PDF
@@ -188,11 +184,11 @@ Relevant Notes/Memos
 * `ACIS - DEA ADC Reset (Dorothy Gordon) <http://cxc.cfa.harvard.edu/acis/memos/gordon_dea_20051118.pdf>`_
 
 .. |mptl| replace:: ``multiplot_tracelog`` Command-line Script
-.. _mptl: https://cxc.cfa.harvard.edu/acis/acispy_cmd/#multiplot-tracelog
+.. _mptl: http://cxc.cfa.harvard.edu/acis/acispy/command_line.html#multiplot-tracelog
 
 Relevant ACISpy Links
 ---------------------
 
-* `Reading MSID Data from Tracelog File <https://cxc.cfa.harvard.edu/acis/acispy/loading_data.html#reading-msid-data-from-a-tracelog-file>`_
-* `Plotting Data in Python <https://cxc.cfa.harvard.edu/acis/acispy/Plotting_Data.html>`_
+* `Reading MSID Data from Tracelog File <http://cxc.cfa.harvard.edu/acis/acispy/loading_data.html#reading-msid-data-from-a-tracelog-file>`_
+* `Plotting Data in Python <http://cxc.cfa.harvard.edu/acis/acispy/plotting_data.html>`_
 * |mptl|_
