@@ -102,7 +102,7 @@ Open access, full memo:
 * `ACIS-MIT Software Problem Report 136 <https://acisweb.mit.edu/pub/SPR136-1.0.pdf>`_
 
 .. |mptl| replace:: ``multiplot_tracelog`` Command-line Script
-.. _mptl: http://cxc.cfa.harvard.edu/acis/acispy/command_line.html#multiplot-tracelog
+.. _mptl: http://cxc.cfa.harvard.edu/acis/acispy_cmd/#multiplot-tracelog
 
 Relevant ACISpy Links
 ---------------------

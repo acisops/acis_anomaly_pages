@@ -182,7 +182,7 @@ Relevant Notes/Memos
 * Obsid 7647: `3-FEP reset anomaly (7/11/2007) <http://cxc.cfa.harvard.edu/acis/memos/OCCcm08039_closeout.pdf>`_
 
 .. |mptl| replace:: ``multiplot_tracelog`` Command-line Script
-.. _mptl: http://cxc.cfa.harvard.edu/acis/acispy/command_line.html#multiplot-tracelog
+.. _mptl: http://cxc.cfa.harvard.edu/acis/acispy_cmd/#multiplot-tracelog
 
 Relevant ACISpy Links
 ---------------------

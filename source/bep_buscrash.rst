@@ -106,9 +106,9 @@ Relevant Notes/Memos
 * CAP 1597: `Restart ACIS <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/CAPs/1501-1600/CAP_1597_Restart%20ACIS/CAP_1597_Restart%20ACIS.pdf>`_
 
 * CAP 1622: Update TXINGS Parameter Vaues. (``acis_docs/CAPs/CAP1622_TXINGB_SETPARAMS.pdf``) (``acis_docs/CAPs/CAP1622_TXINGB_SETPARAMS.docx``)
-  
+
 .. |mptl| replace:: ``multiplot_tracelog`` Command-line Script
-.. _mptl: http://cxc.cfa.harvard.edu/acis/acispy/command_line.html#multiplot-tracelog
+.. _mptl: http://cxc.cfa.harvard.edu/acis/acispy_cmd/#multiplot-tracelog
 
 Relevant ACISpy Links
 ---------------------

@@ -85,7 +85,6 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 * Send an email to ``sot_red_alert@cfa`` and call a telecon with the FOT, SOT, and FDs to brief
   them on the diagnosis and the plan to develop CAPs to recover.
 
-
 * Prepare the CAPs and submit them for review to capreview AT ipa DOT harvard DOT edu, and cc: acisdude.
   It will also be necessary to call the OC/CC to determine which number should be used for the CAPs.
 
@@ -96,33 +95,29 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   CCD observations). Observations using only one or two CCDs need only DPA Side-A FEPs and won't be watchdog
   reset upon loss of the Side-B power. (As of this writing there are two exceptions, the Next-In-Line and the 2-CCD
   ECS SI modes which use FEPs 1 & 4 and would cause a watchdog reboot.)
-  
 
-     If BEP A - the active BEP - has not executed a watchdog reboot, the steps should be:
+  If BEP A - the active BEP - has not executed a watchdog reboot, the steps should be:
 
-     - Turn on DPA side B (|dpab_on|_, this can be executed even if a science run is currently in
-       progress, see note below).
+  - Turn on DPA side B (|dpab_on|_, this can be executed even if a science run is currently in
+    progress, see note below).
 
+  Otherwise if, in addition to this anomaly,  the BEP A has executed a watchdog reboot, the steps should be:
 
-     Otherwise if, in addition to this anomaly,  the BEP A has executed a watchdog reboot, the steps should be:
+  - Stop the science run and power down the FEPs and video boards (|standby|_)
+  - Turn on DPA side B (|dpab_on|_)
+  - Warm-boot the BEP and start a DEA housekeeping run (|warmboot|_).
+  - Set 3 FEPs on by issuing a WSPOW0002A command (1AWSPOW0002A_206.CLD).
 
-     - Stop the science run and power down the FEPs and video boards (|standby|_)
-     - Turn on DPA side B (|dpab_on|_)
-     - Warm-boot the BEP and start a DEA housekeeping run (|warmboot|_).
-     - Set 3 FEPs on by issuing a WSPOW0002A command (1AWSPOW0002A_206.CLD).
-
-
-The current standard, safe configuration for ACIS is 3 FEPs (1, 3, & 5) powered on and not clocking.
-The last step in the recovery in the case of a watchdog reboot listed above issues a WSPOW0002A
-command to put ACIS in the 3 FEPs powered on and not clocking configuration.
+  The current standard, safe configuration for ACIS is 3 FEPs (1, 3, & 5) powered on and not clocking.
+  The last step in the recovery in the case of a watchdog reboot listed above issues a WSPOW0002A
+  command to put ACIS in the 3 FEPs powered on and not clocking configuration.
 
   A CAP to update *txings* values from their defaults to the most-recent settings should follow the
-  main recovery CAP if possible.   CAP 1708  was used at the latest ACIS FSW patch: HJK Version 60.  You can
-  use that CAP  as a  **template** for this.   But you must use the latest txing parameter set (which may not be the
+  main recovery CAP if possible. CAP 1708 was used at the latest ACIS FSW patch: HJK Version 60. You can
+  use that CAP as a **template** for this. But you must use the latest txing parameter set (which may not be the
   values used in 1708). You can find CAP1708_TXINGB_SETPARAMS.docx  in ``acis_docs/CAPs``: ``CAP1708_TXINGB_SETPARAMS``.
   Refer to the most recent txings SAR for the current optimal values for the txings parameters.
 
- 
 * Execute the recovery CAPs at the next available comm. 
   
 * Write a shift report and distribute to ``sot_shift`` to inform the project that ACIS is restored
@@ -208,9 +203,8 @@ FOT Procedures
 CLD Scripts
 +++++++++++
 
-
-   1AWSPOW00002A_206.cld (OBC-A side)
-    - Located at: /data/acis/acis_docs/command_load/1AWSPOW0002A_206.cld and 1AWSPOW0002A_206.txt
+* ``1AWSPOW00002A_206.cld`` (OBC-A side)
+    - Located at: ``/data/acis/acis_docs/command_load/1AWSPOW0002A_206.cld`` and ``1AWSPOW0002A_206.txt``
 
 CAPs
 ++++
@@ -223,11 +217,9 @@ CAPs
 
 
 Relevant Notes/Memos
-+++++++++++++++++++
+++++++++++++++++++++
 
-* `Flight Note 417 <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/flightnotes/controlled/Flight_Note417_DPA_Turn_Off_Anomaly.pdf>`_
-
-This flight note covered the December 2002 DPA-A Shutdown and was used to close this issue out as well.
+* `Flight Note 417 <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/flightnotes/controlled/Flight_Note417_DPA_Turn_Off_Anomaly.pdf>`_ (this flight note covered the December 2002 DPA-A Shutdown and was used to close this issue out as well.)
 
 
 Relevant ACISpy Links

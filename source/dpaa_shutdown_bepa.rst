@@ -176,8 +176,8 @@ FOT Scripts
 CLD Files
 +++++++++++
 
-* 1AWSPOW0002A_206.cld
-    - Located at: /data/acis/acis_docs/command_load/1AWSPOW0002A_206.cld and 1AWSPOW0002A_206.txt
+* ``1AWSPOW0002A_206.cld``
+    - Located at: ``/data/acis/acis_docs/command_load/1AWSPOW0002A_206.cld`` and ``1AWSPOW0002A_206.txt``
 
 
 

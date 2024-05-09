@@ -53,7 +53,7 @@ When did it happen before?
 ++++++++++++++++++++++++++
 
 Make a list here of the times that it has occurred before in the mission, including
-obsids. For example, from the :doc:`dpaa_shutdown` page:
+obsids. For example, from the :doc:`dpaa_shutdown_bepa` page:
 
 The DPA-A has shut down 4 times over the mission:
 
