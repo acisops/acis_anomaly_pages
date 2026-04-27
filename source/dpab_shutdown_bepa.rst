@@ -59,7 +59,7 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 
 * Send an email to the ACIS team at the official anomaly email address,
   ``acis-anomaly -at- googlegroups -dot- com``. If it is off-hours,
-  another ACIS Ops team member should call Peter, Bob, and Jim Francis.
+  another ACIS Ops team member should call Peter and Bob.
 
 * Send an email to ``sot_red_alert@cfa`` announcing that the ACIS team is aware of the DPA-B shutdown
   and is investigating, and that a telecon will be called when more information is available.

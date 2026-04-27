@@ -149,7 +149,7 @@ Most likely, we will be notified by CXCDS Ops that data collection on one or mor
 the CCDs stopped during an observation. We need to:
 
 * Send an e-mail to the ACIS team (including Peter Ford, Bob Goeke, Mark Bautz,
-  Jim Francis, and Bev LaMarr) to alert them to the existence of the anomaly.
+  and Bev LaMarr) to alert them to the existence of the anomaly.
 
 * Examine data from the next observation, because in most cases the setup for 
   the next observation should clear the problem (though see the note below in 

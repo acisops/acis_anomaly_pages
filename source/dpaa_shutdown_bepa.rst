@@ -60,7 +60,7 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
 
 * Send an email to the ACIS team at the official anomaly email address,
   ``acis-anomaly -at- googlegroups -dot- com``. If it is off-hours,
-  another ACIS Ops team member should call Peter, Bob, and Jim Francis.
+  another ACIS Ops team member should call Peter and Bob.
 * Send an email to ``sot_red_alert@cfa`` announcing that the ACIS team is aware of the DPA-A shutdown
   and is investigating, and that a telecon will be called when more information is available.
 * Contact the GOT Duty Officer to inform that we need the dump data as soon as possible and to
@@ -76,6 +76,7 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   more involved analysis with the ACIS team.
 * As soon as the time of the shutdown is known, inform ``sot_yellow_alert@cfa``.
 * Identify whether or not additional comm time is needed and if so ask the OC/LSE to request it.
+* Review upcoming command timing and determine whether an SCS-107 run is needed.
 * Send an email to ``sot_red_alert@cfa`` and call a telecon with the FOT, SOT, and FDs to brief
   them on the diagnosis and the plan to develop CAPs to recover.
 * Prepare the CAPs and submit them for review to capreview AT ipa DOT harvard DOT edu, and cc: acisdude.
@@ -86,11 +87,11 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
  
   - Power down the video boards and leave 3 FEPs on by issuing a WSPOW0002A command (1AWSPOW0002A_206.CLD).
     
-  - Reload the patches and restart DEA housekeeping (|stdhoptj|_)
+  - Reload the patches and restart DEA housekeeping (following the latest FSW using SOP_ACIS_SW_STDxOPTy where x and y refer to the standard and optional-patch identifiers)
+   -  A CAP to update *txings* values from their defaults to most-recent settings should follow the main recovery CAP
   - Reset the focal plane temperature setpoint to -121 :math:`^\circ{\rm C}` (|fptemp_121|_)
 
-  A CAP to update *txings* values from their defaults to most-recent settings should follow the
-  main recovery CAP if possible.  
+
 
 * Execute the CAPs at the next available comm. Reloading the flight software patches can take
   a half an hour, so ensure that there is enough time in the comm to execute the entire procedure.
@@ -98,15 +99,14 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   to its default configuration.
 
 * Upon warmboot it is essential to update the *txings* parameters to the most recent values as quickly as possible in order
-  to prevent undesired radiation triggers.   CAP 1708  was used at the latest ACIS FSW patch: HJK Version 60.  You can
+  to prevent undesired radiation triggers.   CAP 1788  was used to update txingsmost recently at the time of writing (April 2026).  You can
   use that CAP  as a  **template** for this.   But you must use the latest txing parameter set (which may not be the
-  values used in 1708). You can find CAP1708_TXINGB_SETPARAMS.docx  in ``acis_docs/CAPs``: ``CAP1708_TXINGB_SETPARAMS``.
+  values used in 1788). You can find CAP1788_TXINGB_SETPARAMS.docx  in ``acis_docs/CAPs``: ``CAP1788_TXINGB_SETPARAMS``.
   Refer to the most recent txings SAR for the current optimal values for the txings parameters.
 
 .. note::
 
-   As of this writing, the ACIS Flight Software Patch level is standard H, optional J, version = 60. 
-   Before preparing the CAPs, check that this is the correct version.
+   Before preparing the CAPs, be sure to confirm the latest check FSW will be used for the recovery.
 
 Impacts
 -------
@@ -114,8 +114,10 @@ Impacts
 * Until the DPA-A is powered back on, science operations will be interrupted.
   
 * The warmboot of the BEP will reset the parameters of the TXINGS patch to their defaults. 
-  If not updated during initial recovery as above, *txings* settings should be updated as soon as possible via CAP (see CAP 1708) or SAR to prevent undesired radiation shutdowns.
+  If not updated during initial recovery as above, *txings* settings should be updated as soon as possible via CAP (see CAP 1788) or SAR to prevent undesired radiation shutdowns.
 
+* The vid-boards may be left on going into the belts depending on the time of shutdown and recovery.  Bob advises that this risk is incremental and it is therefore advisable to proceed slowly and cautiously and not to rush actions on behalf of the vid-boards.
+  
 
 Relevant Procedures
 -------------------
@@ -129,14 +131,11 @@ Relevant Procedures
 .. |dpaa_on_doc| replace:: DOC
 .. _dpaa_on_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_DPAA_ON.doc
 
-.. |stdhoptj| replace:: ``SOP_ACIS_SW_STDHOPTJ``
-.. _stdhoptj: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDHOPTJ.pdf
+.. |stdxopty| replace:: ``SOP_ACIS_SW_STDxOPTy repository``
+.. _stdxopty: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/
 
-.. |stdhoptj_pdf| replace:: PDF
-.. _stdhoptj_pdf: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDHOPTJ.pdf
-
-.. |stdhoptj_doc| replace:: DOC
-.. _stdhoptj_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_ACIS_SW_STDHOPTJ.doc
+.. |stdxopty_doc| replace:: DOC
+.. _stdxopty_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/
 
 
 
@@ -149,8 +148,8 @@ Relevant Procedures
 .. |fptemp_121_doc| replace:: DOC
 .. _fptemp_121_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/SOP_SI_SET_ACIS_FP_TEMP_TO_M121C.pdf
 
-.. |stdhoptjssc| replace:: ``I_ACIS_SW_STDHOPTJ.ssc``
-.. _stdhoptjssc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/products/ssc/I_ACIS_SW_STDHOPTJ.ssc
+.. |stdxoptyssc| replace:: ``I_ACIS_SW_STDxOPTy.ssc repository``
+.. _stdxoptyssc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/products/ssc/
 
 
 
@@ -158,20 +157,20 @@ SOT Procedures
 ++++++++++++++
 
 * `Turn On DPA-A <http://cxc.cfa.harvard.edu/acis/cmd_seq/dpaa_on.pdf>`_
-* `Flight Software Standard Patch H, Optional Patch J <http://cxc.cfa.harvard.edu/acis/cmd_seq/sw_stdhoptj.pdf>`_
+* `Flight Software Patch Procedures <https://cxc.cfa.harvard.edu/acis/acis_command_sequences.html>`_
 * `Set Focal Plane Temperature to -121 C <http://cxc.cfa.harvard.edu/acis/cmd_seq/setfp_m121.pdf>`_
 
 FOT Procedures
 ++++++++++++++
 
 * ``SOP_ACIS_DPAA_ON`` (|dpaa_on_pdf|_) (|dpaa_on_doc|_)
-* ``SOP_ACIS_SW_STDHOPTJ`` (|stdhoptj_pdf|_) (|stdhoptj_doc|_)
+* ``SOP_ACIS_SW_STDxOPTy`` (|stdxopty_doc|_) 
 * ``SOT_SI_SET_ACIS_FP_TEMP_TO_M121C`` (|fptemp_121_pdf|_) (|fptemp_121_doc|_)
 
 FOT Scripts
 +++++++++++
 
-* |stdhoptjssc|_
+* |stdxoptyssc|_
 
 CLD Files
 +++++++++++
@@ -200,13 +199,13 @@ CAPs
 .. |cap1407_doc| replace:: DOC
 .. _cap1407_doc: http://cxc.cfa.harvard.edu/acis/CAPs/CAP1407_dpaa_poweroff_recovery.doc
 
-.. |cap1708_pdf| replace:: PDF
-.. _cap1708_pdf: http://cxc.cfa.harvard.edu/acis/CAPs/CAP1708_TXINGB_SETPARAMS.pdf
+.. |cap1788_pdf| replace:: PDF
+.. _cap1788_pdf: http://cxc.cfa.harvard.edu/acis/CAPs/CAP1788_TXINGC_SETPARAMS_signed.pdf
 
-.. |cap1708_doc| replace:: DOC
-.. _cap1708_doc: http://cxc.cfa.harvard.edu/acis/CAPs/CAP1708_TXINGB_SETPARAMS.docx
+.. |cap1788_doc| replace:: DOC
+.. _cap1788_doc: http://cxc.cfa.harvard.edu/acis/CAPs/CAP1798_TXINGB_SETPARAMS.docx
 
-* CAP 1708 (Update TXINGS Parameter Values) (|cap1708_pdf|_) (|cap1708_doc|_)
+* CAP 1788 (Update TXINGS Parameter Values) (|cap1788_pdf|_) (|cap1788_doc|_)
 * CAP 1407 (DPA-A Poweroff Recovery) (|cap1407_pdf|_) (|cap1407_doc|_)
 * CAP 1342 (DPA-A Poweroff Recovery) (|cap1342_pdf|_) (|cap1342_doc|_)
 * CAP 818 (DPA-A Side Recovery from Enabled/Powered Off State) (|cap818_pdf|_)
@@ -214,6 +213,7 @@ CAPs
 Relevant Notes/Memos
 --------------------
 
+* `Wayside OCC and realtime activity instructions <https://cxc.cfa.harvard.edu/acis/memos/Waysidetstroom.html>`_
 * `Flight Note 394 <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/flightnotes/controlled/Flight_Note394_DPA_Turn_Off_Anomaly.pdf>`_
 * `Flight Note 417 <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/flightnotes/controlled/Flight_Note417_DPA_Turn_Off_Anomaly.pdf>`_
 * `Flight Note 563 <https://occweb.cfa.harvard.edu/occweb/FOT/configuration/flightnotes/controlled/Flight_Note563_DPA-A_Turn_Off_Anomaly_Report.pdf>`_
