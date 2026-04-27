@@ -88,7 +88,7 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   - Power down the video boards and leave 3 FEPs on by issuing a WSPOW0002A command (1AWSPOW0002A_206.CLD).
     
   - Reload the patches and restart DEA housekeeping (following the latest FSW using SOP_ACIS_SW_STDxOPTy where x and y refer to the standard and optional-patch identifiers)
-   -  A CAP to update *txings* values from their defaults to most-recent settings should follow the main recovery CAP
+  - A CAP to update *txings* values from their defaults to most-recent settings should follow the main recovery CAP
   - Reset the focal plane temperature setpoint to -121 :math:`^\circ{\rm C}` (|fptemp_121|_)
 
 
@@ -99,10 +99,10 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   to its default configuration.
 
 * Upon warmboot it is essential to update the *txings* parameters to the most recent values as quickly as possible in order
-  to prevent undesired radiation triggers.   CAP 1788  was used to update txingsmost recently at the time of writing (April 2026).  You can
+  to prevent undesired radiation triggers.   CAP 1788  was used to update *txings* most recently at the time of writing (April 2026).  You can
   use that CAP  as a  **template** for this.   But you must use the latest txing parameter set (which may not be the
-  values used in 1788). You can find CAP1788_TXINGB_SETPARAMS.docx  in ``acis_docs/CAPs``: ``CAP1788_TXINGB_SETPARAMS``.
-  Refer to the most recent txings SAR for the current optimal values for the txings parameters.
+  values used in 1788). You can find CAP1788_TXINGC_SETPARAMS.docx  in ``acis_docs/CAPs``: ``CAP1788_TXINGC_SETPARAMS``.
+  Refer to the most recent *txings* SAR for the current optimal values for the *txings* parameters.
 
 .. note::
 
@@ -113,7 +113,7 @@ Impacts
 
 * Until the DPA-A is powered back on, science operations will be interrupted.
   
-* The warmboot of the BEP will reset the parameters of the TXINGS patch to their defaults. 
+* The warmboot of the BEP will reset the parameters of the *txings* patch to their defaults. 
   If not updated during initial recovery as above, *txings* settings should be updated as soon as possible via CAP (see CAP 1788) or SAR to prevent undesired radiation shutdowns.
 
 * The vid-boards may be left on going into the belts depending on the time of shutdown and recovery.  Bob advises that this risk is incremental and it is therefore advisable to proceed slowly and cautiously and not to rush actions on behalf of the vid-boards.
@@ -134,7 +134,7 @@ Relevant Procedures
 .. |stdxopty| replace:: ``SOP_ACIS_SW_STDxOPTy repository``
 .. _stdxopty: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/
 
-.. |stdxopty_doc| replace:: DOC
+.. |stdxopty_doc| replace:: repository
 .. _stdxopty_doc: https://occweb.cfa.harvard.edu/occweb/FOT/configuration/procedures/SOP/
 
 
@@ -200,12 +200,12 @@ CAPs
 .. _cap1407_doc: http://cxc.cfa.harvard.edu/acis/CAPs/CAP1407_dpaa_poweroff_recovery.doc
 
 .. |cap1788_pdf| replace:: PDF
-.. _cap1788_pdf: http://cxc.cfa.harvard.edu/acis/CAPs/CAP1788_TXINGC_SETPARAMS_signed.pdf
+.. _cap1788_pdf: http://cxc.cfa.harvard.edu/acis/CAPs/CAP1788_TXINGC_SETPARAMS_Signed.pdf
 
 .. |cap1788_doc| replace:: DOC
-.. _cap1788_doc: http://cxc.cfa.harvard.edu/acis/CAPs/CAP1798_TXINGB_SETPARAMS.docx
+.. _cap1788_doc: http://cxc.cfa.harvard.edu/acis/CAPs/CAP1788_TXINGC_SETPARAMS.docx
 
-* CAP 1788 (Update TXINGS Parameter Values) (|cap1788_pdf|_) (|cap1788_doc|_)
+* CAP 1788 (Update *txings* Parameter Values) (|cap1788_pdf|_) (|cap1788_doc|_)
 * CAP 1407 (DPA-A Poweroff Recovery) (|cap1407_pdf|_) (|cap1407_doc|_)
 * CAP 1342 (DPA-A Poweroff Recovery) (|cap1342_pdf|_) (|cap1342_doc|_)
 * CAP 818 (DPA-A Side Recovery from Enabled/Powered Off State) (|cap818_pdf|_)
