@@ -76,7 +76,7 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
   more involved analysis with the ACIS team.
 * As soon as the time of the shutdown is known, inform ``sot_yellow_alert@cfa``.
 * Identify whether or not additional comm time is needed and if so ask the OC/LSE to request it.
-* Review upcoming command timing and determine whether an SCS-107 run is needed.
+* Review upcoming command timing and determine whether an SCS-107 run is needed to halt any science commanding that could interfere with recovery efforts.
 * Send an email to ``sot_red_alert@cfa`` and call a telecon with the FOT, SOT, and FDs to brief
   them on the diagnosis and the plan to develop CAPs to recover.
 * Prepare the CAPs and submit them for review to capreview AT ipa DOT harvard DOT edu, and cc: acisdude.
@@ -87,7 +87,7 @@ Our real-time web pages will alert us and the Lead System Engineer will call us.
  
   - Power down the video boards and leave 3 FEPs on by issuing a WSPOW0002A command (1AWSPOW0002A_206.CLD).
     
-  - Reload the patches and restart DEA housekeeping (following the latest FSW using SOP_ACIS_SW_STDxOPTy where x and y refer to the standard and optional-patch identifiers)
+  - Reload the patches and restart DEA housekeeping (following the latest FSW using SOP_ACIS_SW_STDxOPTy where x and y refer to the current standard and optional-patch identifiers)
   - A CAP to update *txings* values from their defaults to most-recent settings should follow the main recovery CAP
   - Reset the focal plane temperature setpoint to -121 :math:`^\circ{\rm C}` (|fptemp_121|_)
 
