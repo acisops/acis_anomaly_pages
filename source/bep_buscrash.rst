@@ -71,7 +71,7 @@ What is the first response?
 * Call a red-alert telecon, and plan to run SCS-107 to stop the science load running and assess the overall state of ACIS.
   
 * Be sure that the full ACIS team (including Ken Gage, Peter Ford, Bob Goeke, Mark Bautz,
-  Jim Francis, and Bev LaMarr) is alerted to the anomaly.  
+   and Bev LaMarr) is alerted to the anomaly.  
 
 * Process the dump data and get access to the CXC products to verify that this
   anomaly looks identical or similar to previous occurrences.

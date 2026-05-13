@@ -62,7 +62,7 @@ What is the response?
 Our real-time web pages will alert us and the Lead System Engineer will call us. We need to:
 
 * Send an email to the ACIS team at the official anomaly email address, ``acis-anomaly -at- googlegroups -dot- com``.
-  If it is off-hours, another ACIS Ops team member should call Peter, Jim Francis, Kari and Bob.
+  If it is off-hours, another ACIS Ops team member should call Peter and Bob.
 * Send an email to ``sot_red_alert@cfa`` announcing that the ACIS team is aware of the enabling
   of the door mechanism, and calling a telecon to discuss disabling it. Note that other
   mechanisms (valves) can be sorted out later and are not in any sense urgent.
@@ -93,7 +93,7 @@ If there is not time during the comm at which the anomaly was discovered to send
   If yes, it should appear as if in one frame the door mechanism was enabled.
 * Once analysis of the dump data is complete, convene a telecon at the next reasonable moment
   with the ACIS team and review the diagnosis. The MIT ACIS team (Peter Ford, Bob Goeke, Mark
-  Bautz, Kari Haworth, Jim Francis, and Bev LaMarr) should also be included in the discussion,
+  Bautz, and Bev LaMarr) should also be included in the discussion,
   either in the telecon or via email. If it is determined that the door has moved, this would
   be a significant anomaly and should be discussed further.
 * Execute the CAP at the next available comm. 

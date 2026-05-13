@@ -13,18 +13,18 @@ given to relevant flight notes, procedures, and other documentation.
 
 Contents:
  
-* :doc:`dpaa_shutdown_bepa` (Last Updated January 19, 2024)
-* :doc:`dpab_shutdown_bepa` (Last Updated February 14, 2024)
+* :doc:`dpaa_shutdown_bepa` (Last Updated April 27, 2026)
+* :doc:`dpab_shutdown_bepa` (Last Updated April 27, 2026)
 * :doc:`dpaa_shutdown_bepb` 
 * :doc:`dpab_shutdown_bepb`
 * :doc:`dea_shutdown` (Last Updated May 7,2024)
 * :doc:`dea_seq_reset` (Last Updated September 11, 2018)
-* :doc:`fep_reset` (Last Updated February 3, 2020)
+* :doc:`fep_reset` (Last Updated April 27, 2026)
 * :doc:`hi_lo_anomaly` (Last Updated June 28, 2017)
 * :doc:`trickle_bias_tplane` (Last Updated August 29, 2022)
 * :doc:`fep_thresholder` (Last updated August 14, 2017)
-* :doc:`door_b_enb` (Last updated May 4, 2018)
+* :doc:`door_b_enb` (Last updated April 27, 2026)
 * :doc:`stuck_status_bit` (Last updated August 29, 2022)
-* :doc:`bep_buscrash` (Last updated August 29, 2022)
+* :doc:`bep_buscrash` (Last updated April 27, 2026)
   
 :doc:`howto`
